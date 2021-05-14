@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Сайт компании Колбасный Цех</title>
+  <link rel="preload" href="fonts/montserrat-regular.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="fonts/montserrat-medium.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="fonts/montserrat-semibold.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="fonts/montserrat-bold.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body class="page__body">
+  <header class="page-header">
+    <div class="page-header__container container">
+      <a class="page-header__logo" href="index.html">
+        <img class="page-header__img" src="" alt="Логотип Колбасного Цеха">
+      </a>
+      <nav class="page-header__navigation navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Продукция</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Наборы</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Сертификаты</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">О цехе</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Доставка</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="promo">
+      <div class="promo__container container">
+        <div class="promo__main-info main-info">
+          <h1 class="main-info__title">Колбасный Цех</h1>
+          <p class="main-info__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a class="main-info__button button" href="">Смотреть изделия</a>
+          <ul class="main-info__user-list user-list">
+            <li class="user-list__item">
+              <svg class="socials__icon" width="40" height="38" viewBox="0 0 40 38">
+                <use xlink:href="img/sprite.svg#contacts-phone"></use>
+              </svg>
+              <a class="user-list__link" href="tel:+7(999)-999-99-99">+7(999)-999-99-99</a>
+            </li>
+            <li class="user-list__item">
+              <svg class="socials__icon" width="40" height="29" viewBox="0 0 40 29">
+                <use xlink:href="img/sprite.svg#contacts-mail"></use>
+              </svg>
+              <a class="user-list__link" href="mailto:kolbasnyitseh@gmail.com">kolbasnyitseh@gmail.com</a>
+            </li>
+          </ul>
+          <ul class="main-info__socials socials">
+            <li class="socials__item">
+              <a class="socials__link social-list__link--instagram" href="">
+                <span class="visually-hidden">Instagram</span>
+                <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
+                  <use xlink:href="img/sprite.svg#instagram-icon-mono"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link social-list__link--telegram" href="">
+                <span class="visually-hidden">Telegram</span>
+                <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
+                  <use xlink:href="img/sprite.svg#telegram-icon-mono"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link social-list__link--whatsapp" href="">
+                <span class="visually-hidden">Whatsapp</span>
+                <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
+                  <use xlink:href="img/sprite.svg#whatsapp-icon-mono"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link social-list__link--viber" href="">
+                <span class="visually-hidden">Viber</span>
+                <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
+                  <use xlink:href="img/sprite.svg#viber-icon-mono"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-main__goods goods">
+      <div class="goods__container container">
+        <h2 class="goods__title">Наша продукция</h2>
+        <p class="goods__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <ul class="goods__list">
+          <li class="goods__item product-card">
+            <h3 class="product-card__name">Ветчина из индейки</h3>
+            <div class="product-card__photo">
+              <picture>
+                <img class="product-card__image" src="img/turkey ham.jpg" srcset="" alt="" width="350" height="430">
+              </picture>
+            </div>
+            <a class="product-card__link-more" href="#turkey-ham" data-country-name="turkey-ham" aria-label="Узнать подробнее о товаре">Смотреть подробнее</a>
+          </li>
+          <li class="goods__item product-card">
+            <h3 class="product-card__name">Копчёный цыплёнок</h3>
+            <div class="product-card__photo">
+              <picture>
+                <img class="product-card__image" src="img/chicken-smoked.jpg" srcset="" alt="" width="350" height="430">
+              </picture>
+            </div>
+            <a class="product-card__link-more" href="#chicken-smoked" data-country-name="chicken-smoked" aria-label="Узнать подробнее о товаре">Смотреть подробнее</a>
+          </li>
+          <li class="goods__item product-card">
+            <h3 class="product-card__name">Дрогобычская</h3>
+            <div class="product-card__photo">
+              <picture>
+                <img class="product-card__image" src="img/drogobychskaya.jpg" srcset="" alt="" width="350" height="430">
+              </picture>
+            </div>
+            <a class="product-card__link-more" href="#drogobych" data-country-name="drogobych" aria-label="Узнать подробнее о товаре">Смотреть подробнее</a>
+          </li>
+          <li class="goods__item product-card">
+            <h3 class="product-card__name">Бекон верёно-копчёный</h3>
+            <div class="product-card__photo">
+              <picture>
+                <img class="product-card__image" src="img/bacon.jpg" srcset="" alt="" width="350" height="430">
+              </picture>
+            </div>
+            <a class="product-card__link-more" href="#bacon" data-country-name="bacon" aria-label="Узнать подробнее о товаре">Смотреть подробнее</a>
+          </li>
+          <li class="goods__item product-card">
+            <h3 class="product-card__name">Охотничьи колбаски</h3>
+            <div class="product-card__photo">
+              <picture>
+                <img class="product-card__image" src="img/ohotnichii.jpg" srcset="" alt="" width="350" height="430">
+              </picture>
+            </div>
+            <a class="product-card__link-more" href="#hunters-sausage" data-country-name="hunters-sausage" aria-label="Узнать подробнее о товаре">Смотреть подробнее</a>
+          </li>
+          <li class="goods__item product-card">
+            <h3 class="product-card__name">Паштет из утиной печени</h3>
+            <div class="product-card__photo">
+              <picture>
+                <img class="product-card__image" src="img/pashtet.jpg" srcset="" alt="" width="350" height="430">
+              </picture>
+            </div>
+            <a class="product-card__link-more" href="#duck-pate" data-country-name="duck-pate" aria-label="Узнать подробнее о товаре">Смотреть подробнее</a>
+          </li>
+        </ul>
+        <a class="goods__button button" href="" aria-label="Нажать, чтобы увидеть больше товаров">Хочу посмотреть больше</a>
+      </div>
+    </section>
+    <section class="page-main__product-tabs product-tabs">
+      <div class="product-tabs__container container">
+        <ul class="product-tabs__tab-list tab-list">
+          <li class="tab-list__item">
+            <a class="tab-list__link" href="">Ветчина из индейки</a>
+          </li>
+          <li class="tab-list__item">
+            <a class="tab-list__link" href="">Копчёный цыплёнок</a>
+          </li>
+          <li class="tab-list__item">
+            <a class="tab-list__link" href="">Дрогобычская</a>
+          </li>
+          <li class="tab-list__item">
+            <a class="tab-list__link" href="">Бекон варёно - копчёный</a>
+          </li>
+          <li class="tab-list__item">
+            <a class="tab-list__link" href="">Колбаски охотничьи</a>
+          </li>
+          <li class="tab-list__item">
+            <a class="tab-list__link" href="">Паштет из утиной печени</a>
+          </li>
+        </ul>
+        <div class="product-tabs__tabs-content tabs-content">
+          <div class="tabs-content__product-info product-info">
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <div class="page-footer__container container">
+
+    </div>
+  </footer>
+</body>
+</html>
