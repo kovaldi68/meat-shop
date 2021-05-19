@@ -1,3 +1,20 @@
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .navigation__list {
   @include list-reset;
+}
+
+.navigation__item {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.navigation__link {
+  color: $yellow-main;
 }

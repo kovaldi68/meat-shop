@@ -12,10 +12,10 @@
   <link rel='stylesheet' href='css/style.min.css'>
 </head>
 <body class='page__body'>
-  <header class='page-header'>
+  <header class='page-header page-header--nojs'>
     <div class='page-header__container container'>
       <a class='page-header__logo' href='index.html'>
-        <img class='page-header__img' src='' alt='Логотип Колбасного Цеха'>
+        <img class='page-header__img' src='img/logo.png' alt='Логотип Колбасного Цеха' width='45' height='45'>
       </a>
       <nav class='page-header__navigation navigation'>
         <ul class='navigation__list'>
@@ -36,6 +36,9 @@
           </li>
         </ul>
       </nav>
+      <button class='page-header__toggle toggle' type='button' aria-label='Открыть или закрыть меню'>
+        <span class='toggle__line'></span>
+      </button>
     </div>
   </header>
 
@@ -48,14 +51,14 @@
           <a class='main-info__button button' href=''>Смотреть изделия</a>
           <ul class='main-info__user-list user-list'>
             <li class='user-list__item'>
-              <svg class="socials__icon" width="40" height="38" viewBox="0 0 40 38">
-                <use xlink:href="img/sprite.svg#contacts-phone"></use>
+              <svg class='socials__icon' width='40' height='38' viewBox='0 0 40 38'>
+                <use xlink:href='img/sprite.svg#contacts-phone'></use>
               </svg>
               <a class='user-list__link' href='tel:+7(999)-999-99-99'>+7(999)-999-99-99</a>
             </li>
             <li class='user-list__item'>
-              <svg class="socials__icon" width="40" height="29" viewBox="0 0 40 29">
-                <use xlink:href="img/sprite.svg#contacts-mail"></use>
+              <svg class='socials__icon' width='40' height='29' viewBox='0 0 40 29'>
+                <use xlink:href='img/sprite.svg#contacts-mail'></use>
               </svg>
               <a class='user-list__link' href='mailto:kolbasnyitseh@gmail.com'>kolbasnyitseh@gmail.com</a>
             </li>
@@ -63,33 +66,33 @@
           <ul class='main-info__socials socials'>
             <li class='socials__item'>
               <a class='socials__link social-list__link--instagram' href=''>
-                <span class="visually-hidden">Instagram</span>
-                <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
-                  <use xlink:href="img/sprite.svg#instagram-icon-mono"></use>
+                <span class='visually-hidden'>Instagram</span>
+                <svg class='socials__icon' width='40' height='40' viewBox='0 0 40 40'>
+                  <use xlink:href='img/sprite.svg#instagram-icon-mono'></use>
                 </svg>
               </a>
             </li>
             <li class='socials__item'>
               <a class='socials__link social-list__link--telegram' href=''>
-                <span class="visually-hidden">Telegram</span>
-                <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
-                  <use xlink:href="img/sprite.svg#telegram-icon-mono"></use>
+                <span class='visually-hidden'>Telegram</span>
+                <svg class='socials__icon' width='40' height='40' viewBox='0 0 40 40'>
+                  <use xlink:href='img/sprite.svg#telegram-icon-mono'></use>
                 </svg>
               </a>
             </li>
             <li class='socials__item'>
               <a class='socials__link social-list__link--whatsapp' href=''>
-                <span class="visually-hidden">Whatsapp</span>
-                <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
-                  <use xlink:href="img/sprite.svg#whatsapp-icon-mono"></use>
+                <span class='visually-hidden'>Whatsapp</span>
+                <svg class='socials__icon' width='40' height='40' viewBox='0 0 40 40'>
+                  <use xlink:href='img/sprite.svg#whatsapp-icon-mono'></use>
                 </svg>
               </a>
             </li>
             <li class='socials__item'>
               <a class='socials__link social-list__link--viber' href=''>
-                <span class="visually-hidden">Viber</span>
-                <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
-                  <use xlink:href="img/sprite.svg#viber-icon-mono"></use>
+                <span class='visually-hidden'>Viber</span>
+                <svg class='socials__icon' width='40' height='40' viewBox='0 0 40 40'>
+                  <use xlink:href='img/sprite.svg#viber-icon-mono'></use>
                 </svg>
               </a>
             </li>
@@ -197,7 +200,7 @@
             </div>
             <div class='product-info__photo'>
               <picture>
-                <img class='product-info__image' src='img/turkey-ham.jpg' srcset='' alt='' width='350' height='430'>
+                <img class='product-info__image' src='img/turkey-ham.jpg' srcset='' alt='' width='430' height='596'>
               </picture>
             </div>
           </div>
@@ -214,7 +217,7 @@
             </div>
             <div class='product-info__photo'>
               <picture>
-                <img class='product-info__image' src='img/chicken-smoked.jpg' srcset='' alt='' width='350' height='430'>
+                <img class='product-info__image' src='img/chicken-smoked.jpg' srcset='' alt='' width='430' height='596'>
               </picture>
             </div>
           </div>
@@ -231,7 +234,7 @@
             </div>
             <div class='product-info__photo'>
               <picture>
-                <img class='product-info__image' src='img/drogobychskaya.jpg' srcset='' alt='' width='350' height='430'>
+                <img class='product-info__image' src='img/drogobychskaya.jpg' srcset='' alt='' width='430' height='596'>
               </picture>
             </div>
           </div>
@@ -248,7 +251,7 @@
             </div>
             <div class='product-info__photo'>
               <picture>
-                <img class='product-info__image' src='img/bacon.jpg' srcset='' alt='' width='350' height='430'>
+                <img class='product-info__image' src='img/bacon.jpg' srcset='' alt='' width='430' height='596'>
               </picture>
             </div>
           </div>
@@ -265,7 +268,7 @@
             </div>
             <div class='product-info__photo'>
               <picture>
-                <img class='product-info__image' src='img/ohotnichii.jpg' srcset='' alt='' width='350' height='430'>
+                <img class='product-info__image' src='img/ohotnichii.jpg' srcset='' alt='' width='430' height='596'>
               </picture>
             </div>
           </div>
@@ -282,7 +285,7 @@
             </div>
             <div class='product-info__photo'>
               <picture>
-                <img class='product-info__image' src='img/pashtet.jpg' srcset='' alt='' width='350' height='430'>
+                <img class='product-info__image' src='img/pashtet.jpg' srcset='' alt='' width='430' height='596'>
               </picture>
             </div>
           </div>
@@ -297,14 +300,14 @@
           <h3 class='contact-us__title'>Свяжитесь с нами</h3>
           <ul class='contact-us__user-list user-list user-list--secondary'>
             <li class='user-list__item'>
-              <svg class="socials__icon" width="40" height="38" viewBox="0 0 40 38">
-                <use xlink:href="img/sprite.svg#contacts-phone"></use>
+              <svg class='socials__icon' width='40' height='38' viewBox='0 0 40 38'>
+                <use xlink:href='img/sprite.svg#contacts-phone'></use>
               </svg>
               <a class='user-list__link' href='tel:+7(999)-999-99-99'>+7(999)-999-99-99</a>
             </li>
             <li class='user-list__item'>
-              <svg class="socials__icon" width="40" height="29" viewBox="0 0 40 29">
-                <use xlink:href="img/sprite.svg#contacts-mail"></use>
+              <svg class='socials__icon' width='40' height='29' viewBox='0 0 40 29'>
+                <use xlink:href='img/sprite.svg#contacts-mail'></use>
               </svg>
               <a class='user-list__link' href='mailto:kolbasnyitseh@gmail.com'>kolbasnyitseh@gmail.com</a>
             </li>
@@ -312,33 +315,33 @@
           <ul class='contact-us__socials socials socials--secondary'>
             <li class='socials__item'>
               <a class='socials__link social-list__link--instagram' href=''>
-                <span class="visually-hidden">Instagram</span>
-                <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
-                  <use xlink:href="img/sprite.svg#instagram-icon-mono"></use>
+                <span class='visually-hidden'>Instagram</span>
+                <svg class='socials__icon' width='40' height='40' viewBox='0 0 40 40'>
+                  <use xlink:href='img/sprite.svg#instagram-icon-mono'></use>
                 </svg>
               </a>
             </li>
             <li class='socials__item'>
               <a class='socials__link social-list__link--telegram' href=''>
-                <span class="visually-hidden">Telegram</span>
-                <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
-                  <use xlink:href="img/sprite.svg#telegram-icon-mono"></use>
+                <span class='visually-hidden'>Telegram</span>
+                <svg class='socials__icon' width='40' height='40' viewBox='0 0 40 40'>
+                  <use xlink:href='img/sprite.svg#telegram-icon-mono'></use>
                 </svg>
               </a>
             </li>
             <li class='socials__item'>
               <a class='socials__link social-list__link--whatsapp' href=''>
-                <span class="visually-hidden">Whatsapp</span>
-                <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
-                  <use xlink:href="img/sprite.svg#whatsapp-icon-mono"></use>
+                <span class='visually-hidden'>Whatsapp</span>
+                <svg class='socials__icon' width='40' height='40' viewBox='0 0 40 40'>
+                  <use xlink:href='img/sprite.svg#whatsapp-icon-mono'></use>
                 </svg>
               </a>
             </li>
             <li class='socials__item'>
               <a class='socials__link social-list__link--viber' href=''>
-                <span class="visually-hidden">Viber</span>
-                <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
-                  <use xlink:href="img/sprite.svg#viber-icon-mono"></use>
+                <span class='visually-hidden'>Viber</span>
+                <svg class='socials__icon' width='40' height='40' viewBox='0 0 40 40'>
+                  <use xlink:href='img/sprite.svg#viber-icon-mono'></use>
                 </svg>
               </a>
             </li>
@@ -433,7 +436,7 @@
               <input type='text'>
               <label for=''></label>
             </div>
-            <textarea name='' id='' cols='30' rows='10'></textarea>
+            <textarea name='' id='' cols='20' rows='10'></textarea>
             <button class='form__button button button--form' type='submit' aria-label='Отправить форму с данными для обратного звонка/письма'>Отправить</button>
           </div>
         </form>
@@ -452,47 +455,47 @@
       <ul class='page-footer__socials socials'>
         <li class='socials__item'>
           <a class='socials__link social-list__link--instagram' href=''>
-            <span class="visually-hidden">Instagram</span>
-            <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
-              <use xlink:href="img/sprite.svg#instagram-icon-mono"></use>
+            <span class='visually-hidden'>Instagram</span>
+            <svg class='socials__icon' width='40' height='40' viewBox='0 0 40 40'>
+              <use xlink:href='img/sprite.svg#instagram-icon-mono'></use>
             </svg>
           </a>
         </li>
         <li class='socials__item'>
           <a class='socials__link social-list__link--telegram' href=''>
-            <span class="visually-hidden">Telegram</span>
-            <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
-              <use xlink:href="img/sprite.svg#telegram-icon-mono"></use>
+            <span class='visually-hidden'>Telegram</span>
+            <svg class='socials__icon' width='40' height='40' viewBox='0 0 40 40'>
+              <use xlink:href='img/sprite.svg#telegram-icon-mono'></use>
             </svg>
           </a>
         </li>
         <li class='socials__item'>
           <a class='socials__link social-list__link--whatsapp' href=''>
-            <span class="visually-hidden">Whatsapp</span>
-            <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
-              <use xlink:href="img/sprite.svg#whatsapp-icon-mono"></use>
+            <span class='visually-hidden'>Whatsapp</span>
+            <svg class='socials__icon' width='40' height='40' viewBox='0 0 40 40'>
+              <use xlink:href='img/sprite.svg#whatsapp-icon-mono'></use>
             </svg>
           </a>
         </li>
         <li class='socials__item'>
           <a class='socials__link social-list__link--viber' href=''>
-            <span class="visually-hidden">Viber</span>
-            <svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40">
-              <use xlink:href="img/sprite.svg#viber-icon-mono"></use>
+            <span class='visually-hidden'>Viber</span>
+            <svg class='socials__icon' width='40' height='40' viewBox='0 0 40 40'>
+              <use xlink:href='img/sprite.svg#viber-icon-mono'></use>
             </svg>
           </a>
         </li>
       </ul>
       <ul class='page-footer__user-list user-list'>
         <li class='user-list__item'>
-          <svg class="socials__icon" width="40" height="38" viewBox="0 0 40 38">
-            <use xlink:href="img/sprite.svg#contacts-phone"></use>
+          <svg class='socials__icon' width='40' height='38' viewBox='0 0 40 38'>
+            <use xlink:href='img/sprite.svg#contacts-phone'></use>
           </svg>
           <a class='user-list__link' href='tel:+7(999)-999-99-99'>+7(999)-999-99-99</a>
         </li>
         <li class='user-list__item'>
-          <svg class="socials__icon" width="40" height="29" viewBox="0 0 40 29">
-            <use xlink:href="img/sprite.svg#contacts-mail"></use>
+          <svg class='socials__icon' width='40' height='29' viewBox='0 0 40 29'>
+            <use xlink:href='img/sprite.svg#contacts-mail'></use>
           </svg>
           <a class='user-list__link' href='mailto:kolbasnyitseh@gmail.com'>kolbasnyitseh@gmail.com</a>
         </li>
@@ -528,5 +531,6 @@
       <button class='modal__button button button--close'></button>
     </div>
   </div>
+  <script src='js/script.js'></script>
 </body>
 </html>

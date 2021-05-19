@@ -27,4 +27,48 @@
     background-position: center;
     background-size: 22px;
   }
+
+  &--burger {
+    margin: 0;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    overflow: hidden;
+    font-size: 0;
+    box-shadow: none;
+
+    span {
+      display: block;
+      position: absolute;
+      top: 21px;
+      left: 8px;
+      right: 8px;
+      height: 3px;
+      background: $yellow-main;
+      transition: background 0s 0.3s;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        background: $yellow-main;
+        transition-duration: 0.3s, 0.3s;
+        transition-delay: 0.3s, 0s;
+      }
+
+      &::before {
+        top: -10px;
+        transition-property: top, transform;
+      }
+
+      &::after {
+        bottom: -10px;
+        transition-property: bottom, transform;
+      }
+    }
+  }
 }

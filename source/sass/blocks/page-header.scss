@@ -1,1 +1,39 @@
+.page-header {
+  padding-top: 13px;
+  padding-bottom: 15px;
 
+  &--nojs {
+    .page-header__navigation {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+  }
+
+  &--opened {
+    .page-header__navigation {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      transition: 0.5s all;
+    }
+  }
+}
+
+.page-header__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.page-header__navigation {
+  display: none;
+  order: 2;
+}
+
+.page-header__logo {
+  display: inline-flex;
+  margin-right: auto;
+  width: 45px;
+  height: 45px;
+}
