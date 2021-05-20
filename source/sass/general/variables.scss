@@ -11,6 +11,7 @@ $main-font: "Montserrat", "Verdana", sans-serif;
 
 $white-basic: #ffffff;
 $black-basic: #000000;
+$black-basic-70: rgba($black-basic, 0.7);
 $black-red-main: #1e0000;
 
 //yellow
@@ -23,6 +24,8 @@ $yellow-main-50: rgba($yellow-main, 0.5);
 
 $red-main: #b51d0a;
 $red-dark-decor: #500805;
+$red-background: #52403c;
+
 //box shadow
 
 $feedback-form-shadow: 0 4px 30px rgba(41, 54, 66, 0.1);

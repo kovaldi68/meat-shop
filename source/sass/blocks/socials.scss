@@ -1,3 +1,16 @@
 .socials {
   @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.socials__item {
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }

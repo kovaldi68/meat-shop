@@ -1,3 +1,32 @@
 .main-info {
-  padding: 20px 5px 20px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 10px;
+  background-color: $black-basic-70;
+}
+
+.main-info__title {
+  width: 80%;
+  margin: 0;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.main-info__text {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  text-align: center;
+}
+
+.main-info__button {
+  margin-bottom: 20px;
+}
+
+.main-info__user-list {
+  margin-bottom: 10px;
 }

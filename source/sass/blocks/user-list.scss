@@ -1,3 +1,16 @@
 .user-list {
   @include list-reset;
 }
+
+.user-list__item {
+  display: flex;
+  align-items: center;
+}
+
+.user-list__icon {
+  margin-right: 5px;
+}
+
+.user-list__link {
+  color: $white-basic;
+}
