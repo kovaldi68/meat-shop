@@ -5,6 +5,11 @@
 .user-list__item {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .user-list__icon {
@@ -12,5 +17,56 @@
 }
 
 .user-list__link {
+  position: relative;
+  padding-left: 35px;
   color: $white-basic;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-50%);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $yellow-main;
+  }
+
+  &--phone {
+    &::before {
+      height: 28px;
+      background-image: url('../img/contacts-phone.svg');
+      background-size: 30px 28px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      &::before {
+      background-image: url('../img/contacts-phone-active.svg');
+      }
+    }
+  }
+
+  &--mail {
+    &::before {
+      height: 19px;
+      background-image: url('../img/contacts-mail.svg');
+      background-size: 30px 19px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      &::before {
+        background-image: url('../img/contacts-mail-active.svg');
+      }
+    }
+  }
 }

@@ -1,0 +1,42 @@
+.goods {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.goods__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.goods__title {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.goods__text {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  text-align: center
+}
+
+.goods__list {
+  @include list-reset;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.goods__item {
+  max-width: 520px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.goods__button {
+  max-width: 520px;
+}

@@ -10,6 +10,7 @@ $main-font: "Montserrat", "Verdana", sans-serif;
 // black&white
 
 $white-basic: #ffffff;
+$white-basic-opacity-80: rgba($white-basic, 0.8);
 $black-basic: #000000;
 $black-basic-70: rgba($black-basic, 0.7);
 $black-red-main: #1e0000;
@@ -19,6 +20,7 @@ $black-red-main: #1e0000;
 $yellow-main: #ead39c;
 $yellow-main-70: rgba($yellow-main, 0.7);
 $yellow-main-50: rgba($yellow-main, 0.5);
+$yellow-button-hover: #c9a66b;
 
 //red
 

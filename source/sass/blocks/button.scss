@@ -14,6 +14,12 @@
   text-transform: uppercase;
   color: $red-main;
 
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $yellow-button-hover;
+  }
+
   &--close {
     position: absolute;
     top: 33px;
@@ -30,7 +36,7 @@
 
   &--goods {
     width: 100%;
-    padding: 25px;
+    padding: 18px 25px;
     padding-right: 35px;
     font-size: 10px;
     line-height: 12px;
@@ -40,15 +46,15 @@
     &::after {
       content: '';
       position: absolute;
-      width: 14px;
-      height: 14px;
+      width: 10px;
+      height: 10px;
       top: 50%;
       right: 20px;
       transform: translateY(-50%);
       background-image: url('../img/arrow-down.svg');
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 14px;
+      background-size: 10px;
     }
   }
 }

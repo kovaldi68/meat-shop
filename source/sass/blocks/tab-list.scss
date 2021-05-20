@@ -1,0 +1,50 @@
+.tab-list {
+  @include list-reset;
+  display: flex;
+  margin-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-width: fit-content;
+  overflow-y: auto;
+  white-space: nowrap;
+  border-bottom: 1px solid $yellow-main-50;
+}
+
+.tab-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.415px;
+
+  &:last-child {
+    margin-right: 0;
+    padding-right: 21px;
+  }
+}
+
+.tab-list__link {
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 140px;
+  white-space: pre-line;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: $yellow-main;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $yellow-main-50;
+  }
+
+  &--active {
+    color: $yellow-main-50;
+  }
+}

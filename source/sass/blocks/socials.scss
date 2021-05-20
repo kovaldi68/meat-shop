@@ -6,11 +6,40 @@
 }
 
 .socials__item {
-  margin-right: 5px;
-  width: 30px;
-  height: 30px;
+  margin-right: 40px;
 
   &:last-child {
     margin-right: 0;
+  }
+}
+
+.socials__link {
+  position: relative;
+  display: block;
+  padding: 15px;
+  z-index: $z-index-socials-icon;
+
+
+}
+
+.socials__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  path {
+    fill: inherit;
+  }
+
+  use {
+    fill: $white-basic;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    use {
+      fill: $yellow-main;
+    }
   }
 }
