@@ -1,0 +1,46 @@
+.article {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article__title {
+  margin: 0;
+  margin-right: auto;
+  margin-bottom: 15px;
+  padding-right: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.article__price {
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: $red-main;
+}
+
+.article__about {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  text-align: center;
+  line-height: 25px;
+}
+
+.article__text {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  line-height: 25px;
+}
+
+.article__energy-value-table {
+  margin-bottom: 20px;
+}
+
+.article__button {
+  margin: 0 auto;
+  max-width: 520px;
+}

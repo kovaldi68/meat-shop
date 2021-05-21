@@ -20,19 +20,19 @@
       <nav class='page-header__navigation navigation'>
         <ul class='navigation__list'>
           <li class='navigation__item'>
-            <a class='navigation__link' href='#'>Продукция</a>
+            <a class='navigation__link' href='#' data-hover='Продукция'>Продукция</a>
           </li>
           <li class='navigation__item'>
-            <a class='navigation__link' href='#'>Наборы</a>
+            <a class='navigation__link' href='#' data-hover='Наборы'>Наборы</a>
           </li>
           <li class='navigation__item'>
-            <a class='navigation__link' href='#'>Сертификаты</a>
+            <a class='navigation__link' href='#' data-hover='Сертификаты'>Сертификаты</a>
           </li>
           <li class='navigation__item'>
-            <a class='navigation__link' href='#'>О цехе</a>
+            <a class='navigation__link' href='#' data-hover='Цех'>Цех</a>
           </li>
           <li class='navigation__item'>
-            <a class='navigation__link' href='#'>Доставка</a>
+            <a class='navigation__link' href='#' data-hover='Доставка'>Доставка</a>
           </li>
         </ul>
       </nav>
@@ -183,13 +183,34 @@
           <div class='tabs-content__product-info product-info product-info--active'>
             <div class='product-info__article article'>
               <h3 class='article__title'>Ветчина из индейки</h3>
-              <span class='article__price'>2000p</span>
+              <span class='article__price'>2000p/кг</span>
               <p class='article__about'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-              <ul class='article__energy-value-list'>
-                <li class='article__energy-value-item'></li>
-              </ul>
+              <table class='article__energy-value-table energy-value'>
+                <caption class='energy-value__title'>Энергетическая ценность</caption>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Белки, г</td>
+                  <td class='energy-value__cell energy-value__cell--value'>0,3</td>
+                </tr>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Жиры, г</td>
+                  <td class='energy-value__cell energy-value__cell--value'>0,1</td>
+                </tr>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Углеводы, г</td>
+                  <td class='energy-value__cell energy-value__cell--value'>15,4</td>
+                </tr>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Ккал</td>
+                  <td class='energy-value__cell energy-value__cell--value'>64</td>
+                </tr>
+              </table>
+              <!-- <ul class='article__energy-value-list'>
+                <li class='article__energy-value-item'>Белки</li>
+                <li class='article__energy-value-item'>Жиры</li>
+                <li class='article__energy-value-item'>Углеводы</li>
+              </ul> -->
               <p class='article__text'>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-              <a class='article__button button' href=''>Заказать сейчас</a>
+              <a class='article__button button button--order' href=''>Заказать сейчас</a>
             </div>
             <div class='product-info__photo'>
               <picture>
@@ -219,9 +240,25 @@
               <h3 class='article__title'>Дрогобычская</h3>
               <span class='article__price'>2000p</span>
               <p class='article__about'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-              <ul class='article__energy-value-list'>
-                <li class='article__energy-value-item'></li>
-              </ul>
+              <table class='article__energy-value-table energy-value'>
+                <caption class='energy-value__title'>Энергетическая ценность</caption>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Белки, г</td>
+                  <td class='energy-value__cell energy-value__cell--value'>0,3</td>
+                </tr>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Жиры, г</td>
+                  <td class='energy-value__cell energy-value__cell--value'>0,1</td>
+                </tr>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Углеводы, г</td>
+                  <td class='energy-value__cell energy-value__cell--value'>15,4</td>
+                </tr>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Ккал</td>
+                  <td class='energy-value__cell energy-value__cell--value'>64</td>
+                </tr>
+              </table>
               <p class='article__text'>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
               <a class='article__button button' href=''>Заказать сейчас</a>
             </div>
@@ -236,9 +273,25 @@
               <h3 class='article__title'>Бекон варёно - копчёный</h3>
               <span class='article__price'>2000p</span>
               <p class='article__about'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-              <ul class='article__energy-value-list'>
-                <li class='article__energy-value-item'></li>
-              </ul>
+              <table class='article__energy-value-table energy-value'>
+                <caption class='energy-value__title'>Энергетическая ценность</caption>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Белки, г</td>
+                  <td class='energy-value__cell energy-value__cell--value'>0,3</td>
+                </tr>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Жиры, г</td>
+                  <td class='energy-value__cell energy-value__cell--value'>0,1</td>
+                </tr>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Углеводы, г</td>
+                  <td class='energy-value__cell energy-value__cell--value'>15,4</td>
+                </tr>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Ккал</td>
+                  <td class='energy-value__cell energy-value__cell--value'>64</td>
+                </tr>
+              </table>
               <p class='article__text'>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
               <a class='article__button button' href=''>Заказать сейчас</a>
             </div>
@@ -253,9 +306,25 @@
               <h3 class='article__title'>Колбаски охотничьи</h3>
               <span class='article__price'>2000p</span>
               <p class='article__about'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-              <ul class='article__energy-value-list'>
-                <li class='article__energy-value-item'></li>
-              </ul>
+              <table class='article__energy-value-table energy-value'>
+                <caption class='energy-value__title'>Энергетическая ценность</caption>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Белки, г</td>
+                  <td class='energy-value__cell energy-value__cell--value'>0,3</td>
+                </tr>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Жиры, г</td>
+                  <td class='energy-value__cell energy-value__cell--value'>0,1</td>
+                </tr>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Углеводы, г</td>
+                  <td class='energy-value__cell energy-value__cell--value'>15,4</td>
+                </tr>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Ккал</td>
+                  <td class='energy-value__cell energy-value__cell--value'>64</td>
+                </tr>
+              </table>
               <p class='article__text'>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
               <a class='article__button button' href=''>Заказать сейчас</a>
             </div>
@@ -270,9 +339,25 @@
               <h3 class='article__title'>Паштет из утиной печени</h3>
               <span class='article__price'>2000p</span>
               <p class='article__about'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-              <ul class='article__energy-value-list'>
-                <li class='article__energy-value-item'></li>
-              </ul>
+              <table class='article__energy-value-table energy-value'>
+                <caption class='energy-value__title'>Энергетическая ценность</caption>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Белки, г</td>
+                  <td class='energy-value__cell energy-value__cell--value'>0,3</td>
+                </tr>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Жиры, г</td>
+                  <td class='energy-value__cell energy-value__cell--value'>0,1</td>
+                </tr>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Углеводы, г</td>
+                  <td class='energy-value__cell energy-value__cell--value'>15,4</td>
+                </tr>
+                <tr class='energy-value__row'>
+                  <td class='energy-value__cell energy-value__cell--key'>Ккал</td>
+                  <td class='energy-value__cell energy-value__cell--value'>64</td>
+                </tr>
+              </table>
               <p class='article__text'>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
               <a class='article__button button' href=''>Заказать сейчас</a>
             </div>

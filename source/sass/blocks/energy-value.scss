@@ -1,0 +1,19 @@
+.energy-value {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.energy-value__title {
+  margin-bottom: 5px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.energy-value__cell {
+  padding: 10px;
+  border: 1px solid wheat;
+
+  &--value {
+    text-align: center;
+  }
+}
