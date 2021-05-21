@@ -2,7 +2,6 @@
   @include list-reset;
   display: flex;
   flex-wrap: wrap;
-
 }
 
 .socials__item {
@@ -40,6 +39,20 @@
   &:active {
     use {
       fill: $yellow-main;
+    }
+  }
+
+  &--secondary {
+    use {
+      fill: $brown-contact;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      use {
+        fill: $white-basic;
+      }
     }
   }
 }
