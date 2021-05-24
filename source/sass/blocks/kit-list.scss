@@ -14,7 +14,8 @@
   cursor: pointer;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     &::before {
       content: '';
       position: absolute;
