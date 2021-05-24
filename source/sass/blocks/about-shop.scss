@@ -1,0 +1,40 @@
+.about-shop {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  background-image: url('../img/tseh-photo.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $black-basic-70;
+    z-index: $z-index-background;
+  }
+}
+
+.about-shop__title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  z-index: $z-index-over-text;
+}
+
+.about-shop__text {
+  position: relative;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  text-align: center;
+  z-index: $z-index-over-text;
+}
