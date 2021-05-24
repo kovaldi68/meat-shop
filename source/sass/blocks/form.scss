@@ -1,0 +1,102 @@
+.form {
+  &--feedback {
+    .form__wrapper {
+      padding: 20px;
+      background: $yellow-main;
+      color: $black-red-main;
+    }
+    .form__title {
+      margin: 0;
+      margin-bottom: 15px;
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 32px;
+      text-align: center;
+    }
+    .form-description {
+      margin: 0;
+      margin-bottom: 15px;
+      padding: 0;
+      text-align: center;
+    }
+
+    .form__input-wrapper {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: calc((100% - 10px) / 2);
+        transform: translateY(-50%);
+      }
+
+      &--tel {
+        &::before {
+          content: '+7';
+          left: 20px;
+          color: $black-red-main;
+        }
+      }
+
+      &--mail {
+        &::before {
+          content: '';
+          left: 10px;
+          width: 30px;
+          height: 20px;
+          background-image: url('../../img/contacts-mail-active.svg');
+          background-repeat: no-repeat;
+          background-size: 30px 20px;
+          background-position: center;
+        }
+      }
+    }
+
+    .form__input {
+      margin-bottom: 10px;
+      padding: 15px 15px 15px 50px;
+      width: 100%;
+      line-height: 24px;
+      border: 1px solid $brown-contact;
+      outline: none;
+
+      &:focus,
+      &:active {
+        border: 1px solid $black-red-main;
+      }
+
+      &::placeholder {
+        font-size: 12px;
+        color: $red-background;
+      }
+    }
+
+    .form__user-text {
+      padding: 15px;
+      width: 100%;
+      border: 1px solid $brown-contact;
+      outline: none;
+
+      &:focus,
+      &:active {
+        border: 1px solid $black-red-main;
+      }
+
+      &::placeholder {
+        color: $red-background;
+      }
+    }
+
+    .form__button {
+
+    }
+
+    .button {
+
+    }
+
+    .button--form {
+
+    }
+
+  }
+}

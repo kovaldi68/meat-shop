@@ -465,13 +465,13 @@
         <p class='certification__text'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
         <div class='certification__slider slider slider--main'>
           <div class='slider__item'>
-            <img class='slider__image' src='img/certificate.jpg' alt=''>
+            <img class='slider__image' src='img/certificate.jpg' alt='' width='350' height='430'>
           </div>
           <div class='slider__item'>
-            <img class='slider__image' src='img/certificate.jpg' alt=''>
+            <img class='slider__image' src='img/certificate.jpg' alt='' width='350' height='430'>
           </div>
           <div class='slider__item'>
-            <img class='slider__image' src='img/certificate.jpg' alt=''>
+            <img class='slider__image' src='img/certificate.jpg' alt='' width='350' height='430'>
           </div>
         </div>
       </div>
@@ -485,7 +485,7 @@
     <section class='page-main__delivery delivery'>
       <div class='delivery__container container'>
         <h2 class='delivery__title'>Доставка</h2>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+        <p class='delivery__text'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
       </div>
     </section>
     <section class='page-main__feedback feedback'>
@@ -495,14 +495,14 @@
             <h3 class='form__title'>У вас остались вопросы?</h3>
             <p class='form-description'>Оставьте свой номер или e-mail и мы свяжемся с Вами в течение 1 часа</p>
             <div class='form__input-wrapper form__input-wrapper--tel'>
-              <input type='number'>
-              <label for=''></label>
+              <input class='form__input form__input--tel' type='tel' name='user-tel' id='question-tel' placeholder='Введите 10 цифр номера' pattern='[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}' maxlength='10' required>
+              <label class='form__label form__label--tel' for='question-tel'></label>
             </div>
             <div class='form__input-wrapper form__input-wrapper--mail'>
-              <input type='text'>
-              <label for=''></label>
+              <input class='form__input form__input--mail' type='email' id ='question-mail' name='user-email' placeholder='Email'>
+              <label class='form__label form__label--mail' for='question-mail'></label>
             </div>
-            <textarea name='' id='' cols='20' rows='10'></textarea>
+            <textarea class='form__user-text' name='' id='' cols='20' rows='10' placeholder='Напишите сюда интересующий Вас вопрос'></textarea>
             <button class='form__button button button--form' type='submit' aria-label='Отправить форму с данными для обратного звонка/письма'>Отправить</button>
           </div>
         </form>
@@ -512,12 +512,7 @@
 
   <footer class='page-footer'>
     <div class='page-footer__container container'>
-      <div class='page-footer__shop-info'>
-        <div class='page-footer__logo'>
-          <img class='page-footer__image' src='' alt=''>
-        </div>
-        <p class='page-footer__address'>г. Санкт-Петербург,Дворцовая площадь,Зимний Дворец</p>
-      </div>
+      <h3 class='page-footer__title'>Наши контакты</h3>
       <ul class='page-footer__socials socials'>
         <li class='socials__item'>
           <a class='socials__link socials__link--instagram' href='https://instagram.com/_kolbasniytseh_'>
@@ -552,6 +547,21 @@
           </a>
         </li>
       </ul>
+      <ul class='page-footer__user-list user-list'>
+        <li class='user-list__item'>
+          <a class='user-list__link user-list__link--phone' href='tel:+7(911)-130-04-04'>+7(911)-130-04-04</a>
+        </li>
+        <li class='user-list__item'>
+          <a class='user-list__link user-list__link--mail' href='mailto:kolbasnyitseh@gmail.com'>kolbasnyitseh@gmail.com</a>
+        </li>
+      </ul>
+      <div class='page-footer__shop-info'>
+        <div class='page-footer__logo'>
+          <img class='page-footer__image' src='img/logo.png' alt='Логотип Колбасного Цеха' width='45' height='45'>
+        </div>
+        <span class='page-footer__name'>Колбасный Цех</span>
+        <p class='page-footer__address'>г. Санкт-Петербург, Дворцовая площадь, Зимний Дворец</p>
+      </div>
     </div>
   </footer>
 

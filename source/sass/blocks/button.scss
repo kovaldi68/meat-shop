@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 30px 40px;
+  width: 100%;
   background-color: $yellow-main;
   border-style: none;
   border-radius: 0;
@@ -37,7 +38,6 @@
   &--goods {
     justify-content: flex-start;
     padding: 25px 35px 25px 20px;
-    width: 100%;
     letter-spacing: 2px;
 
     &::after {
@@ -58,7 +58,6 @@
   &--order {
     padding: 20px;
     padding-right: 35px;
-    width: 100%;
     justify-content: flex-start;
     letter-spacing: 2px;
 
@@ -80,7 +79,6 @@
   &--special {
     padding: 20px;
     padding-right: 35px;
-    width: 100%;
     background-color: $red-main;
     color: $white-basic;
     border-bottom-left-radius: 6px;
@@ -100,7 +98,20 @@
       background-size: 22px;
     }
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $red-main-80;
+    }
+  }
+
+  &--form {
+    background-color: $red-main;
+    color: $white-basic;
+
+    &:hover,
+    &:focus,
+    &:active {
       background-color: $red-main-80;
     }
   }
