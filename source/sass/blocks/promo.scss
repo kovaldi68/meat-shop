@@ -2,7 +2,7 @@
   position: relative;
   padding-top: 30px;
   padding-bottom: 50px;
-  background-image: url('../img/main-background.jpg');
+  background-image: url('../img/main-background-mobile.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -19,4 +19,14 @@
   }
 }
 
+@media (min-width: $desktop-width) {
+  .promo {
+    padding-top: 54px;
+    padding-bottom: 54px;
+    background-image: url('../img/main-background.jpg');
+  }
 
+  .promo__main-info {
+    margin-right: -100px;
+  }
+}

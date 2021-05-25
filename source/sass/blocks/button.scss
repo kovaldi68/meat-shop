@@ -116,3 +116,17 @@
     }
   }
 }
+
+@media (min-width: $desktop-width) {
+  .button {
+    &--goods {
+      padding-right: 40px;
+
+      &::after {
+        width: 15px;
+        height: 15px;
+        background-size: 15px;
+      }
+    }
+  }
+}

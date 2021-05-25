@@ -5,16 +5,14 @@
   &--nojs {
     .page-header__navigation {
       display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
+      justify-content: center;
     }
   }
 
   &--opened {
     .page-header__navigation {
       display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
+      justify-content: center;
       transition: 0.5s all;
     }
   }
@@ -36,4 +34,40 @@
   margin-right: auto;
   width: 45px;
   height: 45px;
+}
+
+@media (min-width: $desktop-width) {
+  .page-header {
+    padding-top: 20px;
+    
+    &--nojs {
+      .page-header__navigation {
+        display: flex;
+        order: 1;
+      }
+
+      .page-header__toggle {
+        display: none;
+      }
+    }
+
+    &--opened {
+      .page-header__navigation {
+        display: flex;
+        order: 1;
+      }
+
+      .page-header__toggle {
+        display: none;
+      }
+    }
+
+    .page-header__navigation {
+      display: flex;
+    }
+
+    .page-header__toggle {
+      display: none;
+    }
+  }
 }

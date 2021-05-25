@@ -15,9 +15,6 @@
   align-items: center;
   justify-content: center;
   margin-right: 30px;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
   letter-spacing: -0.415px;
 
   &:last-child {
@@ -32,10 +29,10 @@
   padding-bottom: 10px;
   width: 140px;
   white-space: pre-line;
-  text-align: center;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
   color: $yellow-main;
 
   &:hover,
@@ -46,5 +43,17 @@
 
   &--active {
     color: $yellow-main-50;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .tab-list {
+    margin-left: 0;
+  }
+
+  .tab-list__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
   }
 }

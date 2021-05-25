@@ -58,10 +58,6 @@
   }
 }
 
-.user-list__icon {
-  margin-right: 5px;
-}
-
 .user-list__link {
   position: relative;
   padding-left: 35px;
@@ -114,5 +110,15 @@
         background-image: url('../img/contacts-mail-active.svg');
       }
     }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .user-list__item {
+    margin-bottom: 14px;
+  }
+
+  .user-list__link {
+    padding-left: 60px;
   }
 }

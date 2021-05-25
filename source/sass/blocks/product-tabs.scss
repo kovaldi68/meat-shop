@@ -10,3 +10,18 @@
 .product-tabs__tab-list {
   margin-bottom: 30px;
 }
+
+@media (min-width: $desktop-width) {
+  .product-tabs {
+    padding-top: 60px;
+    padding-bottom: 125px;
+  }
+
+  .product-tabs__container {
+    padding: 0 60px;
+  }
+
+  .product-tabs__tab-list {
+    margin-bottom: 78px;
+  }
+}

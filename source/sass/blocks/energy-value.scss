@@ -11,9 +11,19 @@
 
 .energy-value__cell {
   padding: 10px;
-  border: 1px solid wheat;
+  border: 1px solid $yellow-main;
 
   &--value {
     text-align: center;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .energy-value {
+    width: 50%;
+  }
+
+  .energy-value__cell {
+    padding: 5px;
   }
 }

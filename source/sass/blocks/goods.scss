@@ -27,7 +27,6 @@
 .goods__list {
   @include list-reset;
   margin-bottom: 30px;
-  width: 100%;
 }
 
 .goods__item {
@@ -42,4 +41,64 @@
 
 .goods__button {
   max-width: 520px;
+}
+
+@media (min-width: $desktop-width) {
+  .goods {
+    padding-top: 147px;
+    padding-bottom: 67px;
+  }
+
+  .goods__container {
+    align-items: flex-start;
+  }
+
+  .goods__title {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 60px;
+    padding-bottom: 13px;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 80px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 80%;
+      height: 4px;
+      bottom: 0;
+      left: 0;
+      background-color: $red-main;
+    }
+  }
+
+  .goods__text {
+    margin-bottom: 25px;
+    width: 50%;
+    font-size: 18px;
+    line-height: 31px;
+    text-align: left;
+  }
+
+  .goods__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -$goods-offset / 2;
+    margin-bottom: 20px;
+  }
+
+  .goods__item {
+    margin: $goods-offset / 2;
+    width: calc(100% / 3 - #{$goods-offset});
+
+    &:last-child {
+      margin-bottom: $goods-offset / 2;
+    }
+  }
+
+  .goods__button {
+    align-self: center;
+    max-width: 380px;
+  }
 }

@@ -29,6 +29,19 @@
         transform: translateY(-50%);
       }
 
+      &--name {
+        &::before {
+          content: '';
+          left: 10px;
+          width: 30px;
+          height: 20px;
+          background-image: url('../img/user-icon.svg');
+          background-repeat: no-repeat;
+          background-size: 30px 20px;
+          background-position: center;
+        }
+      }
+
       &--tel {
         &::before {
           content: '+7';
@@ -43,7 +56,7 @@
           left: 10px;
           width: 30px;
           height: 20px;
-          background-image: url('../../img/contacts-mail-active.svg');
+          background-image: url('../img/contacts-mail-active.svg');
           background-repeat: no-repeat;
           background-size: 30px 20px;
           background-position: center;
@@ -55,10 +68,11 @@
       margin-bottom: 10px;
       padding: 15px 15px 15px 50px;
       width: 100%;
-      line-height: 24px;
+      line-height: 23px;
       border: 1px solid $brown-contact;
       outline: none;
 
+      &:hover,
       &:focus,
       &:active {
         border: 1px solid $black-red-main;
@@ -76,6 +90,7 @@
       border: 1px solid $brown-contact;
       outline: none;
 
+      &:hover,
       &:focus,
       &:active {
         border: 1px solid $black-red-main;
