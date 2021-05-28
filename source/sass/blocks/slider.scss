@@ -91,3 +91,8 @@
   }
 }
 
+@media (min-width: $laptop-width) {
+  .slider {
+    min-width: 0;
+  }
+}

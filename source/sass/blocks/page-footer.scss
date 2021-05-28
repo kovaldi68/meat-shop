@@ -57,3 +57,36 @@
 .page-footer__user-list {
   margin-bottom: 20px;
 }
+
+@media (min-width: $laptop-width) {
+  .page-footer {
+    padding-top: 150px;
+    padding-bottom: 90px;
+  }
+
+  .page-footer__container {
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+  }
+
+  .page-footer__title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .page-footer__shop-info {
+    width: 30%;
+    order: 4;
+  }
+
+  .page-footer__socials {
+    margin: 0 auto;
+    width: 30%;
+    order: 3;
+  }
+
+  .page-footer__user-list {
+    width: 30%;
+    order: 2;
+  }
+}

@@ -89,6 +89,8 @@
       width: 100%;
       border: 1px solid $brown-contact;
       outline: none;
+      resize: none;
+      min-height: 200px;
 
       &:hover,
       &:focus,

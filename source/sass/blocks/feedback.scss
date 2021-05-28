@@ -4,6 +4,8 @@
   &::before {
     content: '';
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-image: url('../img/main-background-mobile.jpg');
@@ -20,4 +22,42 @@
   padding-top: 30px;
   padding-bottom: 30px;
   z-index: $z-index-feedback-container;
+}
+
+@media (min-width: $laptop-width) {
+  .feedback {
+    padding-top: 100px;
+    padding-bottom: 150px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .feedback__container {
+    padding-top: 130px;
+    padding-bottom: 90px;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../img/main-background.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      filter: blur(5px);
+      z-index: $z-index-feedback-container;
+    }
+  }
+
+  .feedback__form {
+    position: relative;
+    margin: 0 auto;
+    max-width: 770px;
+    z-index: $z-index-feedback-content;
+  }
 }

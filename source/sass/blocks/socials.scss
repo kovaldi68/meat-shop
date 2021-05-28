@@ -58,8 +58,16 @@
   }
 }
 
+@media (min-width: $laptop-width) {
+  .socials {
+    &--secondary {
+      justify-content: flex-start;
+    }
+  }
+}
+
 @media (min-width: $desktop-width) {
   .socials__item {
-    margin-right: 50px;
+    margin-right: 54px;
   }
 }

@@ -117,3 +117,16 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media (min-width: $laptop-width) {
+  .kit-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -$kit-list-offset / 2;
+  }
+
+  .kit-list__item {
+    width: calc((100% / 2) - #{$kit-list-offset});
+    margin: $kit-list-offset / 2;
+  }
+}

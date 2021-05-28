@@ -46,7 +46,7 @@
   order: 3;
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: $laptop-width) {
   .product-info {
     display: none;
     position: relative;
