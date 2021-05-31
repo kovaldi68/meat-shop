@@ -1,5 +1,6 @@
 .contact-us {
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .contact-us__title {
@@ -10,4 +11,10 @@
 
 .contact-us__user-list {
   margin-bottom: 10px;
+}
+
+@media (min-width: $laptop-width) {
+  .contact-us {
+    text-align: left;
+  }
 }

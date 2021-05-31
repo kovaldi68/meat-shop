@@ -6,7 +6,7 @@
 }
 
 .socials__item {
-  margin-right: 40px;
+  margin-right: 46px;
 
   &:last-child {
     margin-right: 0;
@@ -64,10 +64,8 @@
       justify-content: flex-start;
     }
   }
-}
 
-@media (min-width: $desktop-width) {
   .socials__item {
-    margin-right: 54px;
+    margin-right: 48px;
   }
 }

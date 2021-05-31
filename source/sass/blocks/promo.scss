@@ -19,6 +19,26 @@
   }
 }
 
+.promo__container {
+  padding: 0;
+}
+
+@media (min-width: $mobile-tablet-width) {
+  .promo__container {
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .promo {
+    background-image: url('../img/main-background-tablet.jpg');
+  }
+
+  .promo__container {
+    padding: 0 20px;
+  }
+}
+
 @media (min-width: $laptop-width) {
   .promo {
     padding-top: 54px;
@@ -26,7 +46,13 @@
     background-image: url('../img/main-background.jpg');
   }
 
+  .promo__container {
+    padding: 0 60px;
+  }
+}
+
+@media (min-width: $desktop-width) {
   .promo__main-info {
-    margin-right: -100px;
+    margin-right: -60px;
   }
 }

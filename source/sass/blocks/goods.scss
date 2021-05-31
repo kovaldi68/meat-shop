@@ -25,6 +25,7 @@
 }
 
 .goods__list {
+  width: 100%;
   @include list-reset;
   margin-bottom: 30px;
 }
@@ -41,6 +42,25 @@
 
 .goods__button {
   max-width: 520px;
+}
+
+@media (min-width: $tablet-width) {
+  .goods__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -$goods-offset-tablet / 2;
+    margin-bottom: 20px;
+    width: auto;
+  }
+
+  .goods__item {
+    margin: $goods-offset-tablet / 2;
+    width: calc(100% / 2 - #{$goods-offset-tablet});
+
+    &:last-child {
+      margin-bottom: $goods-offset-tablet / 2;
+    }
+  }
 }
 
 @media (min-width: $laptop-width) {
@@ -82,8 +102,6 @@
   }
 
   .goods__list {
-    display: flex;
-    flex-wrap: wrap;
     margin: -$goods-offset / 2;
     margin-bottom: 20px;
   }

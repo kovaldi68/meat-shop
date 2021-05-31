@@ -20,6 +20,7 @@
   margin: 0;
   margin-bottom: 30px;
   padding: 0;
+  color: $white-basic;
   text-align: center;
 }
 
@@ -32,11 +33,23 @@
   margin-bottom: 20px;
 }
 
-@media (min-width: $laptop-width) {
+@media (min-width: $tablet-width) {
   .main-info {
     margin-left: auto;
-    padding: 99px 64px 84px 64px;
+    padding: 50px 34px 54px 34px;
+    width: 60%;
+  }
+}
+
+@media (min-width: $laptop-width) {
+  .main-info {
     width: 42%;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .main-info {
+    padding: 99px 64px 84px 64px;
   }
 
   .main-info__title {
@@ -53,7 +66,6 @@
     max-width: 375px;
     font-size: 18px;
     line-height: 31px;
-    color: $white-basic;
     text-align: left;
   }
 

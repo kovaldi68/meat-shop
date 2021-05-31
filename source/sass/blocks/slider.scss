@@ -1,12 +1,11 @@
 .slider {
   &--main {
     position: relative;
-    padding-bottom: 50px;
 
     .slick-arrow {
       position: absolute;
       padding: 0;
-      bottom: 0;
+      top: 50%;
       width: 30px;
       height: 30px;
       border-style: none;
@@ -15,8 +14,11 @@
       background-color: transparent;
       font-size: 0;
       background-repeat: no-repeat;
-      background-size: 18px 34px;
-      background-position: center;
+      background-size: 10px 18px;
+      border-radius: 50%;
+      background-color: $black-basic-50;
+      transform: translateY(-50%);
+      z-index: 50;
 
       &:hover,
       &:active {
@@ -25,13 +27,15 @@
     }
 
     .slick-prev {
-      left: 0;
+      left: 10px;
       background-image: url('../img/arrow-left.svg');
+      background-position: 9px center;
     }
 
     .slick-next {
-      right: 0;
+      right: 10px;
       background-image: url('../img/arrow-right.svg');
+      background-position: 11px center;
     }
   }
 }
@@ -40,11 +44,22 @@
   overflow: hidden;
 }
 
+.slick-list.draggable {
+  cursor: pointer;
+  cursor: grab;
+}
+
+.slick-list.dragging {
+  cursor: grabbing;
+}
+
 .slick-track {
   display: flex;
+  align-items: center;
 }
 
 .slider__item {
+  position: relative;
   width: 100%;
   height: 100%;
 }
@@ -55,13 +70,29 @@
   object-fit: cover;
 }
 
+.slider__text {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: $yellow-main;
+  background-color: $black-basic-50;
+}
+
 .slick-dots {
   @include list-reset;
   position: absolute;
   display: flex;
   flex-wrap: wrap;
   left: 50%;
-  bottom: 7px;
+  bottom: -20px;
   transform: translateX(-50%);
 
   li {
@@ -88,6 +119,31 @@
   button {
     background-color: transparent;
     border: 1px solid $yellow-main;
+  }
+}
+
+.slick-current {
+  .slider__text {
+    display: block;
+  }
+}
+
+@media (min-width: 510px) {
+  .slider {
+    &--main {
+      .slick-arrow {
+        background-color: $white-basic;
+      }
+    }
+  }
+
+  .slider__item {
+    margin: 0 5px;
+    opacity: 0.5;
+  }
+
+  .slick-center {
+    opacity: 1;
   }
 }
 

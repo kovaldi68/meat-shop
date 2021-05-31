@@ -118,6 +118,20 @@
   object-fit: cover;
 }
 
+@media (min-width: $tablet-width) {
+  .kit-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -$kit-list-offset / 2;
+    margin-bottom: 20px;
+  }
+
+  .kit-list__item {
+    margin: $kit-list-offset / 2;
+    width: calc(100% / 2 - #{$kit-list-offset});
+  }
+}
+
 @media (min-width: $laptop-width) {
   .kit-list {
     display: flex;
