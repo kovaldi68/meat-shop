@@ -7,14 +7,34 @@
       display: flex;
       justify-content: center;
     }
+
+    .page-header__toggle {
+      display: none;
+    }
   }
 
   &--opened {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $black-red-main;
+    z-index: $z-index-header;
+
     .page-header__navigation {
       display: flex;
       justify-content: center;
       transition: 0.5s all;
     }
+  }
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $black-red-main;
+    z-index: $z-index-header;
   }
 }
 
@@ -39,7 +59,7 @@
 @media (min-width: $laptop-width) {
   .page-header {
     padding-top: 20px;
-    
+
     &--nojs {
       .page-header__navigation {
         display: flex;

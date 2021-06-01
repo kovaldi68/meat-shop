@@ -43,9 +43,10 @@
   .article__title {
     position: relative;
     margin-bottom: 40px;
+    padding-bottom: 13px;
     font-weight: 600;
-    font-size: 36px;
-    line-height: 60px;
+    font-size: 25px;
+    line-height: 34px;
 
     &::after {
       content: '';
@@ -61,8 +62,8 @@
   .article__price {
     margin-bottom: 40px;
     font-weight: 600;
-    font-size: 36px;
-    line-height: 60px;
+    font-size: 25px;
+    line-height: 34px;
     color: $red-main;
   }
 }

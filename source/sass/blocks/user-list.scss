@@ -129,6 +129,12 @@
         }
       }
     }
+
+    &--footer {
+      .user-list__item {
+        justify-content: center;
+      }
+    }
   }
 }
 
@@ -140,6 +146,12 @@
       .user-list__item {
         margin-bottom: 10px;
         margin-right: 0;
+      }
+    }
+
+    &--footer {
+      .user-list__item {
+        justify-content: flex-start;
       }
     }
   }

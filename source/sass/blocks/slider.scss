@@ -1,6 +1,7 @@
 .slider {
   &--main {
     position: relative;
+    padding-top: 30px;
 
     .slick-arrow {
       position: absolute;
@@ -123,8 +124,10 @@
 }
 
 .slick-current {
-  .slider__text {
-    display: block;
+  &:hover {
+    .slider__text {
+      display: block;
+    }
   }
 }
 

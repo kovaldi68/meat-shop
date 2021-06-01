@@ -56,12 +56,11 @@
     &--active {
       display: grid;
       grid-template-columns: 2fr 1fr;
-      column-gap: 74px;
+      column-gap: 50px;
     }
   }
 
   .product-info__article {
-    margin-right: 74px;
     grid-row-start: 1;
     grid-row-end: 2;
   }

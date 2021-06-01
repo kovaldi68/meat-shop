@@ -12,7 +12,7 @@
   <link rel='stylesheet' href='css/style.min.css'>
 </head>
 <body class='page__body'>
-  <header class='page-header page-header--nojs'>
+  <header class='page-header page-header--nojs' id='header'>
     <div class='page-header__container container'>
       <a class='page-header__logo' href='index.html'>
         <img class='page-header__img' src='img/logo.png' alt='Логотип Колбасного Цеха' width='45' height='45'>
@@ -20,19 +20,19 @@
       <nav class='page-header__navigation navigation'>
         <ul class='navigation__list'>
           <li class='navigation__item'>
-            <a class='navigation__link' href='#' data-hover='Продукция'>Продукция</a>
+            <a class='navigation__link' href='#goods' data-hover='Продукция'>Продукция</a>
           </li>
           <li class='navigation__item'>
-            <a class='navigation__link' href='#' data-hover='Наборы'>Наборы</a>
+            <a class='navigation__link' href='#sets' data-hover='Наборы'>Наборы</a>
           </li>
           <li class='navigation__item'>
-            <a class='navigation__link' href='#' data-hover='Сертификаты'>Сертификаты</a>
+            <a class='navigation__link' href='#certification' data-hover='Сертификаты'>Сертификаты</a>
           </li>
           <li class='navigation__item'>
-            <a class='navigation__link' href='#' data-hover='Цех'>Цех</a>
+            <a class='navigation__link' href='#about' data-hover='Цех'>Цех</a>
           </li>
           <li class='navigation__item'>
-            <a class='navigation__link' href='#' data-hover='Доставка'>Доставка</a>
+            <a class='navigation__link' href='#delivery' data-hover='Доставка'>Доставка</a>
           </li>
         </ul>
       </nav>
@@ -94,7 +94,7 @@
         </div>
       </div>
     </section>
-    <section class='page-main__goods goods'>
+    <section class='page-main__goods goods' id='goods'>
       <div class='goods__container container'>
         <h2 class='goods__title' id='our-goods'>Наша продукция</h2>
         <p class='goods__text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -106,7 +106,7 @@
                 <img class='product-card__image' src='img/turkey-ham.jpg' srcset='' alt='' width='350' height='430'>
               </picture>
             </div>
-            <a class='product-card__link-more' href='#turkey-ham' data-country-name='turkey-ham' aria-label='Узнать подробнее о товаре'>Смотреть подробнее</a>
+            <a class='product-card__link-more' href='#turkey-ham-tab' data-product-name='turkey-ham' aria-label='Узнать подробнее о товаре'>Смотреть подробнее</a>
           </li>
           <li class='goods__item product-card'>
             <h3 class='product-card__name'>Копчёный цыплёнок</h3>
@@ -115,7 +115,7 @@
                 <img class='product-card__image' src='img/chicken-smoked.jpg' srcset='' alt='' width='350' height='430'>
               </picture>
             </div>
-            <a class='product-card__link-more' href='#chicken-smoked' data-country-name='chicken-smoked' aria-label='Узнать подробнее о товаре'>Смотреть подробнее</a>
+            <a class='product-card__link-more' href='#chicken-smoked-tab' data-product-name='chicken-smoked' aria-label='Узнать подробнее о товаре'>Смотреть подробнее</a>
           </li>
           <li class='goods__item product-card'>
             <h3 class='product-card__name'>Дрогобычская</h3>
@@ -124,7 +124,7 @@
                 <img class='product-card__image' src='img/drogobychskaya.jpg' srcset='' alt='' width='350' height='430'>
               </picture>
             </div>
-            <a class='product-card__link-more' href='#drogobych' data-country-name='drogobych' aria-label='Узнать подробнее о товаре'>Смотреть подробнее</a>
+            <a class='product-card__link-more' href='#drogobychskaya-tab' data-product-name='drogobychskaya' aria-label='Узнать подробнее о товаре'>Смотреть подробнее</a>
           </li>
           <li class='goods__item product-card'>
             <h3 class='product-card__name'>Бекон верёно-копчёный</h3>
@@ -133,7 +133,7 @@
                 <img class='product-card__image' src='img/bacon.jpg' srcset='' alt='' width='350' height='430'>
               </picture>
             </div>
-            <a class='product-card__link-more' href='#bacon' data-country-name='bacon' aria-label='Узнать подробнее о товаре'>Смотреть подробнее</a>
+            <a class='product-card__link-more' href='#bacon-tab' data-product-name='bacon' aria-label='Узнать подробнее о товаре'>Смотреть подробнее</a>
           </li>
           <li class='goods__item product-card'>
             <h3 class='product-card__name'>Охотничьи колбаски</h3>
@@ -142,7 +142,7 @@
                 <img class='product-card__image' src='img/ohotnichii.jpg' srcset='' alt='' width='350' height='430'>
               </picture>
             </div>
-            <a class='product-card__link-more' href='#hunters-sausage' data-country-name='hunters-sausage' aria-label='Узнать подробнее о товаре'>Смотреть подробнее</a>
+            <a class='product-card__link-more' href='#hunters-sausage-tab' data-product-name='hunters-sausage' aria-label='Узнать подробнее о товаре'>Смотреть подробнее</a>
           </li>
           <li class='goods__item product-card'>
             <h3 class='product-card__name'>Паштет из утиной печени</h3>
@@ -151,7 +151,7 @@
                 <img class='product-card__image' src='img/pashtet.jpg' srcset='' alt='' width='350' height='430'>
               </picture>
             </div>
-            <a class='product-card__link-more' href='#duck-pate' data-country-name='duck-pate' aria-label='Узнать подробнее о товаре'>Смотреть подробнее</a>
+            <a class='product-card__link-more' href='#duck-pate-tab' data-product-name='duck-pate' aria-label='Узнать подробнее о товаре'>Смотреть подробнее</a>
           </li>
         </ul>
         <a class='goods__button button button--goods' href='' aria-label='Нажать, чтобы увидеть больше товаров'>Увидеть больше товаров</a>
@@ -161,25 +161,25 @@
       <div class='product-tabs__container container'>
         <ul class='product-tabs__tab-list tab-list'>
           <li class='tab-list__item'>
-            <a class='tab-list__link tab-list__link--active' href=''>Ветчина из индейки</a>
+            <a class='tab-list__link tab-list__link--active' href='#turkey-ham' data-product-name='turkey-ham' id='turkey-ham-tab'>Ветчина из индейки</a>
           </li>
           <li class='tab-list__item'>
-            <a class='tab-list__link' href=''>Копчёный цыплёнок</a>
+            <a class='tab-list__link' href='#chicken-smoked' data-product-name='chicken-smoked' id='chicken-smoked-tab'>Копчёный цыплёнок</a>
           </li>
           <li class='tab-list__item'>
-            <a class='tab-list__link' href=''>Дрогобычская</a>
+            <a class='tab-list__link' href='#drogobychskaya' data-product-name='drogobychskaya' id='drogobychskaya-tab'>Дрогобычская</a>
           </li>
           <li class='tab-list__item'>
-            <a class='tab-list__link' href=''>Бекон варёно-копчёный</a>
+            <a class='tab-list__link' href='#bacon' data-product-name='bacon' id='bacon-tab'>Бекон варёно-копчёный</a>
           </li>
           <li class='tab-list__item'>
-            <a class='tab-list__link' href=''>Колбаски охотничьи</a>
+            <a class='tab-list__link' href='#hunters-sausage' data-product-name='hunters-sausage' id='hunters-sausage-tab'>Колбаски охотничьи</a>
           </li>
           <li class='tab-list__item'>
-            <a class='tab-list__link' href=''>Паштет из утиной печени</a>
+            <a class='tab-list__link' href='#duck-pate' data-product-name='duck-pate' id='duck-pate-tab'>Паштет из утиной печени</a>
           </li>
         </ul>
-        <div class='product-tabs__product-info product-info product-info--active'>
+        <div class='product-tabs__product-info product-info product-info--active' id='turkey-ham'>
           <div class='product-info__article article'>
             <h3 class='article__title'>Ветчина из индейки</h3>
             <span class='article__price'>2000p/100г</span>
@@ -212,7 +212,7 @@
           </div>
           <a class='product-info__button button button--order' href=''>Добавить товар в заказ</a>
         </div>
-        <div class='product-tabs__product-info product-info'>
+        <div class='product-tabs__product-info product-info' id='chicken-smoked'>
           <div class='product-info__article article'>
             <h3 class='article__title'>Копчёный цыплёнок</h3>
             <span class='article__price'>2000p/100г</span>
@@ -240,12 +240,12 @@
           </div>
           <div class='product-info__photo'>
             <picture>
-              <img class='product-info__image' src='img/turkey-ham.jpg' srcset='' alt='' width='430' height='596'>
+              <img class='product-info__image' src='img/chicken-smoked.jpg' srcset='' alt='' width='430' height='596'>
             </picture>
           </div>
           <a class='product-info__button button button--order' href=''>Добавить товар в заказ</a>
         </div>
-        <div class='product-tabs__product-info product-info'>
+        <div class='product-tabs__product-info product-info' id='drogobychskaya'>
           <div class='product-info__article article'>
             <h3 class='article__title'>Дрогобычская</h3>
             <span class='article__price'>2000p/100г</span>
@@ -273,14 +273,14 @@
           </div>
           <div class='product-info__photo'>
             <picture>
-              <img class='product-info__image' src='img/turkey-ham.jpg' srcset='' alt='' width='430' height='596'>
+              <img class='product-info__image' src='img/drogobychskaya.jpg' srcset='' alt='' width='430' height='596'>
             </picture>
           </div>
           <a class='product-info__button button button--order' href=''>Добавить товар в заказ</a>
         </div>
-        <div class='product-tabs__product-info product-info'>
+        <div class='product-tabs__product-info product-info' id='bacon'>
           <div class='product-info__article article'>
-            <h3 class='article__title'>Бекон- верёно-копчёный</h3>
+            <h3 class='article__title'>Бекон варёно-копчёный</h3>
             <span class='article__price'>2000p/100г</span>
             <p class='article__about'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
             <table class='article__energy-value-table energy-value'>
@@ -306,12 +306,12 @@
           </div>
           <div class='product-info__photo'>
             <picture>
-              <img class='product-info__image' src='img/turkey-ham.jpg' srcset='' alt='' width='430' height='596'>
+              <img class='product-info__image' src='img/bacon.jpg' srcset='' alt='' width='430' height='596'>
             </picture>
           </div>
           <a class='product-info__button button button--order' href=''>Добавить товар в заказ</a>
         </div>
-        <div class='product-tabs__product-info product-info'>
+        <div class='product-tabs__product-info product-info' id='hunters-sausage'>
           <div class='product-info__article article'>
             <h3 class='article__title'>Колбаски охотничьи</h3>
             <span class='article__price'>2000p/100г</span>
@@ -339,12 +339,12 @@
           </div>
           <div class='product-info__photo'>
             <picture>
-              <img class='product-info__image' src='img/turkey-ham.jpg' srcset='' alt='' width='430' height='596'>
+              <img class='product-info__image' src='img/ohotnichii.jpg' srcset='' alt='' width='430' height='596'>
             </picture>
           </div>
           <a class='product-info__button button button--order' href=''>Добавить товар в заказ</a>
         </div>
-        <div class='product-tabs__product-info product-info'>
+        <div class='product-tabs__product-info product-info' id='duck-pate'>
           <div class='product-info__article article'>
             <h3 class='article__title'>Паштет из утиной печени</h3>
             <span class='article__price'>2000p/100г</span>
@@ -372,14 +372,14 @@
           </div>
           <div class='product-info__photo'>
             <picture>
-              <img class='product-info__image' src='img/turkey-ham.jpg' srcset='' alt='' width='430' height='596'>
+              <img class='product-info__image' src='img/pashtet.jpg' srcset='' alt='' width='430' height='596'>
             </picture>
           </div>
           <a class='product-info__button button button--order' href=''>Добавить товар в заказ</a>
         </div>
       </div>
     </section>
-    <section class='page-main__sets sets'>
+    <section class='page-main__sets sets' id='sets'>
       <div class='sets__container container'>
         <div class='sets__info'>
           <h2 class='sets__title'>Наборы</h2>
@@ -470,34 +470,37 @@
         </ul>
       </div>
     </section>
-    <section class='page-main__certification certification'>
+    <section class='page-main__certification certification' id='certification'>
       <div class='certification__container container'>
         <h2 class='certification__title'>Сертификация</h2>
         <p class='certification__text'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
         <div class='certification__slider slider slider--main'>
           <div class='slider__item'>
-            <img class='slider__image' src='img/certificate-bacon.jpg' alt='' width='350' height='430'>
-            <p class='slider__text'>Дрогобычская Колбаса</p>
+            <img class='slider__image' src='img/certificate-bacon.jpg' alt='Скан сертификата на Бекон варёно-копчёный' width='350' height='430'>
+            <p class='slider__text'>Бекон в-к</p>
           </div>
           <div class='slider__item'>
-            <img class='slider__image' src='img/certificate-meat-chips.jpg' alt='' width='350' height='430'>
+            <img class='slider__image' src='img/certificate-meat-chips.jpg' alt='Скан сертификата на Джерки(чипсы) мясные' width='350' height='430'>
+            <p class='slider__text'>Джерки(чипсы) мясные</p>
           </div>
           <div class='slider__item'>
-            <img class='slider__image' src='img/certificate-drogobychskaya.jpg' alt='' width='350' height='430'>
+            <img class='slider__image' src='img/certificate-drogobychskaya.jpg' alt='Скан сертификата на Дрогобычскую колбасу' width='350' height='430'>
+            <p class='slider__text'>Дрогобычская</p>
           </div>
           <div class='slider__item'>
-            <img class='slider__image' src='img/certificate-krakovskaya.jpg' alt='' width='350' height='430'>
+            <img class='slider__image' src='img/certificate-krakovskaya.jpg' alt='Скан сертификата на Краковскую колбасу' width='350' height='430'>
+            <p class='slider__text'>Краковская</p>
           </div>
         </div>
       </div>
     </section>
-    <section class='page-main__about-shop about-shop'>
+    <section class='page-main__about-shop about-shop' id='about'>
       <div class='about-shop__container container'>
         <h2 class='about-shop__title'>О колбасном цехе</h2>
         <p class='about-shop__text'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
       </div>
     </section>
-    <section class='page-main__delivery delivery'>
+    <section class='page-main__delivery delivery' id='delivery'>
       <div class='delivery__container container'>
         <h2 class='delivery__title'>Доставка</h2>
         <p class='delivery__text'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
@@ -532,7 +535,7 @@
   <footer class='page-footer'>
     <div class='page-footer__container container'>
       <h3 class='page-footer__title'>Наши контакты</h3>
-      <ul class='page-footer__socials socials'>
+      <ul class='page-footer__socials socials socials--footer'>
         <li class='socials__item'>
           <a class='socials__link socials__link--instagram' href='https://instagram.com/_kolbasniytseh_'>
             <span class='visually-hidden'>Instagram</span>
@@ -566,7 +569,7 @@
           </a>
         </li>
       </ul>
-      <ul class='page-footer__user-list user-list'>
+      <ul class='page-footer__user-list user-list user-list--footer'>
         <li class='user-list__item'>
           <a class='user-list__link user-list__link--phone' href='tel:+7(911)-130-04-04'>+7(911)-130-04-04</a>
         </li>
@@ -579,7 +582,7 @@
           <img class='page-footer__image' src='img/logo.png' alt='Логотип Колбасного Цеха' width='45' height='45'>
         </div>
         <span class='page-footer__name'>Колбасный Цех</span>
-        <p class='page-footer__address'>г. Санкт-Петербург, Дворцовая площадь, Зимний Дворец</p>
+        <p class='page-footer__address'>Ленинградская область, Выборгский р-н, посёлок&nbsp;Холмово</p>
       </div>
     </div>
   </footer>
@@ -612,8 +615,12 @@
       <button class='modal__button button button--close'></button>
     </div>
   </div>
+
+  <a class='page__button-up' href='#header' title='Наверх'></a>
+
   <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
   <script src='js/slick.min.js'></script>
+  <script src='js/slider.js'></script>
   <script src='js/script.js'></script>
 </body>
 </html>
