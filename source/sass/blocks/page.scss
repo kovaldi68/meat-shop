@@ -39,6 +39,33 @@
   }
 }
 
+.page__button-cart {
+  display: block;
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: $yellow-main;
+  box-shadow: 0 4px 15px rgba($red-main, 0.4);
+  border-radius: 50%;
+  background-image: url('../img/shopping-cart.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25px;
+  z-index: $z-index-button-up;
+  opacity: 0.5;
+  transition: all $transition-time-medium ease;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &--active {
+    right: 20px;
+  }
+}
+
 @media (min-width: $laptop-width) {
   .page__button-up {
     bottom: 30px;
@@ -49,5 +76,11 @@
     &--active {
       right: 30px;
     }
+  }
+
+  .page__button-cart {
+    bottom: 100px;
+    width: 60px;
+    height: 60px;
   }
 }

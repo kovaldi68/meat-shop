@@ -1,0 +1,139 @@
+.order-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  column-gap: 20px;
+  grid-template-areas:
+      'photo good price'
+      'photo number summary';
+  padding: 10px;
+  border-radius: 10px;
+  background-color: $white-basic;
+}
+
+.order-item__photo {
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  grid-area: photo;
+}
+
+.order-item__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.order-item__name {
+  grid-area: good;
+}
+
+.order-item__name-title {
+  margin: 0;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: $black-basic-50;
+}
+
+.order-item__name-text {
+  margin: 0;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.order-item__weight {
+  font-size: 10px;
+  line-height: 15px;
+}
+
+.order-item__number {
+  grid-area: number;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.order-item__input {
+  margin-right: 5px;
+  padding: 5px 10px;
+  width: 30%;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  order: 2;
+  border: 1px solid $black-basic;
+  outline: none;
+
+  &:hover {
+    border-color: $black-basic-50;
+  }
+
+  &:focus,
+  &:active {
+    border: 1px solid $yellow-main;
+  }
+}
+
+.order-item__input::-webkit-outer-spin-button,
+.order-item__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.order-item__input {
+  -moz-appearance: textfield;
+}
+
+.order-item__input:hover,
+.order-item__input:focus {
+  -moz-appearance: number-input;
+}
+
+.order-item__label {
+  margin-right: auto;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: $black-basic-50;
+  order: 1;
+}
+
+.order-item__unit {
+  order: 3;
+}
+
+.order-item__price {
+  grid-area: price;
+}
+
+.order-item__price-title {
+  margin: 0;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: $black-basic-50;
+}
+
+.order-item__summary {
+  grid-area: summary;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.order-item__summary-title {
+  margin: 0;
+  margin-right: auto;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.order-item__summary-value {
+  font-size: 20px;
+  line-height: 32px;
+}

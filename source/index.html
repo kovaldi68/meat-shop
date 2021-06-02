@@ -508,7 +508,7 @@
     </section>
     <section class='page-main__feedback feedback'>
       <div class='feedback__container container'>
-        <form class='feedback__form form form--feedback' action=''>
+        <form class='feedback__form form form--feedback' action='send.php' method='post'>
           <div class='form__wrapper'>
             <h3 class='form__title'>У вас остались вопросы?</h3>
             <p class='form-description'>Оставьте свой номер или e-mail и мы свяжемся с Вами в течение 1 часа</p>
@@ -519,6 +519,7 @@
             <div class='form__input-wrapper form__input-wrapper--tel'>
               <input class='form__input form__input--tel' type='tel' name='user-tel' id='question-tel' placeholder='Введите 10 цифр номера' pattern='[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}' maxlength='10' required>
               <label class='form__label form__label--tel' for='question-tel'></label>
+              <span class='form__input-required-icon' aria-label='Обязательное поле'>*</span>
             </div>
             <div class='form__input-wrapper form__input-wrapper--mail'>
               <input class='form__input form__input--mail' type='email' id ='question-mail' name='user-email' placeholder='Укажите Ваш Email'>
@@ -589,20 +590,77 @@
 
   <div class='modal modal--buy'>
     <div class='modal__wrapper'>
-      <form class='modal__form form form--buy' action='' method='post'>
+      <form class='modal__form form form--buy' action='send.php' method='post'>
         <div class='form__wrapper'>
-          <h3 class='form__title'>Купить тур</h3>
-          <p class='form__description'>Оставьте свой номер или e-mail и мы свяжемся с Вами</p>
+          <h3 class='form__title'>Ваша корзина</h3>
+          <p class='form__order-description'>Ваш заказ:</p>
+          <ul class='form__order-list'>
+            <li class='form__order-item order-item'>
+              <div class='order-item__photo'>
+                <img class='order-item__image' src='img/bacon.jpg' alt='' width='50' height='50'>
+              </div>
+              <div class='order-item__name'>
+                <h3 class='order-item__name-title'>Наименование:</h3>
+                <p class='order-item__name-text'>Бекон</p>
+                <span class='order-item__weight'>300г.</span>
+              </div>
+              <button class='order-item__button button button--remove'></button>
+              <div class='order-item__number'>
+                <input class='order-item__input' id='goods-count' name='goods-count' type='number' value='1' min='1'>
+                <label class='order-item__label' for='goods-count'>Кол-во:</label>
+                <span class='order-item__unit'>шт.</span>
+              </div>
+              <div class='order-item__price'>
+                <h3 class='order-item__price-title'>Цена:</h3>
+                <span class='order-item__price-value'>300р/100г</span>
+              </div>
+              <div class='order-item__summary'>
+                <h3 class='order-item__summary-title'>Сумма:</h3>
+                <span class='order-item__summary-value'>3000р</span>
+              </div>
+            </li>
+          </ul>
+          <ul class='form__order-list'>
+            <li class='form__order-item order-item'>
+              <div class='order-item__photo'>
+                <img class='order-item__image' src='img/bacon.jpg' alt='' width='50' height='50'>
+              </div>
+              <div class='order-item__name'>
+                <h3 class='order-item__name-title'>Наименование:</h3>
+                <p class='order-item__name-text'>Бекон</p>
+                <span class='order-item__weight'>300г.</span>
+              </div>
+              <div class='order-item__number'>
+                <input class='order-item__input' id='goods-count' name='goods-count' type='number' value='1' min='1'>
+                <label class='order-item__label' for='goods-count'>Кол-во:</label>
+                <span class='order-item__unit'>шт.</span>
+              </div>
+              <div class='order-item__price'>
+                <h3 class='order-item__price-title'>Цена:</h3>
+                <span class='order-item__price-value'>300р/100г</span>
+              </div>
+              <div class='order-item__summary'>
+                <h3 class='order-item__summary-title'>Сумма:</h3>
+                <span class='order-item__summary-value'>3000р</span>
+              </div>
+              <button class='order-item__button button button--remove'></button>
+            </li>
+          </ul>
+          <p class='form__description'>Укажите ваши имя, номер телефона и e-mail, и мы свяжемся с Вами для подтверждения заказа</p>
+          <div class='form__input-wrapper form__input-wrapper--name'>
+            <input class='form__input form__input--name' type='text' name='user-name' id='question-name' placeholder='Введите ваше имя'>
+            <label class='form__label form__label--name' for='question-name'></label>
+          </div>
           <div class='form__input-wrapper form__input-wrapper--tel'>
             <input class='form__input form__input--tel' type='tel' name='user-tel' id='buy-tel' placeholder='Введите 10 цифр номера' pattern='[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}' maxlength='10' required>
             <label class='form__label form__label--email' for='buy-tel'></label>
             <span class='form__input-required-icon' aria-label='Обязательное поле'>*</span>
           </div>
-          <div class='form__input-wrapper form__input-wrapper--email'>
-            <input class='form__input form__input--email' type='email' id='buy-mail' name='user-email' placeholder='Email'>
-            <label class='form__label form__label--email' for='buy-mail'></label>
+          <div class='form__input-wrapper form__input-wrapper--mail'>
+            <input class='form__input form__input--mail' type='email' id='buy-mail' name='user-email' placeholder='Email'>
+            <label class='form__label form__label--mail' for='buy-mail'></label>
           </div>
-          <button class='form__button button button--form' type='submit' aria-label='Отправить форму для заказа тура'>Отправить</button>
+          <button class='form__button button button--form' type='submit' aria-label='Отправить форму для заказа тура'>Отправить заказ</button>
         </div>
       </form>
       <button class='modal__button button button--close'></button>
@@ -617,6 +675,34 @@
   </div>
 
   <a class='page__button-up' href='#header' title='Наверх'></a>
+  <a class='page__button-cart' href='#' title='Корзина'></a>
+
+  <template id='order-item-template'>
+    <li class='form__order-item order-item'>
+      <div class='order-item__photo'>
+        <img src='' alt='' width='50' height='50'>
+      </div>
+      <div class='order-item__name'>
+        <h3 class='order-item__name-title'></h3>
+        <p class='order-item__name-text'></p>
+        <span class='order-item__weight'></span>
+      </div>
+      <button class='order-item__button button button--remove'></button>
+      <div class='order-item__number'>
+        <input class='order-item__input' type='number'>
+        <label class='order-item__label' for=''></label>
+        <span class='order-item__unit'>шт.</span>
+      </div>
+      <div class='order-item__price'>
+        <h3 class='order-item__price-title'></h3>
+        <span class='order-item__price-value'></span>
+      </div>
+      <div class='order-item__summary'>
+        <h3 class='order-item__summary-title'></h3>
+        <span class='order-item__summary-value'></span>
+      </div>
+    </li>
+  </template>
 
   <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
   <script src='js/slick.min.js'></script>

@@ -2,86 +2,6 @@
   &--feedback {
     .form__wrapper {
       padding: 20px;
-      background: $yellow-main;
-      color: $black-red-main;
-    }
-    .form__title {
-      margin: 0;
-      margin-bottom: 15px;
-      font-weight: 600;
-      font-size: 25px;
-      line-height: 32px;
-      text-align: center;
-    }
-    .form-description {
-      margin: 0;
-      margin-bottom: 15px;
-      padding: 0;
-      text-align: center;
-    }
-
-    .form__input-wrapper {
-      position: relative;
-
-      &::before {
-        position: absolute;
-        top: calc((100% - 10px) / 2);
-        transform: translateY(-50%);
-      }
-
-      &--name {
-        &::before {
-          content: '';
-          left: 10px;
-          width: 30px;
-          height: 20px;
-          background-image: url('../img/user-icon.svg');
-          background-repeat: no-repeat;
-          background-size: 30px 20px;
-          background-position: center;
-        }
-      }
-
-      &--tel {
-        &::before {
-          content: '+7';
-          left: 20px;
-          color: $black-red-main;
-        }
-      }
-
-      &--mail {
-        &::before {
-          content: '';
-          left: 10px;
-          width: 30px;
-          height: 20px;
-          background-image: url('../img/contacts-mail-active.svg');
-          background-repeat: no-repeat;
-          background-size: 30px 20px;
-          background-position: center;
-        }
-      }
-    }
-
-    .form__input {
-      margin-bottom: 10px;
-      padding: 15px 15px 15px 50px;
-      width: 100%;
-      line-height: 23px;
-      border: 1px solid $brown-contact;
-      outline: none;
-
-      &:hover,
-      &:focus,
-      &:active {
-        border: 1px solid $black-red-main;
-      }
-
-      &::placeholder {
-        font-size: 12px;
-        color: $red-background;
-      }
     }
 
     .form__user-text {
@@ -100,6 +20,187 @@
 
       &::placeholder {
         color: $red-background;
+      }
+    }
+  }
+
+  &--buy {
+    .form__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      padding: 30px;
+    }
+
+    .form__title {
+      padding-left: 20px;
+    }
+
+    .form__order-description {
+      margin: 0;
+      margin-bottom: 15px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .form__description {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .form__button {
+      align-self: center;
+      max-width: 400px;
+    }
+
+    .form__order-list {
+      @include list-reset;
+      margin-bottom: 15px;
+    }
+
+    .form__order-item {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.form__wrapper {
+  background: $yellow-main;
+  color: $black-red-main;
+}
+
+.form__description {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  text-align: center;
+}
+
+.form__input-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+
+  &::before {
+    position: absolute;
+    top: 49%;
+    transform: translateY(-50%);
+  }
+
+  &--name {
+    &::before {
+      content: '';
+      left: 10px;
+      width: 30px;
+      height: 20px;
+      background-image: url('../img/user-icon.svg');
+      background-repeat: no-repeat;
+      background-size: 30px 20px;
+      background-position: center;
+    }
+  }
+
+  &--tel {
+
+    &::before {
+      content: '+7';
+      left: 20px;
+      color: $black-red-main;
+    }
+  }
+
+  &--mail {
+    &::before {
+      content: '';
+      left: 10px;
+      width: 30px;
+      height: 20px;
+      background-image: url('../img/contacts-mail-active.svg');
+      background-repeat: no-repeat;
+      background-size: 30px 20px;
+      background-position: center;
+    }
+  }
+}
+
+.form__input {
+  padding: 15px 15px 15px 50px;
+  width: 100%;
+  line-height: 23px;
+  border: 1px solid $brown-contact;
+  outline: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid $yellow-main;
+  }
+
+  &::placeholder {
+    font-size: 12px;
+    color: $red-background;
+  }
+}
+
+.form__title {
+  margin: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.form__input-required-icon {
+  position: absolute;
+  display: block;
+  top: 10px;
+  left: 10px;
+  color: $red-main;
+}
+
+@media (min-width: $tablet-width) {
+}
+
+@media (min-width: $laptop-width) {
+  .form {
+    &--buy {
+      .form__wrapper {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .form__title {
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 32px;
+      }
+
+      .form__order-description {
+        width: 100%;
+      }
+
+      .form__order-list {
+        width: 100%;
+      }
+
+      .form__description {
+        text-align: left;
+      }
+
+      .form__input-wrapper {
+        &--name {
+          width: calc((100% - 10px) / 2);
+          margin-right: 10px;
+        }
+
+        &--tel {
+          width: calc((100% - 10px) / 2);
+        }
+
+        &--mail {
+          width: 100%;
+        }
       }
     }
   }

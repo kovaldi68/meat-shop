@@ -6,6 +6,7 @@ const tabContentBlocks = document.querySelectorAll('.product-info');
 const goodsCardLinks = document.querySelectorAll('.product-card__link-more');
 const mediaLaptop = window.matchMedia("(min-width: 1024px)");
 const buttonUp = document.querySelector('.page__button-up');
+const buttonCart = document.querySelector('.page__button-cart');
 
 //header-menu
 
@@ -65,6 +66,8 @@ const backToTop = () => {
   }
 }
 
+//button-cart
+
 //tabs
 
 const onTabClickHandler = () => {
@@ -114,6 +117,140 @@ const goToProduct = (evt) => {
   selectTabContent(tabName);
 }
 
+//forms
+
+const orderForm = document.querySelector('.form--buy');
+const orderModal = document.querySelector('.modal--buy');
+const successModal = document.querySelector('.modal--success');
+const feedbackForm = document.querySelector('.form--feedback');
+const productAddButtons = document.querySelectorAll('.button--order');
+const closeModalButtons = document.querySelectorAll('.button--close');
+const userBuyNumber = orderModal.querySelector('[name = user-tel]');
+const userBuyMail = orderModal.querySelector('[name = user-email]');
+const userFeedbackNumber = feedbackForm.querySelector('[name = user-tel]');
+const userFeedbackMail = feedbackForm.querySelector('[name = user-email]');
+const userFeedbackName = feedbackForm.querySelector('[name = user-name]');
+
+//localstoage
+
+let isStorageSupport = true;
+let storageNumber = '';
+let storageMail = '';
+
+try {
+  storageNumber = localStorage.getItem('userNumber');
+  storageMail = localStorage.getItem('userMail');
+} catch (err) {
+  isStorageSupport = false;
+}
+
+const storageData = () => {
+  if (storageNumber && storageMail) {
+    userBuyNumber.value = storageNumber;
+    userBuyMail.value = storageMail;
+  }
+}
+
+const buyFormSubmitHandler = (evt) => {
+  evt.preventDefault();
+  makeOrderModal();
+  showUpSuccessModal();
+
+  if (isStorageSupport) {
+    localStorage.setItem('userNumber', userBuyNumber.value);
+    localStorage.setItem('userMail', userBuyMail.value);
+  }
+}
+
+const feedbackFormSubmitHandler = (evt) => {
+  evt.preventDefault();
+  showUpSuccessModal();
+
+  if (isStorageSupport) {
+    localStorage.setItem('userNumber', userFeedbackNumber.value);
+    localStorage.setItem('userMail', userFeedbackMail.value);
+    localStorage.setItem('userName', userFeedbackName.value);
+  }
+}
+
+const isEscEvent = (evt) => {
+  return evt.key === ('Escape' || 'Esc');
+};
+
+const successModalHandler = () => {
+  successModal.classList.remove('modal--opened');
+
+  document.removeEventListener('keydown', onSuccessEscHandler);
+  document.removeEventListener('click', onSuccessClickHandler);
+}
+
+const makeOrderModal = () => {
+  orderModal.classList.remove('modal--opened');
+
+  document.removeEventListener('keydown', onBuyTourEscHandler);
+  document.removeEventListener('click', onMakeOrderClickHandler);
+}
+
+const onSuccessClickHandler = (evt) => {
+  if (evt.target === document.querySelector('.modal--success')) {
+    successModalHandler();
+  }
+}
+
+const onMakeOrderClickHandler = (evt) => {
+  if (evt.target === document.querySelector('.modal--buy')) {
+    makeOrderModal();
+  }
+}
+
+const onSuccessEscHandler = (evt) => {
+  if (isEscEvent(evt)) {
+    evt.preventDefault();
+    successModalHandler()
+  }
+}
+
+const onBuyTourEscHandler = (evt) => {
+  if (isEscEvent(evt)) {
+    evt.preventDefault();
+    makeOrderModal()
+  }
+}
+
+const buyTourButtonHandler = () => {
+  for (let button of productAddButtons) {
+    button.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      showUpOrderModal();
+    })
+  }
+}
+
+const closeButtonHandler = () => {
+  for (let button of closeModalButtons) {
+    button.addEventListener('click', () => {
+      button.closest('.modal').classList.remove('modal--opened')
+    })
+  }
+}
+
+const showUpOrderModal = () => {
+  orderModal.classList.add('modal--opened');
+  storageData();
+  userBuyNumber.focus();
+
+  document.addEventListener('keydown', onBuyTourEscHandler);
+  document.addEventListener('click', onMakeOrderClickHandler);
+}
+
+const showUpSuccessModal = () => {
+  successModal.classList.add('modal--opened');
+
+  document.addEventListener('keydown', onSuccessEscHandler);
+  document.addEventListener('click', onSuccessClickHandler)
+}
+
+buttonCart.addEventListener('click', showUpOrderModal)
 buttonUp.addEventListener('click', backToTop);
 window.addEventListener("scroll", buttonUpHanlder);
 window.addEventListener("scroll", stickyHeader);
@@ -121,3 +258,7 @@ window.addEventListener("resize", closeHeader);
 headerToggle.addEventListener('click', onHeaderToggleHandler);
 onTabClickHandler();
 onCardLinkHandler();
+orderForm.addEventListener('submit', buyFormSubmitHandler);
+feedbackForm.addEventListener('submit', feedbackFormSubmitHandler);
+buyTourButtonHandler();
+closeButtonHandler();
