@@ -4,7 +4,7 @@
 
   &:hover,
   &:focus {
-    &:before {
+    &::before {
       content: '';
       position: absolute;
       width: 100%;

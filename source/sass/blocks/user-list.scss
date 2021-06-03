@@ -26,7 +26,7 @@
         &:focus,
         &:active {
           &::before {
-          background-image: url('../img/contacts-phone.svg');
+            background-image: url('../img/contacts-phone.svg');
           }
         }
       }
@@ -91,7 +91,7 @@
     &:focus,
     &:active {
       &::before {
-      background-image: url('../img/contacts-phone-active.svg');
+        background-image: url('../img/contacts-phone-active.svg');
       }
     }
   }

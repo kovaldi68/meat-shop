@@ -104,7 +104,6 @@
   }
 
   &--tel {
-
     &::before {
       content: '+7';
       left: 20px;
@@ -157,9 +156,6 @@
   top: 10px;
   left: 10px;
   color: $red-main;
-}
-
-@media (min-width: $tablet-width) {
 }
 
 @media (min-width: $laptop-width) {

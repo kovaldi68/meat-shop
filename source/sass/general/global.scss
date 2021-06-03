@@ -4,6 +4,24 @@
   box-sizing: border-box;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $yellow-main $yellow-main-50;
+}
+
+*::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: $yellow-main-50;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: $yellow-main;
+  border-radius: 5px;
+  border: 3px solid $yellow-main;
+}
+
 a {
   text-decoration: none;
 }

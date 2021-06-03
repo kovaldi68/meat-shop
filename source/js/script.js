@@ -7,6 +7,7 @@ const goodsCardLinks = document.querySelectorAll('.product-card__link-more');
 const mediaLaptop = window.matchMedia("(min-width: 1024px)");
 const buttonUp = document.querySelector('.page__button-up');
 const buttonCart = document.querySelector('.page__button-cart');
+const body = document.querySelector('.page__body');
 
 //header-menu
 
@@ -18,17 +19,17 @@ const onHeaderToggleHandler = () => {
   if (pageHeader.classList.contains("page-header--opened")) {
     pageHeader.classList.remove("page-header--opened");
     headerToggle.classList.remove('toggle--active');
-    document.body.style.paddingTop = 0;
+    body.style.paddingTop = 0;
   } else {
     pageHeader.classList.add("page-header--opened");
     headerToggle.classList.add('toggle--active');
-    document.body.style.paddingTop = `${headerHeight}px`;
+    body.style.paddingTop = `${headerHeight}px`;
   }
 }
 
 const closeHeader = () => {
   if (window.matchMedia(mediaLaptop).matches) {
-    document.body.style.paddingTop = 0;
+    body.style.paddingTop = 0;
     pageHeader.classList.remove("page-header--opened")
   }
 }
@@ -39,16 +40,16 @@ const stickyHeader = () => {
 
   if (offsetTop > 700) {
     pageHeader.classList.add("page-header--fixed")
-    document.body.style.paddingTop = `${headerHeight}px`;
+    body.style.paddingTop = `${headerHeight}px`;
   } else {
     pageHeader.classList.remove("page-header--fixed")
-    document.body.style.paddingTop = 0;
+    body.style.paddingTop = 0;
   }
 }
 
 //button-up
 
-const buttonUpHanlder = () => {
+const buttonUpHandler = () => {
   const windowHeight = window.innerHeight;
   const offsetTop = window.pageYOffset;
 
@@ -67,6 +68,17 @@ const backToTop = () => {
 }
 
 //button-cart
+
+const buttonCartHandler = () => {
+  const windowHeight = window.innerHeight;
+  const offsetTop = window.pageYOffset;
+
+  if (offsetTop > windowHeight) {
+    buttonCart.classList.add('page__button-cart--active');
+  } else {
+    buttonCart.classList.remove('page__button-cart--active');
+  }
+}
 
 //tabs
 
@@ -125,6 +137,7 @@ const successModal = document.querySelector('.modal--success');
 const feedbackForm = document.querySelector('.form--feedback');
 const productAddButtons = document.querySelectorAll('.button--order');
 const closeModalButtons = document.querySelectorAll('.button--close');
+const userBuyName = orderModal.querySelector('[name = user-name]');
 const userBuyNumber = orderModal.querySelector('[name = user-tel]');
 const userBuyMail = orderModal.querySelector('[name = user-email]');
 const userFeedbackNumber = feedbackForm.querySelector('[name = user-tel]');
@@ -159,6 +172,7 @@ const buyFormSubmitHandler = (evt) => {
   if (isStorageSupport) {
     localStorage.setItem('userNumber', userBuyNumber.value);
     localStorage.setItem('userMail', userBuyMail.value);
+    localStorage.setItem('userName', userBuyName.value);
   }
 }
 
@@ -186,6 +200,7 @@ const successModalHandler = () => {
 
 const makeOrderModal = () => {
   orderModal.classList.remove('modal--opened');
+  body.classList.remove('page__body--modal-opened');
 
   document.removeEventListener('keydown', onBuyTourEscHandler);
   document.removeEventListener('click', onMakeOrderClickHandler);
@@ -230,12 +245,14 @@ const closeButtonHandler = () => {
   for (let button of closeModalButtons) {
     button.addEventListener('click', () => {
       button.closest('.modal').classList.remove('modal--opened')
+      body.classList.remove('page__body--modal-opened');
     })
   }
 }
 
 const showUpOrderModal = () => {
   orderModal.classList.add('modal--opened');
+  body.classList.add('page__body--modal-opened');
   storageData();
   userBuyNumber.focus();
 
@@ -250,15 +267,17 @@ const showUpSuccessModal = () => {
   document.addEventListener('click', onSuccessClickHandler)
 }
 
-buttonCart.addEventListener('click', showUpOrderModal)
-buttonUp.addEventListener('click', backToTop);
-window.addEventListener("scroll", buttonUpHanlder);
+
+window.addEventListener("scroll", buttonUpHandler);
+window.addEventListener("scroll", buttonCartHandler);
 window.addEventListener("scroll", stickyHeader);
 window.addEventListener("resize", closeHeader);
+buttonCart.addEventListener('click', showUpOrderModal)
+buttonUp.addEventListener('click', backToTop);
 headerToggle.addEventListener('click', onHeaderToggleHandler);
-onTabClickHandler();
-onCardLinkHandler();
 orderForm.addEventListener('submit', buyFormSubmitHandler);
 feedbackForm.addEventListener('submit', feedbackFormSubmitHandler);
+onTabClickHandler();
+onCardLinkHandler();
 buyTourButtonHandler();
 closeButtonHandler();
