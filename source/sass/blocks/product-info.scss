@@ -10,8 +10,22 @@
   }
 }
 
-.product-info__article {
-  order: 2;
+.product-info__title {
+  margin: 0;
+  margin-right: auto;
+  margin-bottom: 15px;
+  padding-right: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.product-info__price {
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: $red-main;
 }
 
 .product-info__photo {
@@ -20,8 +34,7 @@
   padding-bottom: 20px;
   width: 100%;
   height: 300px;
-  max-width: 760px;
-  order: 1;
+  max-width: 550px;
 
   &::after {
     content: '';
@@ -41,37 +54,118 @@
   object-fit: cover;
 }
 
+.product-info__about {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  line-height: 25px;
+}
+
+.product-info__text {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  line-height: 25px;
+}
+
+.product-info__energy-value-table {
+  margin-bottom: 20px;
+}
+
 .product-info__button {
   margin: 0 auto;
   max-width: 520px;
-  order: 3;
 }
 
-@media (min-width: $laptop-width) {
+@media (min-width: $tablet-width) {
   .product-info {
-    display: none;
-    position: relative;
-    flex-direction: row;
-
     &--active {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      column-gap: 50px;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
     }
   }
 
-  .product-info__article {
+  .product-info__title {
     grid-row-start: 1;
     grid-row-end: 2;
   }
 
+  .product-info__price {
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .product-info__about {
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
   .product-info__photo {
+    grid-row-start: 1;
+    grid-row-end: 4;
+  }
+
+  .product-info__energy-value-table {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .product-info__text {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .product-info__button {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+@media (min-width: $laptop-width) {
+  .product-info {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 50px;
+  }
+
+  .product-info__title {
+    position: relative;
+    margin-bottom: 15px;
+    padding-bottom: 13px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 34px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 80%;
+      height: 4px;
+      bottom: 0;
+      left: 0;
+      background-color: $red-main;
+    }
+  }
+
+  .product-info__price {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: right;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 34px;
+    color: $red-main;
+  }
+
+  .product-info__photo {
+    grid-row-start: 1;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 2;
     margin: 0;
     padding: 0;
     height: 100%;
-    order: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
     max-height: min-content;
 
     &::after {
@@ -79,10 +173,33 @@
     }
   }
 
+  .product-info__about {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+
+  .product-info__energy-value-table {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+
+  .product-info__text {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+  
   .product-info__button {
-    margin: 0 auto;
-    max-width: 100%;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .product-info__title {
+    margin-bottom: 40px;
+  }
+
+  .product-info__price {
+    margin-bottom: 40px;
   }
 }

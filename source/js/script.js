@@ -281,3 +281,19 @@ onTabClickHandler();
 onCardLinkHandler();
 buyTourButtonHandler();
 closeButtonHandler();
+
+const orderItem = document.querySelector('#order-item-template').querySelector('.order-item');
+
+const articles = document.getElementsByClassName('article');
+const productCards = document.getElementsByClassName('product-info');
+const orderButtons = document.getElementsByClassName('button--order');
+
+
+function renderAd() {
+  const goodInfo = {
+    title: article__title,
+    price: article__price,
+    photo: productinfo__photo,
+  }
+}
+console.log(articles)
