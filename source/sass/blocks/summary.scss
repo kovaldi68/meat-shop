@@ -1,0 +1,137 @@
+.summary {
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    text-align: right;
+}
+
+.summary__delivery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: left;
+}
+
+.summary__delivery-price {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.summary__goods-price {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.summary__total-price {
+    margin-top: 10px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.summary__title {
+    margin: 0;
+    margin-right: 5px;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+
+    &--total {
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+
+.summary__value {
+    font-size: 12px;
+    line-height: 15px;
+
+    &--total {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+
+.summary__checkbox-label {
+    position: relative;
+    padding-left: 30px;
+    font-size: 15px;
+    line-height: 20px;
+
+    &:hover,
+    &:focus {
+        cursor: pointer;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-color: $white-basic;
+        border: 1px solid $red-dark-decor;
+        border-radius: 5px;
+    }
+}
+
+.summary__checkbox:checked + .summary__checkbox-label {
+    &::before {
+        background-color: $red-dark-decor;
+        background-image: url('../img/tick-icon.svg');
+        background-repeat: no-repeat;
+        background-size: 14px;
+        background-position: center;
+    }
+}
+
+@media (min-width: $mobile-tablet-width) {
+    .summary {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        'checkbox delprice'
+        '. goodprice'
+        '. totalprice';
+    }
+
+    .summary__delivery {
+        grid-area: checkbox;
+    }
+
+    .summary__delivery-price {
+        grid-area: delprice;
+    }
+
+    .summary__goods-price {
+        grid-area: goodprice;
+    }
+
+    .summary__total-price {
+        grid-area: totalprice;
+    }
+}
+
+@media (min-width: $laptop-width) {
+    .summary__title {
+        font-size: 16px;
+        line-height: 28px;
+    
+        &--total {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+    
+    .summary__value {
+        font-size: 16px;
+        line-height: 28px;
+    
+        &--total {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+}

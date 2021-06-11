@@ -1,4 +1,5 @@
 'use strict';
+
 const pageHeader = document.querySelector('.page-header');
 const headerToggle = document.querySelector('.page-header__toggle');
 const tabs = document.querySelectorAll('.tab-list__link');
@@ -8,6 +9,18 @@ const mediaLaptop = window.matchMedia("(min-width: 1024px)");
 const buttonUp = document.querySelector('.page__button-up');
 const buttonCart = document.querySelector('.page__button-cart');
 const body = document.querySelector('.page__body');
+const orderForm = document.querySelector('.form--buy');
+const orderModal = document.querySelector('.modal--buy');
+const successModal = document.querySelector('.modal--success');
+const feedbackForm = document.querySelector('.form--feedback');
+const productAddButtons = document.querySelectorAll('.button--order');
+const closeModalButtons = document.querySelectorAll('.button--close');
+const userBuyName = orderModal.querySelector('[name = user-name]');
+const userBuyNumber = orderModal.querySelector('[name = user-tel]');
+const userBuyMail = orderModal.querySelector('[name = user-email]');
+const userFeedbackNumber = feedbackForm.querySelector('[name = user-tel]');
+const userFeedbackMail = feedbackForm.querySelector('[name = user-email]');
+const userFeedbackName = feedbackForm.querySelector('[name = user-name]');
 
 //header-menu
 
@@ -129,21 +142,6 @@ const goToProduct = (evt) => {
   selectTabContent(tabName);
 }
 
-//forms
-
-const orderForm = document.querySelector('.form--buy');
-const orderModal = document.querySelector('.modal--buy');
-const successModal = document.querySelector('.modal--success');
-const feedbackForm = document.querySelector('.form--feedback');
-const productAddButtons = document.querySelectorAll('.button--order');
-const closeModalButtons = document.querySelectorAll('.button--close');
-const userBuyName = orderModal.querySelector('[name = user-name]');
-const userBuyNumber = orderModal.querySelector('[name = user-tel]');
-const userBuyMail = orderModal.querySelector('[name = user-email]');
-const userFeedbackNumber = feedbackForm.querySelector('[name = user-tel]');
-const userFeedbackMail = feedbackForm.querySelector('[name = user-email]');
-const userFeedbackName = feedbackForm.querySelector('[name = user-name]');
-
 //localstoage
 
 let isStorageSupport = true;
@@ -163,6 +161,8 @@ const storageData = () => {
     userBuyMail.value = storageMail;
   }
 }
+
+//forms
 
 const buyFormSubmitHandler = (evt) => {
   evt.preventDefault();
@@ -254,7 +254,7 @@ const showUpOrderModal = () => {
   orderModal.classList.add('modal--opened');
   body.classList.add('page__body--modal-opened');
   storageData();
-  userBuyNumber.focus();
+  userBuyName.focus();
 
   document.addEventListener('keydown', onBuyTourEscHandler);
   document.addEventListener('click', onMakeOrderClickHandler);

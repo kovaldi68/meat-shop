@@ -29,11 +29,26 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
-      padding: 30px;
+      padding: 15px;
     }
 
     .form__title {
-      padding-left: 20px;
+      position: relative;
+      padding-left: 25px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 25px;
+        height: 25px;
+        background-image: url('../../img/shopping-cart.svg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        transform: translateY(-50%);
+      }
     }
 
     .form__order-description {
@@ -46,6 +61,10 @@
     .form__description {
       font-size: 14px;
       line-height: 20px;
+    }
+
+    .form__summary {
+      margin-bottom: 15px;
     }
 
     .form__button {
@@ -158,18 +177,48 @@
   color: $red-main;
 }
 
+@media (min-width: $mobile-tablet-width) {
+  .form {
+    &--buy {
+      .form__wrapper {
+        padding: 20px;
+      }
+
+      .form__title {
+        align-self: center;
+        padding-left: 30px;
+  
+        &::before {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: $laptop-width) {
   .form {
     &--buy {
       .form__wrapper {
         flex-direction: row;
         justify-content: center;
+        padding: 30px;
       }
 
       .form__title {
         font-weight: 600;
         font-size: 25px;
         line-height: 32px;
+
+        &::before {
+          width: 25px;
+          height: 25px;
+        }
+      }
+
+      .form__summary {
+        width: 100%;
       }
 
       .form__order-description {
