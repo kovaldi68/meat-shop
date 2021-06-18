@@ -14,7 +14,8 @@ const orderModal = document.querySelector('.modal--buy');
 const successModal = document.querySelector('.modal--success');
 const feedbackForm = document.querySelector('.form--feedback');
 const orderButtons = document.getElementsByClassName('product-info__button');
-const closeModalButtons = document.querySelectorAll('.button--close')
+const closeModalButtons = document.querySelectorAll('.button--close');
+const buttonToGoods = document.querySelector('.button--goods');
 const userBuyName = orderModal.querySelector('[name = user-name]');
 const userBuyNumber = orderModal.querySelector('[name = user-tel]');
 const userBuyMail = orderModal.querySelector('[name = user-email]');
@@ -67,7 +68,7 @@ const stickyHeader = () => {
   const headerHeight = pageHeader.offsetHeight;
   const offsetTop = window.pageYOffset;
 
-  if (offsetTop > 700) {
+  if (offsetTop > 600) {
     pageHeader.classList.add("page-header--fixed")
     body.style.paddingTop = `${headerHeight}px`;
   } else {
@@ -78,18 +79,20 @@ const stickyHeader = () => {
 
 //smooth navigation
 
+const smoothScroll = function(evt) {
+  evt.preventDefault()
+      
+  const blockID = evt.target.getAttribute('href').substr(1)
+  
+  document.getElementById(blockID).scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  })
+}
+
 const smoothNavigation = function() {
   for (let link of navigationLinks) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault()
-      
-      const blockID = link.getAttribute('href').substr(1)
-      
-      document.getElementById(blockID).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      })
-    })
+    link.addEventListener('click', smoothScroll);
   }
 }
 
@@ -462,6 +465,7 @@ buttonCart.addEventListener('click', showUpOrderModal);
 buttonUp.addEventListener('click', backToTop);
 headerToggle.addEventListener('click', onHeaderToggleHandler);
 orderForm.addEventListener('submit', buyFormSubmitHandler);
+buttonToGoods.addEventListener('click', smoothScroll);
 feedbackForm.addEventListener('submit', feedbackFormSubmitHandler);
 setAddtoOrder();
 buySetButtonHandler();
