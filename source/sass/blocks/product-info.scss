@@ -28,6 +28,11 @@
   color: $red-main;
 }
 
+.product-info__price-unit {
+  font-weight: 500;
+  font-size: 12px;
+}
+
 .product-info__photo {
   position: relative;
   margin-bottom: 50px;
@@ -156,6 +161,10 @@
     font-size: 25px;
     line-height: 34px;
     color: $red-main;
+  }
+
+  .product-info__price-unit {
+    font-size: 15px;
   }
 
   .product-info__photo {

@@ -32,6 +32,16 @@
       padding: 15px;
     }
 
+    .form__empty-cart {
+      display: none;
+      margin: 0;
+      padding: 5px 15px;
+      font-style: 15px;
+      line-height: 20px;
+      font-weight: 700;
+      text-align: center;
+    }
+
     .form__title {
       position: relative;
       padding-left: 25px;

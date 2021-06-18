@@ -13,14 +13,26 @@ const orderForm = document.querySelector('.form--buy');
 const orderModal = document.querySelector('.modal--buy');
 const successModal = document.querySelector('.modal--success');
 const feedbackForm = document.querySelector('.form--feedback');
-const productAddButtons = document.querySelectorAll('.button--order');
-const closeModalButtons = document.querySelectorAll('.button--close');
+const orderButtons = document.getElementsByClassName('product-info__button');
+const closeModalButtons = document.querySelectorAll('.button--close')
 const userBuyName = orderModal.querySelector('[name = user-name]');
 const userBuyNumber = orderModal.querySelector('[name = user-tel]');
 const userBuyMail = orderModal.querySelector('[name = user-email]');
 const userFeedbackNumber = feedbackForm.querySelector('[name = user-tel]');
 const userFeedbackMail = feedbackForm.querySelector('[name = user-email]');
 const userFeedbackName = feedbackForm.querySelector('[name = user-name]');
+const navigationLinks = document.getElementsByClassName('navigation__link');
+const orderItem = document.querySelector('#order-item-template').content.querySelector('.order-item');
+const formOrderList = document.querySelector('.form__order-list');
+const productCards = document.getElementsByClassName('product-info');
+const summaryGoods = document.querySelector('.summary__value--goods');
+const summaryTotal = document.querySelector('.summary__value--total');
+const deliveryCheck = document.querySelector('.summary__checkbox');
+const deliveryCost = document.querySelector('.summary__value--delivery');
+
+
+const DELIVERY_COST_CIRCLE = '300 руб.';
+const DELIVERY_COST_OUT_CIRCLE = 'Уточняйте у продавца';
 
 //header-menu
 
@@ -57,6 +69,23 @@ const stickyHeader = () => {
   } else {
     pageHeader.classList.remove("page-header--fixed")
     body.style.paddingTop = 0;
+  }
+}
+
+//smooth navigation
+
+const smoothNavigation = function() {
+  for (let link of navigationLinks) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault()
+      
+      const blockID = link.getAttribute('href').substr(1)
+      
+      document.getElementById(blockID).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    })
   }
 }
 
@@ -202,7 +231,7 @@ const makeOrderModal = () => {
   orderModal.classList.remove('modal--opened');
   body.classList.remove('page__body--modal-opened');
 
-  document.removeEventListener('keydown', onBuyTourEscHandler);
+  document.removeEventListener('keydown', onBuyGoodEscHandler);
   document.removeEventListener('click', onMakeOrderClickHandler);
 }
 
@@ -225,15 +254,15 @@ const onSuccessEscHandler = (evt) => {
   }
 }
 
-const onBuyTourEscHandler = (evt) => {
+const onBuyGoodEscHandler = (evt) => {
   if (isEscEvent(evt)) {
     evt.preventDefault();
     makeOrderModal()
   }
 }
 
-const buyTourButtonHandler = () => {
-  for (let button of productAddButtons) {
+const buyGoodButtonHandler = () => {
+  for (let button of orderButtons) {
     button.addEventListener('click', (evt) => {
       evt.preventDefault();
       showUpOrderModal();
@@ -255,8 +284,14 @@ const showUpOrderModal = () => {
   body.classList.add('page__body--modal-opened');
   storageData();
   userBuyName.focus();
+  checkEmptyCart();
+  getSummOfGood();
+  getChangeOfSum();
+  getSumOfOrder();
+  getTotalSumm();
+  
 
-  document.addEventListener('keydown', onBuyTourEscHandler);
+  document.addEventListener('keydown', onBuyGoodEscHandler);
   document.addEventListener('click', onMakeOrderClickHandler);
 }
 
@@ -267,33 +302,131 @@ const showUpSuccessModal = () => {
   document.addEventListener('click', onSuccessClickHandler)
 }
 
+//order-form
+
+const removeGoodFromOrder = document.getElementsByClassName('button--remove');
+
+const createOrderItem = function(good) {
+  const clonedOrderItem = orderItem.cloneNode(true);
+  const goodTitle = good.querySelector('.product-info__title');
+  const goodImage = good.querySelector('.product-info__image');
+  const goodPriceValue = good.querySelector('.product-info__price-value');
+
+  clonedOrderItem.querySelector('.order-item__name-text').textContent = goodTitle.textContent;
+  clonedOrderItem.querySelector('.order-item__image').src = goodImage.src;
+  clonedOrderItem.querySelector('.order-item__price-value--number').textContent = goodPriceValue.textContent;
+
+  return clonedOrderItem;
+}
+
+const goodRemoveFromOrder = function() {
+  for (let button of removeGoodFromOrder) {
+    button.addEventListener('click', function(evt) {
+      const itemToDelete = evt.target.closest('.order-item');
+      itemToDelete.remove();
+      checkEmptyCart();
+      getSummOfGood();
+      getChangeOfSum();
+      getSumOfOrder();
+      getTotalSumm();
+    })
+  }
+}
+
+const allItemsInCart = formOrderList.getElementsByClassName('order-item');
+
+const getSummOfGood = function() {
+  for (let element of allItemsInCart) {
+    const amountOfGood = element.querySelector('.order-item__input').value;
+    const price = element.querySelector('.order-item__price-value--number').textContent;
+    element.querySelector('.order-item__summary-value').textContent = `${+amountOfGood * +price.slice(0, -1) * 3} руб.`;
+  }
+}
+
+const findRemoveButtons = function() {
+  const removeButtons = document.getElementsByClassName('button--remove');
+
+  return removeButtons;
+}
+
+const goodAddtoOrder = function() {
+  for (let button of orderButtons) {
+    button.addEventListener('click', function(evt) {
+      const goodItem = evt.target.closest('.product-info');
+      formOrderList.appendChild(createOrderItem(goodItem));
+      findRemoveButtons();
+      goodRemoveFromOrder();
+    })
+  }
+}
+
+const getSumOfOrder = function() {
+  let sumsArray = [];
+  for (let orderItem of allItemsInCart) {
+    const itemCost = orderItem.querySelector('.order-item__summary-value').textContent;
+    sumsArray.push(+itemCost.slice(0, -5));
+  }
+  let orderProductsSumm = sumsArray.reduce((accum, elem) => accum + elem, 0);
+  summaryGoods.textContent = `${orderProductsSumm} руб.`
+
+  return orderProductsSumm;
+}
+
+const getChangeOfSum = function() {
+  const orderInputs = document.getElementsByClassName('order-item__input');
+
+  for (let input of orderInputs) {
+    input.addEventListener('change', getSummOfGood);
+    input.addEventListener('change', getSumOfOrder);
+    input.addEventListener('change', getTotalSumm);
+  }
+}
+
+const getTotalSumm = function() {
+  if (deliveryCheck.checked) {
+    summaryTotal.textContent = `${getSumOfOrder() + +DELIVERY_COST_CIRCLE.slice(0, -5)} руб.`;
+  } else {
+    summaryTotal.textContent = `${getSumOfOrder()} руб. + доставка`;
+  }
+};
+
+//check empty 
+
+const emptyText = document.querySelector('.form__empty-cart');
+
+const checkEmptyCart = function() {
+  if (formOrderList.children.length === 0) {
+    emptyText.style.display = 'block';
+  } else {
+    emptyText.style.display = 'none';
+  }
+}
+
+//check delivery
+
+const setDeliveryPrice = function() {
+  if (deliveryCheck.checked) {
+    deliveryCost.textContent = DELIVERY_COST_CIRCLE;
+  } else {
+    deliveryCost.textContent = DELIVERY_COST_OUT_CIRCLE;
+  }
+};
+
 
 window.addEventListener("scroll", buttonUpHandler);
 window.addEventListener("scroll", buttonCartHandler);
 window.addEventListener("scroll", stickyHeader);
 window.addEventListener("resize", closeHeader);
-buttonCart.addEventListener('click', showUpOrderModal)
+deliveryCheck.addEventListener('change', setDeliveryPrice);
+deliveryCheck.addEventListener('change', getTotalSumm);
+buttonCart.addEventListener('click', showUpOrderModal);
 buttonUp.addEventListener('click', backToTop);
 headerToggle.addEventListener('click', onHeaderToggleHandler);
 orderForm.addEventListener('submit', buyFormSubmitHandler);
 feedbackForm.addEventListener('submit', feedbackFormSubmitHandler);
+goodAddtoOrder();
 onTabClickHandler();
 onCardLinkHandler();
-buyTourButtonHandler();
+buyGoodButtonHandler();
 closeButtonHandler();
-
-const orderItem = document.querySelector('#order-item-template').querySelector('.order-item');
-
-const articles = document.getElementsByClassName('article');
-const productCards = document.getElementsByClassName('product-info');
-const orderButtons = document.getElementsByClassName('button--order');
-
-
-function renderAd() {
-  const goodInfo = {
-    title: article__title,
-    price: article__price,
-    photo: productinfo__photo,
-  }
-}
-console.log(articles)
+smoothNavigation();
