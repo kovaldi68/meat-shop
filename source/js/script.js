@@ -29,6 +29,10 @@ const summaryGoods = document.querySelector('.summary__value--goods');
 const summaryTotal = document.querySelector('.summary__value--total');
 const deliveryCheck = document.querySelector('.summary__checkbox');
 const deliveryCost = document.querySelector('.summary__value--delivery');
+const removeGoodFromOrder = document.getElementsByClassName('button--remove');
+const emptyText = document.querySelector('.form__empty-cart');
+const allItemsInCart = formOrderList.getElementsByClassName('order-item');
+const orderSetButtons = document.getElementsByClassName('kit-list__button');
 
 
 const DELIVERY_COST_CIRCLE = '300 руб.';
@@ -261,6 +265,15 @@ const onBuyGoodEscHandler = (evt) => {
   }
 }
 
+const buySetButtonHandler = () => {
+  for (let button of orderSetButtons) {
+    button.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      showUpOrderModal();
+    })
+  }
+}
+
 const buyGoodButtonHandler = () => {
   for (let button of orderButtons) {
     button.addEventListener('click', (evt) => {
@@ -304,17 +317,30 @@ const showUpSuccessModal = () => {
 
 //order-form
 
-const removeGoodFromOrder = document.getElementsByClassName('button--remove');
-
 const createOrderItem = function(good) {
   const clonedOrderItem = orderItem.cloneNode(true);
-  const goodTitle = good.querySelector('.product-info__title');
-  const goodImage = good.querySelector('.product-info__image');
-  const goodPriceValue = good.querySelector('.product-info__price-value');
 
-  clonedOrderItem.querySelector('.order-item__name-text').textContent = goodTitle.textContent;
-  clonedOrderItem.querySelector('.order-item__image').src = goodImage.src;
-  clonedOrderItem.querySelector('.order-item__price-value--number').textContent = goodPriceValue.textContent;
+  if (good.classList.contains('product-info')) {
+    const goodTitle = good.querySelector('.product-info__title');
+    const goodImage = good.querySelector('.product-info__image');
+    const goodPriceValue = good.querySelector('.product-info__price-value');
+  
+    clonedOrderItem.querySelector('.order-item__name-text').textContent = goodTitle.textContent;
+    clonedOrderItem.querySelector('.order-item__image').src = goodImage.src;
+    clonedOrderItem.querySelector('.order-item__price-value--number').textContent = goodPriceValue.textContent;
+  }
+
+  if (good.classList.contains('kit-list__item')) {
+    const setTitle = good.querySelector('.kit-list__title');
+    const setImage = good.querySelector('.kit-list__image');
+    const setPriceValue = good.querySelector('.kit-list__price');
+  
+    clonedOrderItem.querySelector('.order-item__name-text').textContent = `Набор ${setTitle.textContent}`;
+    clonedOrderItem.querySelector('.order-item__image').src = setImage.src;
+    clonedOrderItem.querySelector('.order-item__price-value--number').textContent = setPriceValue.textContent;
+    clonedOrderItem.querySelector('.order-item__price-value--amount').textContent = '';
+    clonedOrderItem.querySelector('.order-item__weight').textContent = '';
+  }
 
   return clonedOrderItem;
 }
@@ -333,13 +359,15 @@ const goodRemoveFromOrder = function() {
   }
 }
 
-const allItemsInCart = formOrderList.getElementsByClassName('order-item');
-
 const getSummOfGood = function() {
   for (let element of allItemsInCart) {
     const amountOfGood = element.querySelector('.order-item__input').value;
     const price = element.querySelector('.order-item__price-value--number').textContent;
+    const name = element.querySelector('.order-item__name-text').textContent;
     element.querySelector('.order-item__summary-value').textContent = `${+amountOfGood * +price.slice(0, -1) * 3} руб.`;
+    if (name.includes('Набор')) {
+      element.querySelector('.order-item__summary-value').textContent = `${+amountOfGood * +price.slice(0, -1)} руб.`;
+    }
   }
 }
 
@@ -347,6 +375,19 @@ const findRemoveButtons = function() {
   const removeButtons = document.getElementsByClassName('button--remove');
 
   return removeButtons;
+}
+
+const setAddtoOrder = function() {
+  for (let button of orderSetButtons) {
+    button.addEventListener('click', function(evt) {
+      evt.preventDefault();
+
+      const goodItem = evt.target.closest('.kit-list__item');
+      formOrderList.appendChild(createOrderItem(goodItem));
+      findRemoveButtons();
+      goodRemoveFromOrder();
+    })
+  }
 }
 
 const goodAddtoOrder = function() {
@@ -392,8 +433,6 @@ const getTotalSumm = function() {
 
 //check empty 
 
-const emptyText = document.querySelector('.form__empty-cart');
-
 const checkEmptyCart = function() {
   if (formOrderList.children.length === 0) {
     emptyText.style.display = 'block';
@@ -424,6 +463,8 @@ buttonUp.addEventListener('click', backToTop);
 headerToggle.addEventListener('click', onHeaderToggleHandler);
 orderForm.addEventListener('submit', buyFormSubmitHandler);
 feedbackForm.addEventListener('submit', feedbackFormSubmitHandler);
+setAddtoOrder();
+buySetButtonHandler();
 goodAddtoOrder();
 onTabClickHandler();
 onCardLinkHandler();
