@@ -26,9 +26,6 @@
 
   &--buy {
     .form__wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
       padding: 15px;
     }
 
@@ -191,6 +188,9 @@
   .form {
     &--buy {
       .form__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
         padding: 20px;
       }
 
