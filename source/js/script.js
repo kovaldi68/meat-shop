@@ -34,7 +34,18 @@ const removeGoodFromOrder = document.getElementsByClassName('button--remove');
 const emptyText = document.querySelector('.form__empty-cart');
 const allItemsInCart = formOrderList.getElementsByClassName('order-item');
 const orderSetButtons = document.getElementsByClassName('kit-list__button');
+const allSlides = document.querySelectorAll('.slider__item');
+const modalImage = document.querySelector('.modal--image');
 
+allSlides.forEach(element => {
+  element.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    
+    modalImage.classList.add('modal--opened');
+    body.classList.add('page__body--modal-opened');
+    modalImage.querySelector('img').src = evt.target.src;
+  })
+});
 
 const DELIVERY_COST_CIRCLE = '300 руб.';
 const DELIVERY_COST_OUT_CIRCLE = 'Уточняйте у продавца';
