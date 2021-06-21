@@ -25,6 +25,21 @@
       background-color: $black-red-main;
     }
   }
+
+  &--image {
+    .modal__wrapper {
+      width: 100%;
+      max-width: 580px;
+      height: auto;
+      box-shadow: none;
+    }
+
+    .modal__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
 .modal__wrapper {
@@ -36,6 +51,11 @@
   z-index: $z-index-form;
   transform: translate(-50%, -50%);
   box-shadow: 0 5px 30px rgba($red-main, 0.5);
+}
+
+.modal__image {
+  width: 100%;
+  height: 100%;
 }
 
 @media (min-width: $tablet-width) {
@@ -52,6 +72,14 @@
 }
 
 @media (min-width: $desktop-width) {
+  .modal {
+    &--image {
+      .modal__wrapper {
+        width: 50%;
+      }
+    }
+  }
+
   .modal__wrapper {
     width: 50%;
     max-width: none;

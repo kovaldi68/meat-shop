@@ -39,11 +39,17 @@ const modalImage = document.querySelector('.modal--image');
 
 allSlides.forEach(element => {
   element.addEventListener('click', function(evt) {
-    evt.preventDefault();
+  evt.preventDefault();
+  
+  if (element.classList.contains('slick-current')) {
     
     modalImage.classList.add('modal--opened');
     body.classList.add('page__body--modal-opened');
-    modalImage.querySelector('img').src = evt.target.src;
+
+    document.addEventListener('keydown', onImageModalEscHandler);
+    document.addEventListener('click', onImageModalClickHandler);
+    modalImage.querySelector('.modal__image').src = evt.target.src;
+    }
   })
 });
 
@@ -253,6 +259,14 @@ const makeOrderModal = () => {
   document.removeEventListener('click', onMakeOrderClickHandler);
 }
 
+const imageModal = () => {
+  modalImage.classList.remove('modal--opened');
+  body.classList.remove('page__body--modal-opened');
+
+  document.removeEventListener('keydown', onImageModalEscHandler);
+  document.removeEventListener('click', onImageModalClickHandler);
+}
+
 const onSuccessClickHandler = (evt) => {
   if (evt.target === document.querySelector('.modal--success')) {
     successModalHandler();
@@ -262,6 +276,12 @@ const onSuccessClickHandler = (evt) => {
 const onMakeOrderClickHandler = (evt) => {
   if (evt.target === document.querySelector('.modal--buy')) {
     makeOrderModal();
+  }
+}
+
+const onImageModalClickHandler = (evt) => {
+  if (evt.target === document.querySelector('.modal--image')) {
+    imageModal();
   }
 }
 
@@ -276,6 +296,13 @@ const onBuyGoodEscHandler = (evt) => {
   if (isEscEvent(evt)) {
     evt.preventDefault();
     makeOrderModal()
+  }
+}
+
+const onImageModalEscHandler = (evt) => {
+  if (isEscEvent(evt)) {
+    evt.preventDefault();
+    imageModal();
   }
 }
 

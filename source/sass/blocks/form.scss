@@ -184,6 +184,18 @@
   color: $red-main;
 }
 
+.form__agreement {
+  margin: 0;
+  padding: 15px 10px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.form__agreement-link {
+  color: $red-main;
+}
+
 @media (min-width: $mobile-tablet-width) {
   .form {
     &--buy {
@@ -204,6 +216,11 @@
         }
       }
     }
+  }
+
+  .form__agreement {
+    font-size: 16px;
+    line-height: 28px;
   }
 }
 

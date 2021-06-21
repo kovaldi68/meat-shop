@@ -100,7 +100,7 @@
         <p class='goods__text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         <ul class='goods__list'>
           <li class='goods__item product-card'>
-            <h3 class='product-card__name'>Ветчина из индейки</h3>
+            <h3 class='product-card__name'>Ветчина из индейки с шампиньонами</h3>
             <div class='product-card__photo'>
               <picture>
                 <!-- <source type='image/webp' media='(min-width: 1024px)' srcset='img/turkey-ham-desktop.webp 1x, img/turkey-ham-desktop@2x.webp 2x'>
@@ -239,7 +239,7 @@
       <div class='product-tabs__container container'>
         <ul class='product-tabs__tab-list tab-list'>
           <li class='tab-list__item'>
-            <a class='tab-list__link tab-list__link--active' href='#turkey-ham' data-product-name='turkey-ham' id='turkey-ham-tab'>Ветчина из индейки</a>
+            <a class='tab-list__link tab-list__link--active' href='#turkey-ham' data-product-name='turkey-ham' id='turkey-ham-tab'>Ветчина из индейки с шампиньонами</a>
           </li>
           <li class='tab-list__item'>
             <a class='tab-list__link' href='#chicken-smoked' data-product-name='chicken-smoked' id='chicken-smoked-tab'>Копчёный цыплёнок</a>
@@ -281,7 +281,7 @@
               <img class='product-info__image' src='img/turkey-ham-tablet.jpg' srcset='img/turkey-ham-tablet@2x.jpg 2x' alt='' width='350' height='430'>
             </picture>
           </div>
-          <h3 class='product-info__title'>Ветчина из индейки</h3>
+          <h3 class='product-info__title'>Ветчина из индейки с шампиньонами</h3>
           <div class='product-info__price'>
             <span class='product-info__price-value'>200p</span><span class='product-info__price-unit'>/100г</span>
           </div>
@@ -818,6 +818,7 @@
             </div>
             <textarea class='form__user-text' name='' id='' cols='20' rows='10' placeholder='Напишите сюда интересующий Вас вопрос'></textarea>
             <button class='form__button button button--form' type='submit' aria-label='Отправить форму с данными для обратного звонка/письма'>Отправить</button>
+            <p class='form__agreement'>Отправляя форму вы соглашаетесь с <a class='form__agreement-link form__agreement-link--agreement' href='#'>пользовательским соглашением</a> и <a class='form__agreement-link form__agreement-link--policy' href='#'>политикой конфиденциальности</a>.</p>
           </div>
         </form>
       </div>
@@ -921,6 +922,7 @@
             <label class='form__label form__label--mail' for='buy-mail'></label>
           </div>
           <button class='form__button button button--form' type='submit' aria-label='Отправить форму для заказа тура'>Отправить заказ</button>
+          <p class='form__agreement'>Оформляя заказ вы соглашаетесь с <a class='form__agreement-link form__agreement-link--agreement' href='#'>пользовательским соглашением</a> и <a class='form__agreement-link form__agreement-link--policy' href='#'>политикой конфиденциальности</a>.</p>
         </div>
       </form>
       <button class='modal__button button button--close'></button>
@@ -936,7 +938,8 @@
 
   <div class='modal modal--image'>
     <div class='modal__wrapper'>
-      <img src='' alt=''>
+      <img class='modal__image' src='' alt=''>
+      <button class='modal__button button button--close'></button>
     </div>
   </div>
 
