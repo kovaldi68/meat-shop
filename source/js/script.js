@@ -49,6 +49,7 @@ allSlides.forEach(element => {
     document.addEventListener('keydown', onImageModalEscHandler);
     document.addEventListener('click', onImageModalClickHandler);
     modalImage.querySelector('.modal__image').src = evt.target.src;
+    modalImage.querySelector('.modal__image').alt = evt.target.alt;
     }
   })
 });
@@ -219,13 +220,20 @@ const storageData = () => {
 
 const buyFormSubmitHandler = (evt) => {
   evt.preventDefault();
-  makeOrderModal();
-  showUpSuccessModal();
+  if (formOrderList.children.length !== 0) {
+    makeOrderModal();
+    showUpSuccessModal();
+  
+    if (isStorageSupport) {
+      localStorage.setItem('userNumber', userBuyNumber.value);
+      localStorage.setItem('userMail', userBuyMail.value);
+      localStorage.setItem('userName', userBuyName.value);
+    }
 
-  if (isStorageSupport) {
-    localStorage.setItem('userNumber', userBuyNumber.value);
-    localStorage.setItem('userMail', userBuyMail.value);
-    localStorage.setItem('userName', userBuyName.value);
+    formOrderList.innerHTML = '';
+    userBuyNumber.value = '';
+    userBuyMail.value = '';
+    userBuyName.value = '';
   }
 }
 
@@ -244,8 +252,22 @@ const isEscEvent = (evt) => {
   return evt.key === ('Escape' || 'Esc');
 };
 
+const isEnterEvent = (evt) => {
+  return evt.key === ('Enter');
+};
+
+const onFormEnterHandler = (evt) => {
+  if (isEnterEvent(evt)) {
+    evt.preventDefault();
+    return false;
+  }
+}
+
+orderForm.addEventListener('keydown', onFormEnterHandler);
+
 const successModalHandler = () => {
   successModal.classList.remove('modal--opened');
+  body.classList.remove('page__body--modal-opened');
 
   document.removeEventListener('keydown', onSuccessEscHandler);
   document.removeEventListener('click', onSuccessClickHandler);
@@ -351,6 +373,7 @@ const showUpOrderModal = () => {
 
 const showUpSuccessModal = () => {
   successModal.classList.add('modal--opened');
+  body.classList.add('page__body--modal-opened');
 
   document.addEventListener('keydown', onSuccessEscHandler);
   document.addEventListener('click', onSuccessClickHandler)

@@ -802,7 +802,7 @@
         <form class='feedback__form form form--feedback' action='send.php' method='post'>
           <div class='form__wrapper'>
             <h3 class='form__title'>У вас остались вопросы?</h3>
-            <p class='form-description'>Оставьте свой номер или e-mail и мы свяжемся с Вами в течение 1 часа</p>
+            <p class='form__description'>Оставьте свой номер или e-mail и мы свяжемся с Вами</p>
             <div class='form__input-wrapper form__input-wrapper--name'>
               <input class='form__input form__input--name' type='text' name='user-name' id='question-name' placeholder='Введите ваше имя'>
               <label class='form__label form__label--name' for='question-name'></label>
@@ -931,7 +931,11 @@
 
   <div class='modal modal--success'>
     <div class='modal__wrapper'>
-      <p class='modal__success-text'>Форма успешно отправлена, спасибо! :)</p>
+      <a class='modal__logo' href='index.html'>
+        <img class='modal__logo-image' src='img/logo.png' alt='Логотип Колбасного Цеха' width='45' height='45'>
+      </a>
+      <p class='modal__success-text'>Команда <strong>Колбасного цеха</strong> благодарит Вас за заказ!</p>
+      <p class='modal__call-text'>Наш менеджер свяжется с Вами в течение 15 минут!</p>
       <button class='modal__button button button--close'></button>
     </div>
   </div>
