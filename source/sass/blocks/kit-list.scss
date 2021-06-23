@@ -117,6 +117,12 @@
   object-fit: cover;
 }
 
+@media (min-width: $mobile-tablet-width) {
+  .kit-list__photo {
+    height: 250px;
+  }
+}
+
 @media (min-width: $tablet-width) {
   .kit-list {
     display: flex;
@@ -128,10 +134,6 @@
   .kit-list__item {
     margin: $kit-list-offset / 2;
     width: calc(100% / 2 - #{$kit-list-offset});
-  }
-
-  .kit-list__photo {
-    height: 250px;
   }
 }
 
