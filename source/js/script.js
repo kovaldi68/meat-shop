@@ -402,6 +402,7 @@ const createOrderItem = function(good) {
   
     clonedOrderItem.querySelector('.order-item__name-text').textContent = `Набор ${setTitle.textContent}`;
     clonedOrderItem.querySelector('.order-item__image').src = setImage.src;
+    clonedOrderItem.querySelector('.order-item__image').alt = setImage.alt;
     clonedOrderItem.querySelector('.order-item__price-value--number').textContent = setPriceValue.textContent;
     clonedOrderItem.querySelector('.order-item__price-value--amount').textContent = '';
     clonedOrderItem.querySelector('.order-item__weight').textContent = '';
