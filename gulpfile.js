@@ -15,12 +15,14 @@ var svgsprite = require("gulp-svg-sprite");
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
+const imageminMozjpeg = require('imagemin-mozjpeg');
 
 gulp.task("css", function () {
   return gulp.src("source/sass/style.scss")
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
+    .pipe(gulp.dest("build/css"))
     .pipe(postcss([ autoprefixer() ]))
     .pipe(csso())
     .pipe(rename("style.min.css"))
@@ -53,12 +55,11 @@ gulp.task("images", function() {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 3}),
-      imagemin.jpegtran({progressive: true}),
+      imageminMozjpeg({quality: 80, progressive: true}),
       imagemin.svgo()
     ]))
 
     .pipe(gulp.dest("source/img"));
-
 });
 
 gulp.task("webp", function () {
@@ -111,5 +112,5 @@ gulp.task("clean", function () {
   return del("build");
 });
 
-gulp.task("build", gulp.series("clean", "copy", "css", "sprite", "html"));  //не забыть вернуть webp в сборку
+gulp.task("build", gulp.series("clean", "copy", "css", "webp", "sprite", "html"));
 gulp.task("start", gulp.series("build", "server"));

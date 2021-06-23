@@ -129,6 +129,10 @@
     margin: $kit-list-offset / 2;
     width: calc(100% / 2 - #{$kit-list-offset});
   }
+
+  .kit-list__photo {
+    height: 250px;
+  }
 }
 
 @media (min-width: $laptop-width) {
