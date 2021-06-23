@@ -391,6 +391,7 @@ const createOrderItem = function(good) {
   
     clonedOrderItem.querySelector('.order-item__name-text').textContent = goodTitle.textContent;
     clonedOrderItem.querySelector('.order-item__image').src = goodImage.src;
+    clonedOrderItem.querySelector('.order-item__image').alt = goodImage.alt;
     clonedOrderItem.querySelector('.order-item__price-value--number').textContent = goodPriceValue.textContent;
   }
 
