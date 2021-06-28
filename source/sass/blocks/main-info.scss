@@ -4,24 +4,24 @@
   align-items: center;
   padding: 30px 10px;
   background-color: $black-basic-70;
-}
 
-.main-info__title {
-  width: 80%;
-  margin: 0;
-  margin-bottom: 25px;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 40px;
-  text-align: center;
-}
-
-.main-info__text {
-  margin: 0;
-  margin-bottom: 30px;
-  padding: 0;
-  color: $white-basic;
-  text-align: center;
+  h1 {
+    width: 80%;
+    margin: 0;
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+  }
+  
+  p {
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+    color: $white-basic;
+    text-align: center;
+  }
 }
 
 .main-info__button {
@@ -50,23 +50,23 @@
 @media (min-width: $desktop-width) {
   .main-info {
     padding: 99px 64px 84px 64px;
-  }
 
-  .main-info__title {
-    margin-bottom: 30px;
-    width: 100%;
-    font-weight: 600;
-    font-size: 60px;
-    line-height: 80px;
-  }
-
-  .main-info__text {
-    margin-bottom: 30px;
-    width: 90%;
-    max-width: 375px;
-    font-size: 18px;
-    line-height: 31px;
-    text-align: left;
+    h1 {
+      margin-bottom: 30px;
+      width: 100%;
+      font-weight: 600;
+      font-size: 60px;
+      line-height: 80px;
+    }
+  
+    p {
+      margin-bottom: 30px;
+      width: 90%;
+      max-width: 375px;
+      font-size: 18px;
+      line-height: 31px;
+      text-align: left;
+    }
   }
 
   .main-info__button {

@@ -37,6 +37,8 @@ const orderSetButtons = document.getElementsByClassName('kit-list__button');
 const allSlides = document.querySelectorAll('.slider__item');
 const modalImage = document.querySelector('.modal--image');
 
+const ALERT_SHOW_TIME = 3000;
+
 allSlides.forEach(element => {
   element.addEventListener('click', function(evt) {
   evt.preventDefault();
@@ -201,16 +203,19 @@ const goToProduct = (evt) => {
 let isStorageSupport = true;
 let storageNumber = '';
 let storageMail = '';
+let storageName = '';
 
 try {
   storageNumber = localStorage.getItem('userNumber');
   storageMail = localStorage.getItem('userMail');
+  storageName = localStorage.getItem('userName')
 } catch (err) {
   isStorageSupport = false;
 }
 
 const storageData = () => {
   if (storageNumber && storageMail) {
+    userBuyName.value = storageName;
     userBuyNumber.value = storageNumber;
     userBuyMail.value = storageMail;
   }
@@ -218,23 +223,112 @@ const storageData = () => {
 
 //forms
 
-const buyFormSubmitHandler = (evt) => {
+async function buyFormSubmitHandler(evt) {
   evt.preventDefault();
-  if (formOrderList.children.length !== 0) {
-    makeOrderModal();
-    showUpSuccessModal();
+  let error = formValidate(orderForm);
+  const summaryInfo = document.querySelector('.summary');
+  
+  const formData = new FormData(orderForm);
+  formData.append('order', formOrderList);
+  formData.append('delivery', summaryInfo.querySelector('.summary__value--delivery').textContent);
+  formData.append('goods', summaryInfo.querySelector('.summary__value--goods').textContent);
+  formData.append('total', summaryInfo.querySelector('.summary__value--total').textContent); 
+
+  if (formOrderList.children.length !== 0 && error === 0) {
+    orderForm.classList.add('form--sending');
+
+    let response = await fetch('send.php', {
+      method: 'POST',
+      body: formData
+    });
+    if (response.ok) {
+      let result = await response.json();
+      formOrderList.innerHTML = '';
+      orderForm.classList.remove('form--sending');
+      makeOrderModal();
+      showUpSuccessModal();
+    } else {
+      createErrorMessage();
+      orderForm.classList.remove('form--sending');
+    }
   
     if (isStorageSupport) {
       localStorage.setItem('userNumber', userBuyNumber.value);
       localStorage.setItem('userMail', userBuyMail.value);
       localStorage.setItem('userName', userBuyName.value);
     }
-
-    formOrderList.innerHTML = '';
-    userBuyNumber.value = '';
-    userBuyMail.value = '';
-    userBuyName.value = '';
   }
+}
+
+const createErrorMessage = function() {
+  const message = document.createElement('div');
+  message.classList.add('.form__error-message')
+  message.textContent = 'Ошибка при отправке формы, свяжитесь с нами по телефону или через соц сети';
+  message.style.zIndex = 100;
+  message.style.width = '90%';
+  message.style.margin = '0 auto';
+  message.style.position = 'absolute';
+  message.style.bottom = 0;
+  message.style.left = 0;
+  message.style.right = 0;
+  message.style.padding = '5px';
+  message.style.fontSize = '15px';
+  message.style.background = '#500805';
+  message.style.color = '#fff';
+  message.style.textAlign = 'center';
+  
+  orderForm.appendChild(message);
+  
+  setTimeout(() => {
+    message.remove();
+  }, ALERT_SHOW_TIME);
+}
+
+const emailTest = function(input) {
+  return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+}
+
+const phoneTest = function(input) {
+  return !/^[0-9]{10}/.test(input.value);
+}
+
+const formValidate = function(formToValidate) {
+  let error = 0;
+  let formReq = formToValidate.querySelectorAll('.form__input--required');
+
+  for (let i = 0; i < formReq.length; i++) {
+    const input = formReq[i];
+    formRemoveError(input);
+    
+    if (input.classList.contains('form__input--mail')) {
+      if (emailTest(input)) {
+        formAddError(input);
+        error++;
+      }
+    } else if (input.classList.contains('form__input--tel')) {
+      if (phoneTest(input)) {
+        formAddError(input);
+        error++;
+      }
+    } else {
+      if (input.value === '') {
+        formAddError(input);
+        error++;
+      }
+    }
+  }
+
+  return error;
+}
+
+const formRemoveError = function(input) {
+  input.closest('div').classList.remove('form__input-wrapper--error');
+  input.classList.remove('form__input--error')
+}
+
+const formAddError = function(input) {
+  input.closest('div').classList.add('form__input-wrapper--error');
+  input.classList.add('form__input--error')
 }
 
 const feedbackFormSubmitHandler = (evt) => {
@@ -262,8 +356,6 @@ const onFormEnterHandler = (evt) => {
     return false;
   }
 }
-
-orderForm.addEventListener('keydown', onFormEnterHandler);
 
 const successModalHandler = () => {
   successModal.classList.remove('modal--opened');
@@ -517,7 +609,7 @@ const setDeliveryPrice = function() {
   }
 };
 
-
+orderForm.addEventListener('keydown', onFormEnterHandler);
 window.addEventListener("scroll", buttonUpHandler);
 window.addEventListener("scroll", buttonCartHandler);
 window.addEventListener("scroll", stickyHeader);

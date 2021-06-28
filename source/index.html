@@ -10,12 +10,21 @@
   <link rel='preload' href='fonts/montserrat-semibold.woff2' as='font' type='font/woff2' crossorigin>
   <link rel='preload' href='fonts/montserrat-bold.woff2' as='font' type='font/woff2' crossorigin>
   <link rel='stylesheet' href='css/style.min.css'>
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 </head>
 <body class='page__body'>
   <header class='page-header page-header--nojs' id='header'>
     <div class='page-header__container container'>
       <a class='page-header__logo' href='index.html'>
-        <img class='page-header__img' src='img/logo.png' alt='Логотип Колбасного Цеха' width='45' height='45'>
+        <picture>
+          <source type='image/webp' srcset='img/logo.webp 1x, img/logo@2x.webp 2x'>
+          <img class='page-header__img' src='img/logo.png' srcset='img/logo@2x.png' alt='Логотип Колбасного Цеха' width='60' height='60'>
+        </picture>
       </a>
       <nav class='page-header__navigation navigation'>
         <ul class='navigation__list'>
@@ -46,8 +55,8 @@
     <section class="promo">
       <div class="promo__container container">
         <div class="promo__main-info main-info">
-          <h1 class="main-info__title">Колбасный Цех</h1>
-          <p class="main-info__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h1>Колбасный Цех</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <a class="main-info__button button button--goods" href="#our-goods">Смотреть изделия</a>
           <ul class="main-info__user-list user-list user-list--primary">
             <li class="user-list__item">
@@ -96,8 +105,8 @@
     </section>
     <section class="page-main__goods goods" id="goods">
       <div class="goods__container container">
-        <h2 class="goods__title" id="our-goods">Наша продукция</h2>
-        <p class="goods__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h2 id="our-goods">Наша продукция</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         <ul class="goods__list">
           <li class="goods__item product-card">
             <h3 class="product-card__name">Ветчина из индейки с шампиньонами</h3>
@@ -232,7 +241,6 @@
             <a class="product-card__link-more" href="#duck-pate-tab" data-product-name="duck-pate" aria-label="Узнать подробнее о товаре">Смотреть подробнее</a>
           </li>
         </ul>
-        <!-- <a class='goods__button button button--goods' href='' aria-label='Нажать, чтобы увидеть больше товаров'>Увидеть больше товаров</a> -->
       </div>
     </section>
     <section class="page-main__product-tabs product-tabs">
@@ -599,7 +607,7 @@
         <div class="product-tabs__product-info product-info" id="smoked-duck">
           <div class="product-info__photo">
             <picture>
-              <source type='image/webp' media='(min-width: 1024px)' srcset='img/smoked-duck-desktop.webp 1x, img/smoked-duck-desktop@2x.webp 2x'>
+              <source type='image/webp' media='(min-width: 1024px)' srcset='img/smoked-duck-desktop.webp 1x, img/smoked-duck0-desktop@2x.webp 2x'>
               <source type='image/webp' srcset='img/smoked-duck-tablet.webp 1x, img/smoked-duckd-tablet@2x.webp 2x'>
               <source media="(min-width: 1024px)" srcset="img/smoked-duck-desktop.jpg 1x, img/smoked-duck-desktop@2x.jpg 2x">
               <img class="product-info__image" src="img/smoked-duck-tablet.jpg" srcset="img/smoked-duck-tablet@2x.jpg 2x" alt="Фото утки копчёной" width="350" height="430">
@@ -673,8 +681,8 @@
     <section class="page-main__sets sets" id="sets">
       <div class="sets__container container">
         <div class="sets__info">
-          <h2 class="sets__title">Наборы</h2>
-          <p class="sets__text">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</p>
+          <h2>Наборы</h2>
+          <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</p>
           <div class="sets__contact-us contact-us">
             <h3 class="contact-us__title">Свяжитесь с нами</h3>
             <ul class="contact-us__user-list user-list user-list--secondary">
@@ -769,8 +777,8 @@
     </section>
     <section class="page-main__certification certification" id="certification">
       <div class="certification__container container">
-        <h2 class="certification__title">Сертификация</h2>
-        <p class="certification__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <h2>Сертификация</h2>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
         <div class="certification__slider slider slider--main">
           <a class="slider__item" href="#">
             <img class="slider__image" src="img/bacon-cert.png" alt="Скан сертификата на Бекон варёно-копчёный" width="350" height="430">
@@ -805,7 +813,7 @@
     </section>
     <section class="page-main__feedback feedback">
       <div class="feedback__container container">
-        <form class="feedback__form form form--feedback" action="send.php" method="post">
+        <form class="feedback__form form form--feedback" action="mail.php" method="POST">
           <div class="form__wrapper">
             <h3 class="form__title">У вас остались вопросы?</h3>
             <p class="form__description">Оставьте свой номер или e-mail и мы свяжемся с Вами</p>
@@ -888,7 +896,7 @@
 
   <div class='modal modal--buy'>
     <div class='modal__wrapper'>
-      <form class='modal__form form form--buy' action='send.php' method='post'>
+      <form class='modal__form form form--buy' action='send.php' method='POST'>
         <div class='form__wrapper'>
           <h3 class='form__title'>Ваша корзина</h3>
           <p class='form__order-description'>Ваш заказ:</p>
@@ -906,25 +914,24 @@
             </div>
             <div class='summary__goods-price'>
               <h3 class='summary__title summary__title--goods'>Товары:</h3>
-              <span class='summary__value summary__value--goods'>5000 руб.</span>
+              <span class='summary__value summary__value--goods'></span>
             </div>
             <div class='summary__total-price'>
               <h3 class='summary__title summary__title--total'>Итого:</h3>
-              <span class='summary__value summary__value--total'>5300 руб.</span>
+              <span class='summary__value summary__value--total'></span>
             </div>
           </div>
           <p class='form__description'>Укажите ваши имя, номер телефона и e-mail, и мы свяжемся с Вами для подтверждения заказа</p>
           <div class='form__input-wrapper form__input-wrapper--name'>
-            <input class='form__input form__input--name' type='text' name='user-name' id='question-name' placeholder='Введите ваше имя'>
+            <input class='form__input form__input--name form__input--required' type='text' name='user-name' id='question-name' placeholder='Введите ваше имя'>
             <label class='form__label form__label--name' for='question-name'></label>
           </div>
           <div class='form__input-wrapper form__input-wrapper--tel'>
-            <input class='form__input form__input--tel' type='tel' name='user-tel' id='buy-tel' placeholder='Введите 10 цифр номера' pattern='[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}' maxlength='10' required>
+            <input class='form__input form__input--tel form__input--required' type='tel' name='user-tel' id='buy-tel' placeholder='Введите 10 цифр номера' pattern='[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}' maxlength='10'>
             <label class='form__label form__label--email' for='buy-tel'></label>
-            <span class='form__input-required-icon' aria-label='Обязательное поле'>*</span>
           </div>
           <div class='form__input-wrapper form__input-wrapper--mail'>
-            <input class='form__input form__input--mail' type='email' id='buy-mail' name='user-email' placeholder='Email'>
+            <input class='form__input form__input--mail form__input--required' type='email' id='buy-mail' name='user-email' placeholder='Email'>
             <label class='form__label form__label--mail' for='buy-mail'></label>
           </div>
           <button class='form__button button button--form' type='submit' aria-label='Отправить форму для заказа тура'>Отправить заказ</button>
