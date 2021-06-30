@@ -223,21 +223,40 @@ const storageData = () => {
 
 //forms
 
+const getOrderList = function() {
+  let list = [];
+  const goodInfo = document.querySelectorAll('.order-item');
+  
+  for (let i = 0; i < goodInfo.length; i++) {
+      let item = [];
+      goodInfo[i].querySelector('[name = order-good-name]').value = goodInfo[i].querySelector('.order-item__name-text').textContent;
+      let name = goodInfo[i].querySelector('[name = order-good-name]').value
+      let number = goodInfo[i].querySelector('[name = goods-number]').value;
+      goodInfo[i].querySelector('[name = order-good-sum]').value = goodInfo[i].querySelector('.order-item__summary-value').textContent;
+      let sum = goodInfo[i].querySelector('[name = order-good-sum]').value;
+      
+      item.push(name, number, sum);
+      
+      list.push(item);
+  }
+
+  return list;
+}
+
 async function buyFormSubmitHandler(evt) {
   evt.preventDefault();
   let error = formValidate(orderForm);
   const summaryInfo = document.querySelector('.summary');
-  
+
+  summaryInfo.querySelector('[name = goods-sum]').value = summaryInfo.querySelector('.summary__value--goods').textContent;
+  summaryInfo.querySelector('[name = total-sum]').value = summaryInfo.querySelector('.summary__value--total').textContent;
+
   const formData = new FormData(orderForm);
-  formData.append('order', formOrderList);
-  formData.append('delivery', summaryInfo.querySelector('.summary__value--delivery').textContent);
-  formData.append('goods', summaryInfo.querySelector('.summary__value--goods').textContent);
-  formData.append('total', summaryInfo.querySelector('.summary__value--total').textContent); 
 
   if (formOrderList.children.length !== 0 && error === 0) {
     orderForm.classList.add('form--sending');
 
-    let response = await fetch('send.php', {
+    let response = await fetch('sendmail.php', {
       method: 'POST',
       body: formData
     });
@@ -251,7 +270,7 @@ async function buyFormSubmitHandler(evt) {
       createErrorMessage();
       orderForm.classList.remove('form--sending');
     }
-  
+
     if (isStorageSupport) {
       localStorage.setItem('userNumber', userBuyNumber.value);
       localStorage.setItem('userMail', userBuyMail.value);

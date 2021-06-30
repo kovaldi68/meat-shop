@@ -26,25 +26,6 @@
     .form__wrapper {
       padding: 20px;
     }
-
-    .form__user-text {
-      padding: 15px;
-      width: 100%;
-      border: 1px solid $brown-contact;
-      outline: none;
-      resize: none;
-      min-height: 200px;
-
-      &:hover,
-      &:focus,
-      &:active {
-        border: 1px solid $black-red-main;
-      }
-
-      &::placeholder {
-        color: $red-background;
-      }
-    }
   }
 
   &--buy {
@@ -97,11 +78,6 @@
       margin-bottom: 15px;
     }
 
-    .form__button {
-      align-self: center;
-      max-width: 400px;
-    }
-
     .form__order-list {
       @include list-reset;
       margin-bottom: 15px;
@@ -113,6 +89,12 @@
       &:last-child {
         margin-bottom: 0;
       }
+    }
+
+    .form__user-text {
+      margin-bottom: 10px;
+      min-height: 100px;
+      height: 100px;
     }
   }
 }
@@ -198,6 +180,25 @@
   }
 }
 
+.form__user-text {
+  padding: 15px;
+  width: 100%;
+  border: 1px solid $brown-contact;
+  min-height: 200px;
+  resize: none;
+  outline: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid $black-red-main;
+  }
+
+  &::placeholder {
+    color: $red-background;
+  }
+}
+
 .form__title {
   margin: 0;
   margin-bottom: 15px;
@@ -228,9 +229,6 @@
   .form {
     &--buy {
       .form__wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
         padding: 20px;
       }
 
@@ -256,6 +254,8 @@
   .form {
     &--buy {
       .form__wrapper {
+        display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         justify-content: center;
         padding: 30px;

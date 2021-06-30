@@ -80,9 +80,13 @@
 }
 
 .kit-list__advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   @include list-reset;
   padding-top: 20px;
   padding-bottom: 20px;
+  align-self: flex-start;
 }
 
 .kit-list__advantages-item {
@@ -147,5 +151,11 @@
   .kit-list__item {
     width: calc((100% / 2) - #{$kit-list-offset});
     margin: $kit-list-offset / 2;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .kit-list__description {
+    min-height: 100px;
   }
 }

@@ -138,7 +138,7 @@
   }
 }
 
-@media (min-width: $laptop-width) {
+@media (min-width: 1338px) {
   .user-list {
     &--secondary {
       display: block;
@@ -148,7 +148,11 @@
         margin-right: 0;
       }
     }
+  }
+}
 
+@media (min-width: $desktop-width) {
+  .user-list {
     &--footer {
       .user-list__item {
         justify-content: flex-start;

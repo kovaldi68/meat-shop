@@ -14,7 +14,7 @@
 }
 
 .summary__delivery-price {
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-column-end: 3;
 }
 
@@ -56,9 +56,9 @@
 
 .summary__checkbox-label {
     position: relative;
-    padding-left: 30px;
-    font-size: 15px;
-    line-height: 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    line-height: 25px;
 
     &:hover,
     &:focus {
@@ -70,8 +70,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
         background-color: $white-basic;
         border: 1px solid $red-dark-decor;
         border-radius: 5px;
@@ -83,7 +83,7 @@
         background-color: $red-dark-decor;
         background-image: url('../img/tick-icon.svg');
         background-repeat: no-repeat;
-        background-size: 14px;
+        background-size: 17px;
         background-position: center;
     }
 }

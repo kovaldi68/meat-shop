@@ -60,10 +60,6 @@
 
 @media (min-width: $laptop-width) {
   .socials {
-    &--secondary {
-      justify-content: flex-start;
-    }
-
     &--footer {
       .socials__item {
         margin-right: 0;
@@ -83,5 +79,13 @@
 
   .socials__item {
     margin-right: 48px;
+  }
+}
+
+@media (min-width: 1338px) {
+  .socials {
+    &--secondary {
+      justify-content: flex-start;
+    }
   }
 }
