@@ -13,9 +13,9 @@ $mail->isHTML(true);
 
 $mail->setFrom('admin@ferma-holmovo.ru', 'Колбасный Цех');
 $mail->addAddress('Ferma-kholmovo@yandex.ru');
-$mail->Subject = 'Новый заказ на сайте Колбасный Цех';
+$mail->Subject = 'Вопрос с сайта Колбасный Цех';
 
-$body = '<h1>Новый заказ c ' .$_POST['title']. '!</h1>';
+$body = '<h1>Новый вопрос c ' .$_POST['title']. '!</h1>';
 
 if(trim(!empty($_POST['user-name']))){
     $body.='<p><strong>Имя:</strong> '.$_POST['user-name'].'</p>';
@@ -27,19 +27,7 @@ if(trim(!empty($_POST['user-email']))){
     $body.='<p><strong>Email:</strong> '.$_POST['user-email'].'</p>';
 }
 
-
-
-$body.='<p><strong>Заказ:</strong></p>'.$_POST['orderGoodsList'].'</p>';
-
-$info = json_decode($_POST['orderGoodsList'], true);
-
-foreach ($info as $value) {
-   $body.= '<p><strong>'.$value.'</strong></p>';
-}
-
-$body.='<p><strong>Доставка в пределах КАД:</strong> '.$_POST['circle-accept'].'</p>';
-$body.='<p><strong>Стоимость товаров:</strong> '.$_POST['goods-sum'].'</p>';
-$body.='<p><strong>Итого:</strong> '.$_POST['total-sum'].'</p>';
+$body.='<p><strong>Комментарий:</strong> '.$_POST['user-text'].'</p>';
 
 $mail->Body = $body;
 

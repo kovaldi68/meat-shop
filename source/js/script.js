@@ -12,6 +12,7 @@ const body = document.querySelector('.page__body');
 const orderForm = document.querySelector('.form--buy');
 const orderModal = document.querySelector('.modal--buy');
 const successModal = document.querySelector('.modal--success');
+const successFeedbackModal = document.querySelector('.modal--success-feedback');
 const feedbackForm = document.querySelector('.form--feedback');
 const orderButtons = document.getElementsByClassName('product-info__button');
 const closeModalButtons = document.querySelectorAll('.button--close');
@@ -227,20 +228,22 @@ const getOrderList = function() {
   let list = [];
   const goodInfo = document.querySelectorAll('.order-item');
   
-  for (let i = 0; i < goodInfo.length; i++) {
-      let item = [];
-      goodInfo[i].querySelector('[name = order-good-name]').value = goodInfo[i].querySelector('.order-item__name-text').textContent;
-      let name = goodInfo[i].querySelector('[name = order-good-name]').value
-      let number = goodInfo[i].querySelector('[name = goods-number]').value;
-      goodInfo[i].querySelector('[name = order-good-sum]').value = goodInfo[i].querySelector('.order-item__summary-value').textContent;
-      let sum = goodInfo[i].querySelector('[name = order-good-sum]').value;
-      
-      item.push(name, number, sum);
-      
-      list.push(item);
-  }
+for (let i = 0; i < goodInfo.length; i++) {
+    let item = {};
+    goodInfo[i].querySelector('[name = order-good-name]').value = goodInfo[i].querySelector('.order-item__name-text').textContent;
+    let name = goodInfo[i].querySelector('[name = order-good-name]').value
+    let number = goodInfo[i].querySelector('[name = goods-number]').value;
+    goodInfo[i].querySelector('[name = order-good-sum]').value = goodInfo[i].querySelector('.order-item__summary-value').textContent;
+    let sum = goodInfo[i].querySelector('[name = order-good-sum]').value;
+    
+    item["Наименование"] = name;
+    item["Количество"] = number;
+    item["Сумма"] = sum;
+    
+    list.push(item);
+}
 
-  return list;
+return list;
 }
 
 async function buyFormSubmitHandler(evt) {
@@ -252,6 +255,8 @@ async function buyFormSubmitHandler(evt) {
   summaryInfo.querySelector('[name = total-sum]').value = summaryInfo.querySelector('.summary__value--total').textContent;
 
   const formData = new FormData(orderForm);
+  const allGoodsInOrder = JSON.stringify(getOrderList());
+  formData.append('orderGoodsList', allGoodsInOrder);
 
   if (formOrderList.children.length !== 0 && error === 0) {
     orderForm.classList.add('form--sending');
@@ -260,6 +265,7 @@ async function buyFormSubmitHandler(evt) {
       method: 'POST',
       body: formData
     });
+    
     if (response.ok) {
       let result = await response.json();
       formOrderList.innerHTML = '';
@@ -350,14 +356,35 @@ const formAddError = function(input) {
   input.classList.add('form__input--error')
 }
 
-const feedbackFormSubmitHandler = (evt) => {
+async function feedbackFormSubmitHandler(evt) {
   evt.preventDefault();
-  showUpSuccessModal();
+  let error = formValidate(feedbackForm);
 
-  if (isStorageSupport) {
-    localStorage.setItem('userNumber', userFeedbackNumber.value);
-    localStorage.setItem('userMail', userFeedbackMail.value);
-    localStorage.setItem('userName', userFeedbackName.value);
+  const formData = new FormData(feedbackForm);
+
+  if (error === 0) {
+    feedbackForm.classList.add('form--sending');
+
+    let response = await fetch('sendmail-feedback.php', {
+      method: 'POST',
+      body: formData
+    });
+    
+    if (response.ok) {
+      let result = await response.json();
+      feedbackForm.classList.remove('form--sending');
+      feedbackForm.reset();
+      showUpSuccessFeedbackModal();
+    } else {
+      createErrorMessage();
+      feedbackForm.classList.remove('form--sending');
+    }
+
+    if (isStorageSupport) {
+      localStorage.setItem('userNumber', userBuyNumber.value);
+      localStorage.setItem('userMail', userBuyMail.value);
+      localStorage.setItem('userName', userBuyName.value);
+    }
   }
 }
 
@@ -378,6 +405,14 @@ const onFormEnterHandler = (evt) => {
 
 const successModalHandler = () => {
   successModal.classList.remove('modal--opened');
+  body.classList.remove('page__body--modal-opened');
+
+  document.removeEventListener('keydown', onSuccessEscHandler);
+  document.removeEventListener('click', onSuccessClickHandler);
+}
+
+const successFeedbackModalHandler = () => {
+  successFeedbackModal.classList.remove('modal--opened');
   body.classList.remove('page__body--modal-opened');
 
   document.removeEventListener('keydown', onSuccessEscHandler);
@@ -405,6 +440,11 @@ const onSuccessClickHandler = (evt) => {
     successModalHandler();
   }
 }
+const onSuccessFeedbackClickHandler = (evt) => {
+  if (evt.target === document.querySelector('.modal--success-feedback')) {
+    successFeedbackModalHandler();
+  }
+}
 
 const onMakeOrderClickHandler = (evt) => {
   if (evt.target === document.querySelector('.modal--buy')) {
@@ -422,6 +462,7 @@ const onSuccessEscHandler = (evt) => {
   if (isEscEvent(evt)) {
     evt.preventDefault();
     successModalHandler()
+    successFeedbackModalHandler();
   }
 }
 
@@ -487,7 +528,15 @@ const showUpSuccessModal = () => {
   body.classList.add('page__body--modal-opened');
 
   document.addEventListener('keydown', onSuccessEscHandler);
-  document.addEventListener('click', onSuccessClickHandler)
+  document.addEventListener('click', onSuccessClickHandler);
+}
+
+const showUpSuccessFeedbackModal = () => {
+  successFeedbackModal.classList.add('modal--opened');
+  body.classList.add('page__body--modal-opened');
+
+  document.addEventListener('keydown', onSuccessEscHandler);
+  document.addEventListener('click', onSuccessFeedbackClickHandler);
 }
 
 //order-form

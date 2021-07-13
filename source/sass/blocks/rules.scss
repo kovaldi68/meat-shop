@@ -1,0 +1,34 @@
+.rules__container {
+    padding-bottom: 50px;
+}
+
+.rules__list {
+    @include list-reset;
+    padding: 0;
+}
+
+.rules__item {
+    position: relative;
+    counter-increment: action-counter;
+    margin-bottom: 15px;
+    padding-left: 30px;
+
+    &::before {
+        content: '1.' counter(action-counter);
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .rules__list {
+        padding: 0 30px;
+    }
+}

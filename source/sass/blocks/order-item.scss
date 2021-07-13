@@ -42,11 +42,6 @@
   line-height: 20px;
 }
 
-.order-item__weight {
-  font-size: 10px;
-  line-height: 15px;
-}
-
 .order-item__number {
   grid-column-start: 1;
   grid-column-end: 2;
@@ -225,6 +220,7 @@
 
   .order-item__name-text {
     margin-right: 0;
+    width: 85%;
     font-size: 24px;
     line-height: 32px;
   }

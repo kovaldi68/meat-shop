@@ -4,12 +4,13 @@
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <meta name="description" content="Колбасный Цех. Мы семейный бизнес, который изготавливает мясную продукцию без лишней химии и исключительно из натуральных и проверенных ингредиентов." />
   <title>Сайт компании Колбасный Цех</title>
   <link rel='preload' href='fonts/montserrat-regular.woff2' as='font' type='font/woff2' crossorigin>
   <link rel='preload' href='fonts/montserrat-medium.woff2' as='font' type='font/woff2' crossorigin>
   <link rel='preload' href='fonts/montserrat-semibold.woff2' as='font' type='font/woff2' crossorigin>
   <link rel='preload' href='fonts/montserrat-bold.woff2' as='font' type='font/woff2' crossorigin>
-  <link rel='stylesheet' href='css/style.min.css'>
+  <link rel='stylesheet' href='css/style.min.css?version=2.0'>
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -20,7 +21,7 @@
 <body class='page__body'>
   <header class='page-header page-header--nojs' id='header'>
     <div class='page-header__container container'>
-      <a class='page-header__logo' href='index.html'>
+      <a class='page-header__logo'>
         <picture>
           <source type='image/webp' srcset='img/logo.webp 1x, img/logo@2x.webp 2x'>
           <img class='page-header__img' src='img/logo.png' srcset='img/logo@2x.png' alt='Логотип Колбасного Цеха' width='60' height='60'>
@@ -106,7 +107,7 @@
     <section class="page-main__goods goods" id="goods">
       <div class="goods__container container">
         <h2 id="our-goods">Наша продукция</h2>
-        <p>Здесь вы можете ознакомиться с нашим ассортиментом. </p>
+        <p>Здесь вы можете ознакомиться с нашим ассортиментом.Все наши товары упакованы в индивидуальную вакуумную упаковку, позволяющую сохранить его свойства в течение доставки.</p>
         <ul class="goods__list">
           <li class="goods__item product-card">
             <h3 class="product-card__name">Ветчина из индейки с шампиньонами</h3>
@@ -291,7 +292,7 @@
           </div>
           <h3 class="product-info__title">Ветчина из индейки с шампиньонами</h3>
           <div class="product-info__price">
-            <span class="product-info__price-value">200p</span><span class="product-info__price-unit">/100г</span>
+            <span class="product-info__price-value">100p</span><span class="product-info__price-unit">/100г</span>
           </div>
           <p class="product-info__about">Нежная и сочная ветчина, порадует вас богатым, но не резким вкусом.</p>
           <table class="product-info__energy-value-table energy-value">
@@ -310,10 +311,11 @@
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Энергетическая ценность</td>
-              <td class="energy-value__cell energy-value__cell--value">106,45 кКал /446  кДж</td>
+              <td class="energy-value__cell energy-value__cell--value">106,45 кКал / 446 кДж</td>
             </tr>
           </table>
-          <p class="product-info__text">Состав: индейка, шампиньоны, соль поваренная, соль нитритная, сахар, паприка, томаты, горчица, перец белый, перец чили, имбирь, куркума, мускатный орех, кориандр, чеснок. <br><br> Срок годности: 30 суток в вакуумной упаковке, при соблюдении условий хранения, после вскрытия упаковки – 5 суток. <br><br> Условия хранения: от 0° С до +6° С </p>
+          <p class="product-info__text">Состав: индейка, шампиньоны, соль поваренная, соль нитритная, сахар, паприка, томаты, горчица, перец белый, перец чили, имбирь, куркума, мускатный орех, кориандр, чеснок. <br><br> Срок годности: 30 суток в вакуумной упаковке, при соблюдении условий хранения, после вскрытия упаковки – 5 суток. <br><br> Условия хранения: от 0° С до +6° С
+          </p>
           <a class="product-info__button button button--order" href="#">Добавить товар в заказ</a>
         </div>
         <div class="product-tabs__product-info product-info" id="chicken-smoked">
@@ -327,29 +329,30 @@
           </div>
           <h3 class="product-info__title">Копчёный цыплёнок</h3>
           <div class="product-info__price">
-            <span class="product-info__price-value">200p</span><span class="product-info__price-unit">/100г</span>
+            <span class="product-info__price-value">50p</span><span class="product-info__price-unit">/100г</span>
           </div>
-          <p class="product-info__about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          <p class="product-info__about">Станет желанным гостем в ваших салатах и сэндвичах, подарит вам ненавязчивый копчёный оттенок и разнообразит вкус привычных блюд.</p>
           <table class="product-info__energy-value-table energy-value">
             <caption class="energy-value__title">Пищевая ценность ценность на 100г</caption>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Белки, г</td>
-              <td class="energy-value__cell energy-value__cell--value">17,55</td>
+              <td class="energy-value__cell energy-value__cell--value">18,27</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Жиры, г</td>
-              <td class="energy-value__cell energy-value__cell--value">3,87</td>
+              <td class="energy-value__cell energy-value__cell--value">15,74</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Углеводы, г</td>
-              <td class="energy-value__cell energy-value__cell--value">0,28</td>
+              <td class="energy-value__cell energy-value__cell--value">0,67</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Энергетическая ценность</td>
-              <td class="energy-value__cell energy-value__cell--value">106,45 кКал /446  кДж</td>
+              <td class="energy-value__cell energy-value__cell--value">214,73 кКал / 899 кДж</td>
             </tr>
           </table>
-          <p class="product-info__text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+          <p class="product-info__text">Состав: цыплёнок, томаты вяленые, паприка, соль поваренная, соль нитритная, мускатный орех, лавровый лист, чеснок. <br><br> Срок годности: 30 суток в вакуумной упаковке, при соблюдении условий хранения, после вскрытия упаковки – 5 суток. <br><br> Условия хранения: от 0° С до +6° С
+          </p>
           <a class="product-info__button button button--order" href="#">Добавить товар в заказ</a>
         </div>
         <div class="product-tabs__product-info product-info" id="drogobychskaya">
@@ -363,29 +366,30 @@
           </div>
           <h3 class="product-info__title">Дрогобычская</h3>
           <div class="product-info__price">
-            <span class="product-info__price-value">200p</span><span class="product-info__price-unit">/100г</span>
+            <span class="product-info__price-value">100p</span><span class="product-info__price-unit">/100г</span>
           </div>
-          <p class="product-info__about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          <p class="product-info__about">Колбаса в которой нет ничего лишнего, только крупно помолотое свежайшее мясо и специи, для раскрытия всех граней вкуса.</p>
           <table class="product-info__energy-value-table energy-value">
             <caption class="energy-value__title">Пищевая ценность ценность на 100г</caption>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Белки, г</td>
-              <td class="energy-value__cell energy-value__cell--value">17,55</td>
+              <td class="energy-value__cell energy-value__cell--value">17,67</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Жиры, г</td>
-              <td class="energy-value__cell energy-value__cell--value">3,87</td>
+              <td class="energy-value__cell energy-value__cell--value">20,82</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Углеводы, г</td>
-              <td class="energy-value__cell energy-value__cell--value">0,28</td>
+              <td class="energy-value__cell energy-value__cell--value">0,52</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Энергетическая ценность</td>
-              <td class="energy-value__cell energy-value__cell--value">106,45 кКал /446  кДж</td>
+              <td class="energy-value__cell energy-value__cell--value">257 кКал / 1076 кДж</td>
             </tr>
           </table>
-          <p class="product-info__text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+          <p class="product-info__text">Состав: свинина, соль поваренная, соль нитритная, сахар, перец черный, перец белый, кориандр, тмин, чеснок, аскорбинат натрия. <br><br> Срок годности: 30 суток в вакуумной упаковке, при соблюдении условий хранения, после вскрытия упаковки – 5 суток. <br><br> Условия хранения: от 0° С до +6° С
+          </p>
           <a class="product-info__button button button--order" href="#">Добавить товар в заказ</a>
         </div>
         <div class="product-tabs__product-info product-info" id="bacon">
@@ -399,29 +403,30 @@
           </div>
           <h3 class="product-info__title">Бекон варёно-копчёный</h3>
           <div class="product-info__price">
-            <span class="product-info__price-value">200p</span><span class="product-info__price-unit">/100г</span>
+            <span class="product-info__price-value">85p</span><span class="product-info__price-unit">/100г</span>
           </div>
-          <p class="product-info__about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          <p class="product-info__about">Сочный бекон, имеет слегка пряный и насыщенный мясной вкус.</p>
           <table class="product-info__energy-value-table energy-value">
             <caption class="energy-value__title">Пищевая ценность ценность на 100г</caption>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Белки, г</td>
-              <td class="energy-value__cell energy-value__cell--value">17,55</td>
+              <td class="energy-value__cell energy-value__cell--value">9,74</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Жиры, г</td>
-              <td class="energy-value__cell energy-value__cell--value">3,87</td>
+              <td class="energy-value__cell energy-value__cell--value">50,94</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Углеводы, г</td>
-              <td class="energy-value__cell energy-value__cell--value">0,28</td>
+              <td class="energy-value__cell energy-value__cell--value">0,34</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Энергетическая ценность</td>
-              <td class="energy-value__cell energy-value__cell--value">106,45 кКал /446  кДж</td>
+              <td class="energy-value__cell energy-value__cell--value">495,06 кКал / 2072 кДж</td>
             </tr>
           </table>
-          <p class="product-info__text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+          <p class="product-info__text">Состав: свинина, виски, соль поваренная, соль нитритная, сахар, перец зелёный, можжевельник, чеснок, кориандр. <br><br> Срок годности: 30 суток в вакуумной упаковке, при соблюдении условий хранения, после вскрытия упаковки – 5 суток. <br><br> Условия хранения: от 0° С до +6° С
+          </p>
           <a class="product-info__button button button--order" href="#">Добавить товар в заказ</a>
         </div>
         <div class="product-tabs__product-info product-info" id="hunters-sausage">
@@ -435,29 +440,30 @@
           </div>
           <h3 class="product-info__title">Колбаски охотничьи(свинина)</h3>
           <div class="product-info__price">
-            <span class="product-info__price-value">200p</span><span class="product-info__price-unit">/100г</span>
+            <span class="product-info__price-value">110p</span><span class="product-info__price-unit">/100г</span>
           </div>
-          <p class="product-info__about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          <p class="product-info__about">Наши колбаски лишены перекопчённого вкуса и излишней жирности, что делает их отличными спутниками в вашей ежедневной трапезе.</p>
           <table class="product-info__energy-value-table energy-value">
             <caption class="energy-value__title">Пищевая ценность ценность на 100г</caption>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Белки, г</td>
-              <td class="energy-value__cell energy-value__cell--value">17,55</td>
+              <td class="energy-value__cell energy-value__cell--value">17,9</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Жиры, г</td>
-              <td class="energy-value__cell energy-value__cell--value">3,87</td>
+              <td class="energy-value__cell energy-value__cell--value">14,38</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Углеводы, г</td>
-              <td class="energy-value__cell energy-value__cell--value">0,28</td>
+              <td class="energy-value__cell energy-value__cell--value">0,14</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Энергетическая ценность</td>
-              <td class="energy-value__cell energy-value__cell--value">106,45 кКал /446  кДж</td>
+              <td class="energy-value__cell energy-value__cell--value">? кКал / ? кДж</td>
             </tr>
           </table>
-          <p class="product-info__text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+          <p class="product-info__text">Состав: свинина, соль поваренная, соль нитритная, смесь перцев, мускатный орех, чеснок, кориандр, паприка, сахар. <br><br> Срок годности: 30 суток в вакуумной упаковке, при соблюдении условий хранения, после вскрытия упаковки – 5 суток. <br><br> Условия хранения: от 0° С до +6° С
+          </p>
           <a class="product-info__button button button--order" href="#">Добавить товар в заказ</a>
         </div>
         <div class="product-tabs__product-info product-info" id="hunters-sausage-ram">
@@ -471,29 +477,30 @@
           </div>
           <h3 class="product-info__title">Колбаски охотничьи(баранина, говядина)</h3>
           <div class="product-info__price">
-            <span class="product-info__price-value">200p</span><span class="product-info__price-unit">/100г</span>
+            <span class="product-info__price-value">155p</span><span class="product-info__price-unit">/100г</span>
           </div>
-          <p class="product-info__about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          <p class="product-info__about">Наши колбаски лишены перекопчённого вкуса и излишней жирности, что делает их отличными спутниками в вашей ежедневной трапезе.</p>
           <table class="product-info__energy-value-table energy-value">
             <caption class="energy-value__title">Пищевая ценность ценность на 100г</caption>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Белки, г</td>
-              <td class="energy-value__cell energy-value__cell--value">17,55</td>
+              <td class="energy-value__cell energy-value__cell--value">17,9</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Жиры, г</td>
-              <td class="energy-value__cell energy-value__cell--value">3,87</td>
+              <td class="energy-value__cell energy-value__cell--value">14,38</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Углеводы, г</td>
-              <td class="energy-value__cell energy-value__cell--value">0,28</td>
+              <td class="energy-value__cell energy-value__cell--value">0,14</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Энергетическая ценность</td>
-              <td class="energy-value__cell energy-value__cell--value">106,45 кКал /446  кДж</td>
+              <td class="energy-value__cell energy-value__cell--value">? кКал / ? кДж</td>
             </tr>
           </table>
-          <p class="product-info__text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+          <p class="product-info__text">Состав: говядина, баранина, соль поваренная, соль нитритная, смесь перцев, мускатный орех, чеснок, кориандр, паприка, сахар. <br><br> Срок годности: 30 суток в вакуумной упаковке, при соблюдении условий хранения, после вскрытия упаковки – 5 суток. <br><br> Условия хранения: от 0° С до +6° С
+          </p>
           <a class="product-info__button button button--order" href="#">Добавить товар в заказ</a>
         </div>
         <div class="product-tabs__product-info product-info" id="krakov-sausage">
@@ -507,29 +514,30 @@
           </div>
           <h3 class="product-info__title">Краковская</h3>
           <div class="product-info__price">
-            <span class="product-info__price-value">200p</span><span class="product-info__price-unit">/100г</span>
+            <span class="product-info__price-value">110p</span><span class="product-info__price-unit">/100г</span>
           </div>
-          <p class="product-info__about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          <p class="product-info__about">Наполненная палитрой специй, сочная и сытная «Краковская» станет вашим гостем в кулинарных щедеврах.</p>
           <table class="product-info__energy-value-table energy-value">
             <caption class="energy-value__title">Пищевая ценность ценность на 100г</caption>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Белки, г</td>
-              <td class="energy-value__cell energy-value__cell--value">17,55</td>
+              <td class="energy-value__cell energy-value__cell--value">13,25</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Жиры, г</td>
-              <td class="energy-value__cell energy-value__cell--value">3,87</td>
+              <td class="energy-value__cell energy-value__cell--value">37,71</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Углеводы, г</td>
-              <td class="energy-value__cell energy-value__cell--value">0,28</td>
+              <td class="energy-value__cell energy-value__cell--value">0,23</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Энергетическая ценность</td>
-              <td class="energy-value__cell energy-value__cell--value">106,45 кКал /446  кДж</td>
+              <td class="energy-value__cell energy-value__cell--value">389 кКал / 1629 кДж</td>
             </tr>
           </table>
-          <p class="product-info__text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+          <p class="product-info__text">Состав: свинина, говядина, шпик свиной, соль поваренная, соль нитритная, смесь перцев, кардамон, горчичный порошок, сахар, чеснок гранулированный. <br><br> Срок годности: 30 суток в вакуумной упаковке, при соблюдении условий хранения, после вскрытия упаковки – 5 суток. <br><br> Условия хранения: от 0° С до +6° С
+          </p>
           <a class="product-info__button button button--order" href="#">Добавить товар в заказ</a>
         </div>
         <div class="product-tabs__product-info product-info" id="meat-chips">
@@ -543,29 +551,30 @@
           </div>
           <h3 class="product-info__title">Джерки(чипсы) в асс.</h3>
           <div class="product-info__price">
-            <span class="product-info__price-value">200p</span><span class="product-info__price-unit">/100г</span>
+            <span class="product-info__price-value">170p</span><span class="product-info__price-unit">/шт</span>
           </div>
-          <p class="product-info__about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          <p class="product-info__about">Пряные мясные чипсы, станут отличный закуской для ваших душевных посиделок.</p>
           <table class="product-info__energy-value-table energy-value">
             <caption class="energy-value__title">Пищевая ценность ценность на 100г</caption>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Белки, г</td>
-              <td class="energy-value__cell energy-value__cell--value">17,55</td>
+              <td class="energy-value__cell energy-value__cell--value">22,5</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Жиры, г</td>
-              <td class="energy-value__cell energy-value__cell--value">3,87</td>
+              <td class="energy-value__cell energy-value__cell--value">1,8</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Углеводы, г</td>
-              <td class="energy-value__cell energy-value__cell--value">0,28</td>
+              <td class="energy-value__cell energy-value__cell--value">0,89</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Энергетическая ценность</td>
-              <td class="energy-value__cell energy-value__cell--value">106,45 кКал /446  кДж</td>
+              <td class="energy-value__cell energy-value__cell--value">109 кКал / 456 кДж</td>
             </tr>
           </table>
-          <p class="product-info__text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+          <p class="product-info__text">Состав: индейка/курица/свинина, соль поваренная, соль нитритная, чеснок, паприка, соевый соус. <br><br> Срок годности: 30 суток в вакуумной упаковке, при соблюдении условий хранения, после вскрытия упаковки – 5 суток. <br><br> Условия хранения: от 0° С до +6° С
+          </p>
           <a class="product-info__button button button--order" href="#">Добавить товар в заказ</a>
         </div>
         <div class="product-tabs__product-info product-info" id="sirloin">
@@ -579,65 +588,67 @@
           </div>
           <h3 class="product-info__title">Вырезка свиная</h3>
           <div class="product-info__price">
-            <span class="product-info__price-value">200p</span><span class="product-info__price-unit">/100г</span>
+            <span class="product-info__price-value">90p</span><span class="product-info__price-unit">/100г</span>
           </div>
-          <p class="product-info__about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          <p class="product-info__about">Сочное свиное мясо, наполненное гармоничным сочетанием специй. </p>
           <table class="product-info__energy-value-table energy-value">
             <caption class="energy-value__title">Пищевая ценность ценность на 100г</caption>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Белки, г</td>
-              <td class="energy-value__cell energy-value__cell--value">17,55</td>
+              <td class="energy-value__cell energy-value__cell--value">18,75</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Жиры, г</td>
-              <td class="energy-value__cell energy-value__cell--value">3,87</td>
+              <td class="energy-value__cell energy-value__cell--value">6,86</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Углеводы, г</td>
-              <td class="energy-value__cell energy-value__cell--value">0,28</td>
+              <td class="energy-value__cell energy-value__cell--value">0,34</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Энергетическая ценность</td>
-              <td class="energy-value__cell energy-value__cell--value">106,45 кКал /446  кДж</td>
+              <td class="energy-value__cell energy-value__cell--value">141,96 кКал / 594 кДж</td>
             </tr>
           </table>
-          <p class="product-info__text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+          <p class="product-info__text">Состав: свинина, виски, соль поваренная, соль нитритная, сахар, перец зелёный, можжевельник, чеснок, кориандр. <br><br> Срок годности: 30 суток в вакуумной упаковке, при соблюдении условий хранения, после вскрытия упаковки – 5 суток. <br><br> Условия хранения: от 0° С до +6° С
+          </p>
           <a class="product-info__button button button--order" href="#">Добавить товар в заказ</a>
         </div>
         <div class="product-tabs__product-info product-info" id="smoked-duck">
           <div class="product-info__photo">
             <picture>
-              <source type='image/webp' media='(min-width: 1024px)' srcset='img/smoked-duck-desktop.webp 1x, img/smoked-duck0-desktop@2x.webp 2x'>
-              <source type='image/webp' srcset='img/smoked-duck-tablet.webp 1x, img/smoked-duckd-tablet@2x.webp 2x'>
+              <source type='image/webp' media='(min-width: 1024px)' srcset='img/smoked-duck-desktop.webp 1x, img/smoked-duck-desktop@2x.webp 2x'>
+              <source type='image/webp' srcset='img/smoked-duck-tablet.webp 1x, img/smoked-duck-tablet@2x.webp 2x'>
               <source media="(min-width: 1024px)" srcset="img/smoked-duck-desktop.jpg 1x, img/smoked-duck-desktop@2x.jpg 2x">
               <img class="product-info__image" src="img/smoked-duck-tablet.jpg" srcset="img/smoked-duck-tablet@2x.jpg 2x" alt="Фото утки копчёной" width="350" height="430">
             </picture>
           </div>
           <h3 class="product-info__title">Утка копчёная</h3>
           <div class="product-info__price">
-            <span class="product-info__price-value">200p</span><span class="product-info__price-unit">/100г</span>
+            <span class="product-info__price-value">100p</span><span class="product-info__price-unit">/100г</span>
           </div>
-          <p class="product-info__about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          <p class="product-info__about">Сочная утка, очень нежная с копчёным вкусом, поможет вам по другому взглянуть на эту птицу.</p>
           <table class="product-info__energy-value-table energy-value">
             <caption class="energy-value__title">Пищевая ценность ценность на 100г</caption>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Белки, г</td>
-              <td class="energy-value__cell energy-value__cell--value">17,55</td>
+              <td class="energy-value__cell energy-value__cell--value">18,81</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Жиры, г</td>
-              <td class="energy-value__cell energy-value__cell--value">3,87</td>
+              <td class="energy-value__cell energy-value__cell--value">28,12</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Углеводы, г</td>
-              <td class="energy-value__cell energy-value__cell--value">0,28</td>
+              <td class="energy-value__cell energy-value__cell--value">0,00</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Энергетическая ценность</td>
-              <td class="energy-value__cell energy-value__cell--value">106,45 кКал /446  кДж</td>
+              <td class="energy-value__cell energy-value__cell--value">333,7 кКал / 1397 кДж</td>
             </tr>
           </table>
-          <p class="product-info__text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+          <p class="product-info__text">Состав: утка, соль поваренная, соль нитритная. <br><br> Срок годности: 30 суток в вакуумной упаковке, при соблюдении условий хранения, после вскрытия упаковки – 5 суток. <br><br> Условия хранения: от 0° С до +6° С
+          </p>
           <a class="product-info__button button button--order" href="#">Добавить товар в заказ</a>
         </div>
         <div class="product-tabs__product-info product-info" id="duck-pate">
@@ -651,29 +662,30 @@
           </div>
           <h3 class="product-info__title">Паштет из утиной печени</h3>
           <div class="product-info__price">
-            <span class="product-info__price-value">200p</span><span class="product-info__price-unit">/100г</span>
+            <span class="product-info__price-value">370p</span><span class="product-info__price-unit">/шт</span>
           </div>
-          <p class="product-info__about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          <p class="product-info__about">Наш паштет подойдёт даже самым изысканным гурманам. Наполненный богатым сочетанием специй, с идеальной текстурой, этот паштет не оставит вас равнодушными. </p>
           <table class="product-info__energy-value-table energy-value">
             <caption class="energy-value__title">Пищевая ценность ценность на 100г</caption>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Белки, г</td>
-              <td class="energy-value__cell energy-value__cell--value">17,55</td>
+              <td class="energy-value__cell energy-value__cell--value">7,81</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Жиры, г</td>
-              <td class="energy-value__cell energy-value__cell--value">3,87</td>
+              <td class="energy-value__cell energy-value__cell--value">31,08</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Углеводы, г</td>
-              <td class="energy-value__cell energy-value__cell--value">0,28</td>
+              <td class="energy-value__cell energy-value__cell--value">2,89</td>
             </tr>
             <tr class="energy-value__row">
               <td class="energy-value__cell energy-value__cell--key">Энергетическая ценность</td>
-              <td class="energy-value__cell energy-value__cell--value">106,45 кКал /446  кДж</td>
+              <td class="energy-value__cell energy-value__cell--value">332,47 кКал / 1392 кДж</td>
             </tr>
           </table>
-          <p class="product-info__text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+          <p class="product-info__text">Состав: печень утиная, морковь, лук, масло сливочное, масло растительное, бренди, сливки коровьи, соль поваренная, мускатный орех, можжевельник, перец белый. <br><br> Срок годности: 30 суток в вакуумной упаковке, при соблюдении условий хранения, после вскрытия упаковки – 5 суток. <br><br> Условия хранения: от 0° С до +6° С
+          </p>
           <a class="product-info__button button button--order" href="">Добавить товар в заказ</a>
         </div>
       </div>
@@ -682,7 +694,7 @@
       <div class="sets__container container">
         <div class="sets__info">
           <h2>Наборы</h2>
-          <p>Если вы хотите ознакомиться с нашим ассортиментом, но не знаете с чего начать?</p>
+          <p>Если вы хотите ознакомиться с нашим ассортиментом, но не знаете с чего начать? То вам подойдут наборы!</p>
           <div class="sets__contact-us contact-us">
             <h3 class="contact-us__title">Свяжитесь с нами</h3>
             <ul class="contact-us__user-list user-list user-list--secondary">
@@ -788,7 +800,7 @@
     <section class="page-main__certification certification" id="certification">
       <div class="certification__container container">
         <h2>Сертификация</h2>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p>Мы сертифицируем нашу продукцию согласно самым высоким стандартам Евразйского Экономического Союза</p>
         <div class="certification__slider slider slider--main">
           <a class="slider__item" href="#">
             <img class="slider__image" src="img/bacon-cert.png" alt="Скан сертификата на Бекон варёно-копчёный" width="350" height="430">
@@ -812,19 +824,20 @@
     <section class="page-main__about-shop about-shop" id="about">
       <div class="about-shop__container container">
         <h2 class="about-shop__title">О колбасном цехе</h2>
-        <p class="about-shop__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+        <p class="about-shop__text">Мы молодой и семейный бренд, создаём свою продукцию с любовью и уважением к своим покупателям. Все ингредиенты у нас натуральные и проверенные, готовим мы действительно в цехе, с профессиональным оборудованием и с постоянной дезинфекцией.<br>В будущем хотим сделать свою ферму, у нас уже есть земля и проведённое электричество, дело за малым 😊 </p>
       </div>
     </section>
     <section class="page-main__delivery delivery" id="delivery">
       <div class="delivery__container container">
         <h2 class="delivery__title">Доставка</h2>
-        <p class="delivery__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p class="delivery__text">Мы доставим Вам ваш заказ в любую точку Санкт-Петербурга в пределах КАД. Для доставки в Ленинградскую область уточняйте информацию у наших менеджеров.</p>
       </div>
     </section>
     <section class="page-main__feedback feedback">
       <div class="feedback__container container">
-        <form class="feedback__form form form--feedback" action="" method="POST">
+        <form class="feedback__form form form--feedback">
           <div class="form__wrapper">
+            <input class="form__hidden-input" type="hidden" name="title" value='Формы обратной связи'>
             <h3 class="form__title">У вас остались вопросы?</h3>
             <p class="form__description">Оставьте свой номер или e-mail и мы свяжемся с Вами</p>
             <div class="form__input-wrapper form__input-wrapper--name">
@@ -840,9 +853,9 @@
               <input class="form__input form__input--mail" type="email" id="question-mail" name="user-email" placeholder="Укажите Ваш Email">
               <label class="form__label form__label--mail" for="question-mail"></label>
             </div>
-            <textarea class="form__user-text" name='user-text' id='user-text' cols='20' rows='10' placeholder='Напишите сюда интересующий Вас вопрос'></textarea>
+            <textarea class="form__user-text" name="user-text" cols="20" rows="10" placeholder="Напишите сюда интересующий Вас вопрос"></textarea>
             <button class="form__button button button--form" type="submit" aria-label="Отправить форму с данными для обратного звонка/письма">Отправить</button>
-            <p class="form__agreement">Отправляя форму вы соглашаетесь с <a class="form__agreement-link form__agreement-link--agreement" href="#">пользовательским соглашением</a> и <a class="form__agreement-link form__agreement-link--policy" href="#">политикой конфиденциальности</a>.</p>
+            <p class="form__agreement">Отправляя форму вы соглашаетесь с <a class="form__agreement-link form__agreement-link--agreement" href='#' target="_blank">пользовательским соглашением</a> и <a class="form__agreement-link form__agreement-link--policy" href='policy' target="_blank">политикой конфиденциальности</a>.</p>
           </div>
         </form>
       </div>
@@ -898,9 +911,20 @@
         <div class='page-footer__logo'>
           <img class='page-footer__image' src='img/logo.png' alt='Логотип Колбасного Цеха' width='45' height='45'>
         </div>
-        <span class='page-footer__name'>Колбасный Цех</span>
+        <span class='page-footer__organization'>ИП Поляков С.В.</span>
         <p class='page-footer__address'>Ленинградская область, Выборгский р-н, посёлок&nbsp;Холмово</p>
       </div>
+      <ul class='page-footer__docs'>
+        <li class='page-footer__docs-item'>
+          <a href='rules' target="_blank">Правила использования сайта</a>
+        </li>
+        <li class='page-footer__docs-item'>
+          <a href='policy' target="_blank">Политика конфиденциальности</a>
+        </li>
+        <li class='page-footer__docs-item'>
+          <a href='agreement' target="_blank">Пользовательское соглашение</a>
+        </li>
+      </ul>
     </div>
   </footer>
 
@@ -936,7 +960,7 @@
           </div>
           <p class='form__description'>Укажите ваши имя, номер телефона и e-mail, и мы свяжемся с Вами для подтверждения заказа</p>
           <div class='form__input-wrapper form__input-wrapper--name'>
-            <input class='form__input form__input--name form__input--required' type='text' name='user-name' id='question-name' placeholder='Введите ваше имя'>
+            <input class='form__input form__input--name form__input--required' type='text' name='user-name' id='buy-name' placeholder='Введите ваше имя'>
             <label class='form__label form__label--name' for='question-name'></label>
           </div>
           <div class='form__input-wrapper form__input-wrapper--tel'>
@@ -949,7 +973,7 @@
           </div>
           <textarea class='form__user-text' name='user-text' id='user-text' cols='20' rows='10' placeholder='Комментарий к заказу'></textarea>
           <button class='form__button button button--form' type='submit' aria-label='Отправить форму для заказа тура'>Отправить заказ</button>
-          <p class='form__agreement'>Оформляя заказ вы соглашаетесь с <a class='form__agreement-link form__agreement-link--agreement' href='#'>пользовательским соглашением</a> и <a class='form__agreement-link form__agreement-link--policy' href='#'>политикой конфиденциальности</a>.</p>
+          <p class='form__agreement'>Оформляя заказ вы соглашаетесь с <a class='form__agreement-link form__agreement-link--agreement' href='#' target="_blank">пользовательским соглашением</a> и <a class='form__agreement-link form__agreement-link--policy' href='policy' target="_blank">политикой конфиденциальности</a>.</p>
         </div>
       </form>
       <button class='modal__button button button--close'></button>
@@ -996,10 +1020,10 @@
       <div class='order-item__name'>
         <h3 class='order-item__name-title'>Наименование:</h3>
         <p class='order-item__name-text'></p>
-        <span class='order-item__weight'>300г.</span>
+        <input type='hidden' name='order-good-name' value=''>
       </div>
       <div class='order-item__number'>
-        <input class='order-item__input' type='number' value='1' min='1'>
+        <input class='order-item__input' type='number' value='1' min='1' name='goods-number'>
         <label class='order-item__label' for=''>Кол-во:</label>
         <span class='order-item__unit'>шт.</span>
       </div>
@@ -1012,6 +1036,7 @@
       <div class='order-item__summary'>
         <h3 class='order-item__summary-title'>Сумма:</h3>
         <span class='order-item__summary-value'></span>
+        <input type='hidden' name='order-good-sum' value=''>
       </div>
       <button class='order-item__button button button--remove' type='button'></button>
     </li>
@@ -1020,8 +1045,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src='js/slick.min.js'></script>
   <script src='js/slider.js'></script>
-  <script src='js/script.js'></script>
-  <script src='js/form.js'></script>
-
+  <script src='js/script.js?version=2.0'></script>
 </body>
 </html>
