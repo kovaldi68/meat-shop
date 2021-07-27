@@ -31,15 +31,11 @@ if(trim(!empty($_POST['user-email']))){
 
 $body.='<p><strong>Заказ:</strong></p>'.$_POST['orderGoodsList'].'</p>';
 
-$info = json_decode($_POST['orderGoodsList'], true);
-
-foreach ($info as $value) {
-   $body.= '<p><strong>'.$value.'</strong></p>';
-}
-
 $body.='<p><strong>Доставка в пределах КАД:</strong> '.$_POST['circle-accept'].'</p>';
 $body.='<p><strong>Стоимость товаров:</strong> '.$_POST['goods-sum'].'</p>';
 $body.='<p><strong>Итого:</strong> '.$_POST['total-sum'].'</p>';
+
+$body.='<p><strong>Комментарий к заказу:</strong> '.$_POST['user-text'].'</p>';
 
 $mail->Body = $body;
 
