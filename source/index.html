@@ -10,7 +10,7 @@
   <link rel='preload' href='fonts/montserrat-medium.woff2' as='font' type='font/woff2' crossorigin>
   <link rel='preload' href='fonts/montserrat-semibold.woff2' as='font' type='font/woff2' crossorigin>
   <link rel='preload' href='fonts/montserrat-bold.woff2' as='font' type='font/woff2' crossorigin>
-  <link rel='stylesheet' href='css/style.min.css?version=2.0'>
+  <link rel='stylesheet' href='css/style.min.css?version=2.1'>
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -54,11 +54,12 @@
 
   <main class="page-main">
     <section class="promo">
+      <p class='promo__attention'>Уважаемые гости нашего сайта, обращаем Ваше внимание, что сайт находится в режиме доработки, но вы уже можете совершать заказы! А мы будем рады их принять!</p>
       <div class="promo__container container">
         <div class="promo__main-info main-info">
           <h1>Колбасный Цех</h1>
           <p>Мы семейный бизнес, который изготавливает свою продукцию без лишней химии и исключительно из натуральных и проверенных ингредиентов.</p>
-          <a class="main-info__button button button--goods" href="#our-goods">Смотреть изделия</a>
+          <a class="main-info__button button button--goods" href="#our-goods" aria-label='Перейти к каталогу продукции'>Каталог продукции</a>
           <ul class="main-info__user-list user-list user-list--primary">
             <li class="user-list__item">
               <a class="user-list__link user-list__link--phone" href="tel:+7(911)-130-04-04">+7(911)-130-04-04</a>
@@ -170,18 +171,6 @@
             <a class="product-card__link-more" href="#hunters-sausage-tab" data-product-name="hunters-sausage" aria-label="Узнать подробнее о товаре">Смотреть подробнее</a>
           </li>
           <li class="goods__item product-card">
-            <h3 class="product-card__name">Охотничьи колбаски(баранина, говядина)</h3>
-            <div class="product-card__photo">
-              <picture>
-                <source type='image/webp' media='(min-width: 1024px)' srcset='img/hunters-sausage-ram-beef-desktop.webp 1x, img/hunters-sausage-ram-beef-desktop@2x.webp 2x'>
-                <source type='image/webp' srcset='img/hunters-sausage-ram-beef-tablet.webp 1x, img/hunters-sausage-ram-beef-tablet@2x.webp 2x'>
-                <source media="(min-width: 1024px)" srcset="img/hunters-sausage-ram-beef-desktop.jpg 1x, img/hunters-sausage-ram-beef-desktop@2x.jpg 2x">
-                <img class="product-card__image" src="img/hunters-sausage-ram-beef-tablet.jpg" srcset="img/hunters-sausage-ram-beef-tablet@2x.jpg 2x" alt="Фото охотничьих колбасок из баранины и говядины" width="350" height="430">
-              </picture>
-            </div>
-            <a class="product-card__link-more" href="#hunters-sausage-ram-tab" data-product-name="hunters-sausage-ram" aria-label="Узнать подробнее о товаре">Смотреть подробнее</a>
-          </li>
-          <li class="goods__item product-card">
             <h3 class="product-card__name">Краковская</h3>
             <div class="product-card__photo">
               <picture>
@@ -263,9 +252,6 @@
             <a class="tab-list__link" href="#hunters-sausage" data-product-name="hunters-sausage" id="hunters-sausage-tab">Колбаски охотничьи(свин)</a>
           </li>
           <li class="tab-list__item">
-            <a class="tab-list__link" href="#hunters-sausage-ram" data-product-name="hunters-sausage-ram" id="hunters-sausage-ram-tab">Колбаски охотничьи(бар, гов)</a>
-          </li>
-          <li class="tab-list__item">
             <a class="tab-list__link" href="#krakov" data-product-name="krakov-sausage" id="krakov-tab">Краковская</a>
           </li>
           <li class="tab-list__item">
@@ -329,9 +315,9 @@
           </div>
           <h3 class="product-info__title">Копчёный цыплёнок</h3>
           <div class="product-info__price">
-            <span class="product-info__price-value">50p</span><span class="product-info__price-unit">/100г</span>
+            <span class="product-info__price-value">800p</span><span class="product-info__price-unit">/шт</span>
           </div>
-          <p class="product-info__about">Станет желанным гостем в ваших салатах и сэндвичах, подарит вам ненавязчивый копчёный оттенок и разнообразит вкус привычных блюд.</p>
+          <p class="product-info__about">Станет желанным гостем в ваших салатах и сэндвичах, подарит вам ненавязчивый копчёный оттенок и разнообразит вкус привычных блюд. <br> Примерный вес цыплёнка составляет 1500-1700г</p>
           <table class="product-info__energy-value-table energy-value">
             <caption class="energy-value__title">Пищевая ценность ценность на 100г</caption>
             <tr class="energy-value__row">
@@ -466,43 +452,6 @@
           </p>
           <a class="product-info__button button button--order" href="#">Добавить товар в заказ</a>
         </div>
-        <div class="product-tabs__product-info product-info" id="hunters-sausage-ram">
-          <div class="product-info__photo">
-            <picture>
-              <source type='image/webp' media='(min-width: 1024px)' srcset='img/hunters-sausage-ram-beef-desktop.webp 1x, img/hunters-sausage-ram-beef-desktop@2x.webp 2x'>
-              <source type='image/webp' srcset='img/hunters-sausage-ram-beef-tablet.webp 1x, img/hunters-sausage-ram-beef-tablet@2x.webp 2x'>
-              <source media="(min-width: 1024px)" srcset="img/hunters-sausage-ram-beef-desktop.jpg 1x, img/hunters-sausage-ram-beef-desktop@2x.jpg 2x">
-              <img class="product-info__image" src="img/hunters-sausage-ram-beef-tablet.jpg" srcset="img/hunters-sausage-ram-beef-tablet@2x.jpg 2x" alt="Фото колбасок охотничьих из баранины и говядины" width="350" height="430">
-            </picture>
-          </div>
-          <h3 class="product-info__title">Колбаски охотничьи(баранина, говядина)</h3>
-          <div class="product-info__price">
-            <span class="product-info__price-value">155p</span><span class="product-info__price-unit">/100г</span>
-          </div>
-          <p class="product-info__about">Наши колбаски лишены перекопчённого вкуса и излишней жирности, что делает их отличными спутниками в вашей ежедневной трапезе.</p>
-          <table class="product-info__energy-value-table energy-value">
-            <caption class="energy-value__title">Пищевая ценность ценность на 100г</caption>
-            <tr class="energy-value__row">
-              <td class="energy-value__cell energy-value__cell--key">Белки, г</td>
-              <td class="energy-value__cell energy-value__cell--value">17,9</td>
-            </tr>
-            <tr class="energy-value__row">
-              <td class="energy-value__cell energy-value__cell--key">Жиры, г</td>
-              <td class="energy-value__cell energy-value__cell--value">14,38</td>
-            </tr>
-            <tr class="energy-value__row">
-              <td class="energy-value__cell energy-value__cell--key">Углеводы, г</td>
-              <td class="energy-value__cell energy-value__cell--value">0,14</td>
-            </tr>
-            <tr class="energy-value__row">
-              <td class="energy-value__cell energy-value__cell--key">Энергетическая ценность</td>
-              <td class="energy-value__cell energy-value__cell--value">? кКал / ? кДж</td>
-            </tr>
-          </table>
-          <p class="product-info__text">Состав: говядина, баранина, соль поваренная, соль нитритная, смесь перцев, мускатный орех, чеснок, кориандр, паприка, сахар. <br><br> Срок годности: 30 суток в вакуумной упаковке, при соблюдении условий хранения, после вскрытия упаковки – 5 суток. <br><br> Условия хранения: от 0° С до +6° С
-          </p>
-          <a class="product-info__button button button--order" href="#">Добавить товар в заказ</a>
-        </div>
         <div class="product-tabs__product-info product-info" id="krakov-sausage">
           <div class="product-info__photo">
             <picture>
@@ -625,9 +574,9 @@
           </div>
           <h3 class="product-info__title">Утка копчёная</h3>
           <div class="product-info__price">
-            <span class="product-info__price-value">100p</span><span class="product-info__price-unit">/100г</span>
+            <span class="product-info__price-value">1500р</span><span class="product-info__price-unit">/шт</span>
           </div>
-          <p class="product-info__about">Сочная утка, очень нежная с копчёным вкусом, поможет вам по другому взглянуть на эту птицу.</p>
+          <p class="product-info__about">Сочная утка, очень нежная с копчёным вкусом, поможет вам по другому взглянуть на эту птицу. <br> Примерный вес утки составляет 1500-1700г </p>
           <table class="product-info__energy-value-table energy-value">
             <caption class="energy-value__title">Пищевая ценность ценность на 100г</caption>
             <tr class="energy-value__row">
@@ -753,16 +702,22 @@
                 </picture>
               </div>
               <h3 class="kit-list__title">Полный фарш</h3>
-              <span class="kit-list__price">2000р</span>
+              <span class="kit-list__price">10000р</span>
               <p class="kit-list__description">Если вы хотите подарить кому-то подарок на застолье или порадовать самих себя, вам подойдёт набор «Luxury»</p>
               <ul class="kit-list__advantages-list">
-                <li class="kit-list__advantages-item">Цыпленок в/к</li>
-                <li class="kit-list__advantages-item">Дрогобычская</li>
-                <li class="kit-list__advantages-item">Бекон</li>
-                <li class="kit-list__advantages-item">Груша маринованная</li>
-                <li class="kit-list__advantages-item">Аджика</li>
-                <li class="kit-list__advantages-item">Соус Понзу</li>
-
+                <li class="kit-list__advantages-item">Ветчина из индейки с шампиньонами (650-700гр)</li>
+                <li class="kit-list__advantages-item">Колбаса «Краковская» (600-650гр)</li>
+                <li class="kit-list__advantages-item">Колбаса «Дрогобычская» (500-600гр)</li>
+                <li class="kit-list__advantages-item">Вырезка из свинины (300-350гр)</li>
+                <li class="kit-list__advantages-item">Утка фермерская в/к (1,5-2,0кг)</li>
+                <li class="kit-list__advantages-item">Бекон в/к (350-400гр)</li>
+                <li class="kit-list__advantages-item">Джерки (свиные/куриные/индюшачьи) (180-200гр)</li>
+                <li class="kit-list__advantages-item">Паштет из утиной печени (500гр)</li>
+                <li class="kit-list__advantages-item">Охотничьи колбаски из свинины (500-550гр) / баранины и говядины (350-400гр)</li>
+                <li class="kit-list__advantages-item">Колбаса сыровяленная из свинины (700-800гр)</li>
+                <li class="kit-list__advantages-item">Аджика (250гр)</li>
+                <li class="kit-list__advantages-item">Соус "Понзу" (250мл)</li>
+                <li class="kit-list__advantages-item">Маринованные груши (250гр)</li>
               </ul>
             </div>
             <a class="kit-list__button button button--special" href="">Заказать сейчас</a>
@@ -778,18 +733,15 @@
                 </picture>
               </div>
               <h3 class="kit-list__title">Дегустационный</h3>
-              <span class="kit-list__price">1000р</span>
+              <span class="kit-list__price">3000р</span>
               <p class="kit-list__description"> Представляем вашему вниманию «Дегустационный» набор в него входит: </p>
               <ul class="kit-list__advantages-list">
-                <li class="kit-list__advantages-item">Ветчина из индейки с шампиньонами</li>
-                <li class="kit-list__advantages-item">Колбаса «Краковская»</li>
-                <li class="kit-list__advantages-item">Колбаса «Дрогобычская» </li>
-                <li class="kit-list__advantages-item">Вырезка свиная</li>
-                <li class="kit-list__advantages-item">Утка фермерская в/к</li>
-                <li class="kit-list__advantages-item">Бекон в/к</li>
-                <li class="kit-list__advantages-item">Джерки (свиные/куриные/индюшачьи)</li>
-                <li class="kit-list__advantages-item">Паштет из утиной печени</li>
-                <li class="kit-list__advantages-item">Аджика</li>
+                <li class="kit-list__advantages-item">Цыпленок в/к (1,5-2,0кг)</li>
+                <li class="kit-list__advantages-item">Колбаса «Дрогобычская» (300-350гр)</li>
+                <li class="kit-list__advantages-item">Бекон в/к (350-400гр)</li>
+                <li class="kit-list__advantages-item">Груша маринованная (250гр)</li>
+                <li class="kit-list__advantages-item">Аджика (250гр)</li>
+                <li class="kit-list__advantages-item">Соус Понзу (250мл)</li>
               </ul>
             </div>
             <a class="kit-list__button button button--special" href="">Заказать сейчас</a>
@@ -990,7 +942,7 @@
       <button class='modal__button button button--close'></button>
     </div>
   </div>
-  
+
   <div class='modal modal--success-feedback'>
     <div class='modal__wrapper'>
       <a class='modal__logo' href='index.html'>
@@ -1045,6 +997,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src='js/slick.min.js'></script>
   <script src='js/slider.js'></script>
-  <script src='js/script.js?version=2.0'></script>
+  <script src='js/script.js?version=2.2'></script>
 </body>
 </html>

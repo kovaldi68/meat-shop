@@ -43,9 +43,9 @@ const ALERT_SHOW_TIME = 3000;
 allSlides.forEach(element => {
   element.addEventListener('click', function(evt) {
   evt.preventDefault();
-  
+
   if (element.classList.contains('slick-current')) {
-    
+
     modalImage.classList.add('modal--opened');
     body.classList.add('page__body--modal-opened');
 
@@ -102,9 +102,9 @@ const stickyHeader = () => {
 
 const smoothScroll = function(evt) {
   evt.preventDefault()
-      
+
   const blockID = evt.target.getAttribute('href').substr(1)
-  
+
   document.getElementById(blockID).scrollIntoView({
     behavior: 'smooth',
     block: 'start'
@@ -225,25 +225,25 @@ const storageData = () => {
 //forms
 
 const getOrderList = function() {
-  let list = [];
-  const goodInfo = document.querySelectorAll('.order-item');
-  
-for (let i = 0; i < goodInfo.length; i++) {
-    let item = {};
-    goodInfo[i].querySelector('[name = order-good-name]').value = goodInfo[i].querySelector('.order-item__name-text').textContent;
-    let name = goodInfo[i].querySelector('[name = order-good-name]').value
-    let number = goodInfo[i].querySelector('[name = goods-number]').value;
-    goodInfo[i].querySelector('[name = order-good-sum]').value = goodInfo[i].querySelector('.order-item__summary-value').textContent;
-    let sum = goodInfo[i].querySelector('[name = order-good-sum]').value;
-    
-    item["Наименование"] = name;
-    item["Количество"] = number;
-    item["Сумма"] = sum;
-    
-    list.push(item);
-}
+    let list = [];
+    const goodInfo = document.querySelectorAll('.order-item');
 
-return list;
+  for (let i = 0; i < goodInfo.length; i++) {
+      let item = {};
+      goodInfo[i].querySelector('[name = order-good-name]').value = goodInfo[i].querySelector('.order-item__name-text').textContent;
+      let name = goodInfo[i].querySelector('[name = order-good-name]').value
+      let number = goodInfo[i].querySelector('[name = goods-number]').value;
+      goodInfo[i].querySelector('[name = order-good-sum]').value = goodInfo[i].querySelector('.order-item__summary-value').textContent;
+      let sum = goodInfo[i].querySelector('[name = order-good-sum]').value;
+
+      item["Наименование"] = name;
+      item["Количество"] = number;
+      item["Сумма"] = sum;
+
+      list.push(item);
+  }
+
+  return list;
 }
 
 async function buyFormSubmitHandler(evt) {
@@ -265,7 +265,7 @@ async function buyFormSubmitHandler(evt) {
       method: 'POST',
       body: formData
     });
-    
+
     if (response.ok) {
       let result = await response.json();
       formOrderList.innerHTML = '';
@@ -301,9 +301,9 @@ const createErrorMessage = function() {
   message.style.background = '#500805';
   message.style.color = '#fff';
   message.style.textAlign = 'center';
-  
+
   orderForm.appendChild(message);
-  
+
   setTimeout(() => {
     message.remove();
   }, ALERT_SHOW_TIME);
@@ -324,7 +324,7 @@ const formValidate = function(formToValidate) {
   for (let i = 0; i < formReq.length; i++) {
     const input = formReq[i];
     formRemoveError(input);
-    
+
     if (input.classList.contains('form__input--mail')) {
       if (emailTest(input)) {
         formAddError(input);
@@ -369,7 +369,7 @@ async function feedbackFormSubmitHandler(evt) {
       method: 'POST',
       body: formData
     });
-    
+
     if (response.ok) {
       let result = await response.json();
       feedbackForm.classList.remove('form--sending');
@@ -517,7 +517,7 @@ const showUpOrderModal = () => {
   getChangeOfSum();
   getSumOfOrder();
   getTotalSumm();
-  
+
 
   document.addEventListener('keydown', onBuyGoodEscHandler);
   document.addEventListener('click', onMakeOrderClickHandler);
@@ -548,24 +548,27 @@ const createOrderItem = function(good) {
     const goodTitle = good.querySelector('.product-info__title');
     const goodImage = good.querySelector('.product-info__image');
     const goodPriceValue = good.querySelector('.product-info__price-value');
-  
+
     clonedOrderItem.querySelector('.order-item__name-text').textContent = goodTitle.textContent;
     clonedOrderItem.querySelector('.order-item__image').src = goodImage.src;
     clonedOrderItem.querySelector('.order-item__image').alt = goodImage.alt;
     clonedOrderItem.querySelector('.order-item__price-value--number').textContent = goodPriceValue.textContent;
+
+    if (goodTitle.textContent.includes('цыплёнок') || goodTitle.textContent.includes('Утка')) {
+        clonedOrderItem.querySelector('.order-item__price-value--amount').textContent = '/шт';
+    }
   }
 
   if (good.classList.contains('kit-list__item')) {
     const setTitle = good.querySelector('.kit-list__title');
     const setImage = good.querySelector('.kit-list__image');
     const setPriceValue = good.querySelector('.kit-list__price');
-  
+
     clonedOrderItem.querySelector('.order-item__name-text').textContent = `Набор ${setTitle.textContent}`;
     clonedOrderItem.querySelector('.order-item__image').src = setImage.src;
     clonedOrderItem.querySelector('.order-item__image').alt = setImage.alt;
     clonedOrderItem.querySelector('.order-item__price-value--number').textContent = setPriceValue.textContent;
     clonedOrderItem.querySelector('.order-item__price-value--amount').textContent = '';
-    clonedOrderItem.querySelector('.order-item__weight').textContent = '';
   }
 
   return clonedOrderItem;
@@ -590,10 +593,7 @@ const getSummOfGood = function() {
     const amountOfGood = element.querySelector('.order-item__input').value;
     const price = element.querySelector('.order-item__price-value--number').textContent;
     const name = element.querySelector('.order-item__name-text').textContent;
-    element.querySelector('.order-item__summary-value').textContent = `${+amountOfGood * +price.slice(0, -1) * 3} руб.`;
-    if (name.includes('Набор')) {
-      element.querySelector('.order-item__summary-value').textContent = `${+amountOfGood * +price.slice(0, -1)} руб.`;
-    }
+    element.querySelector('.order-item__summary-value').textContent = `${+amountOfGood * +price.slice(0, -1)} руб.`;
   }
 }
 
@@ -657,7 +657,7 @@ const getTotalSumm = function() {
   }
 };
 
-//check empty 
+//check empty
 
 const checkEmptyCart = function() {
   if (formOrderList.children.length === 0) {

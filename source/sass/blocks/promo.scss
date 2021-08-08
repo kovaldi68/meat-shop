@@ -23,6 +23,16 @@
   padding: 0;
 }
 
+.promo__attention {
+  margin: 0;
+  margin-top: -30px;
+  margin-bottom: 30px;
+  padding: 10px;
+  color: $red-dark-decor;
+  text-align: center;
+  background-color: $yellow-main-70;
+}
+
 @media (min-width: $mobile-tablet-width) {
   .promo__container {
     padding: 0 15px;
@@ -44,6 +54,10 @@
     padding-top: 54px;
     padding-bottom: 54px;
     background-image: url('../img/main-background.jpg');
+  }
+
+  .promo__attention {
+    margin-top: -54px;
   }
 
   .promo__container {
