@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('.slider').slick({
+  $('.slider--main').slick({
     dots: true,
     responsive: [
       {
@@ -12,5 +12,28 @@ $(document).ready(function(){
       }
     ],
     mobileFirst: true,
+  });
+
+  $('.slider--gallery').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    asNavFor: '.slider--gallery-nav'
+  });
+
+  $('.slider--gallery-nav').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    asNavFor: '.slider--gallery',
+    dots: true,
+    arrows: true,
+    infinite: true,
+    centerMode: true,
+    focusOnSelect: true
   });
 });

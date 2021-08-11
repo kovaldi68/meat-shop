@@ -554,7 +554,7 @@ const createOrderItem = function(good) {
     clonedOrderItem.querySelector('.order-item__image').alt = goodImage.alt;
     clonedOrderItem.querySelector('.order-item__price-value--number').textContent = goodPriceValue.textContent;
 
-    if (goodTitle.textContent.includes('цыплёнок') || goodTitle.textContent.includes('Утка')) {
+    if (goodTitle.textContent.includes('цыплёнок') || goodTitle.textContent.includes('Утка') || goodTitle.textContent.includes('Паштет')) {
         clonedOrderItem.querySelector('.order-item__price-value--amount').textContent = '/шт';
     }
   }
