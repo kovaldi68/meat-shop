@@ -75,17 +75,13 @@
         height: 60px;
       }
     }
+
+    &--secondary {
+      justify-content: flex-start;
+    }
   }
 
   .socials__item {
     margin-right: 48px;
-  }
-}
-
-@media (min-width: 1338px) {
-  .socials {
-    &--secondary {
-      justify-content: flex-start;
-    }
   }
 }

@@ -138,6 +138,14 @@
   }
 }
 
+@media (min-width: $laptop-width) {
+  .user-list {
+    &--secondary {
+      justify-content: flex-start;
+    }
+  }
+}
+
 @media (min-width: 1338px) {
   .user-list {
     &--secondary {

@@ -17,9 +17,14 @@ $(document).ready(function(){
   $('.slider--gallery').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
+    adaptiveHeight: true,
     arrows: false,
+    autoplay: true,
+    pauseOnFocus: true,
+    pauseOnHover: true,
+    pauseOnDotsHover: true,
+    touchThresHold: 10,
     fade: true,
-    infinite: true,
     speed: 500,
     fade: true,
     cssEase: 'linear',
@@ -31,9 +36,20 @@ $(document).ready(function(){
     slidesToScroll: 1,
     asNavFor: '.slider--gallery',
     dots: true,
-    arrows: true,
-    infinite: true,
+    arrows: false,
+    variableWidth: true,
     centerMode: true,
-    focusOnSelect: true
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          initialSlide: 1,
+          arrows: true
+        }
+      }
+    ],
+    mobileFirst: true
   });
 });
